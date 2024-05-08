@@ -1,4 +1,4 @@
-﻿@patient  @1.6.0-Full-Pack
+﻿@patient  @1.6.2-Full-Pack
 Feature: PatientSearch
 
 Scenario: Returned patients should contain a logical identifier

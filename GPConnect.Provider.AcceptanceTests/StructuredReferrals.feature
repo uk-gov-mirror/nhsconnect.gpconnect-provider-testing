@@ -1,4 +1,4 @@
-﻿@Structured @StructuredReferrals  @1.6.0-Full-Pack
+﻿@Structured @StructuredReferrals  @1.6.2-Full-Pack
 Feature: StructuredReferrals
 
 # These Tests are only Testing this Structured Area in isolation and Not with other Areas or Combinations of Include Parameters
@@ -120,7 +120,7 @@ Given I configure the default "GpcGetStructuredRecord" request
 	Then the response status code should indicate failure
 		And the response should be a OperationOutcome resource
 
-@1.6.0-IncrementalAndRegression	
+	
 Scenario: Retrieve Referrals data structured record for a patient that has sensitive flag
 	Given I configure the default "GpcGetStructuredRecord" request 
 		And I add an NHS Number parameter for "patient9"

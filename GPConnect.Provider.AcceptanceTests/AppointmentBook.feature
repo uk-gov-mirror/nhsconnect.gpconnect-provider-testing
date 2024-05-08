@@ -1,4 +1,4 @@
-﻿@appointment  @1.6.0-Full-Pack
+﻿@appointment  @1.6.2-Full-Pack
 Feature: AppointmentBook
 
 Scenario: Book single appointment for patient

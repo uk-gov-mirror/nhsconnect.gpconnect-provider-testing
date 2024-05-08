@@ -1,4 +1,4 @@
-﻿@Structured @StructuredMigrate @1.6.0-Full-Pack @1.6.0-Only
+﻿@Structured @StructuredMigrate @1.6.2-Full-Pack
 Feature: StructuredMigrate
 
 #Migrate Tests -- WIP --

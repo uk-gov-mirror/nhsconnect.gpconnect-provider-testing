@@ -1,4 +1,4 @@
-﻿@patient  @1.6.0-Full-Pack
+﻿@patient  @1.6.2-Full-Pack
 Feature: PatientRegister
 
 Scenario Outline: Register patient send request to incorrect URL
@@ -502,7 +502,7 @@ Scenario: Register patient with family name not matching PDS
 #
 # github demonstrator ref 128
 # RMB 29/10/2018	
-@1.6.0-IncrementalAndRegression
+
 	Scenario: Register deceased patient
 	Given I get the next Patient to register and store it
 	Given I configure the default "RegisterPatient" request
@@ -522,7 +522,7 @@ Scenario: Register patient with family name not matching PDS
 	Then the response status code should be "400"
 		And the response should be a OperationOutcome resource with error code "INVALID_PATIENT_DEMOGRAPHICS"
 
-@1.6.0-IncrementalAndRegression
+
 	Scenario: Register superseded patient
 	Given I get the next Patient to register and store it
 	Given I configure the default "RegisterPatient" request

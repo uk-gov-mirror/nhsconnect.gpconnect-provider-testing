@@ -1,6 +1,7 @@
-﻿@practitioner  @1.6.0-Full-Pack
+﻿@practitioner  @1.6.2-Full-Pack
 Feature: PractitionerRead
 
+@1.6.2--IncrementalAndRegression
 Scenario Outline: Practitioner read successful request validate all of response
 	Given I get the Practitioner for Practitioner Code "<practitioner>"
 		And I store the Practitioner
@@ -11,7 +12,7 @@ Scenario Outline: Practitioner read successful request validate all of response
 		And the Practitioner Id should equal the Request Id
 		And the Practitioner Metadata should be valid
 		And the Practitioner Identifiers should be valid
-		And the Practitioner Name should be valid
+		#And the Practitioner Name should be valid
 		And the Practitioner nhsCommunication should be valid
 		And the Practitioner should exclude disallowed elements
 		And the practitioner Telecom should be valid

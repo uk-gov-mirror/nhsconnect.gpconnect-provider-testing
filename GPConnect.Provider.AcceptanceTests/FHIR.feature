@@ -1,11 +1,10 @@
-﻿@fhir  @1.6.0-Full-Pack
+﻿@fhir  @1.6.2-Full-Pack
 Feature: FHIR
 
 ##########################################
 #Foundations and Appointments Tests
 ##########################################
 
-@1.6.0-Only
 Scenario: Fhir Get Metadata and Check Version of Foundations And Appointments CapabilityStatement
 	Given I configure the default "MetadataRead" request
 	When I make the "MetadataRead" request
@@ -141,7 +140,7 @@ Scenario: Foundations endpoint should support gzip compression for metadata endp
 		And the response body should be FHIR JSON
 		And the Response Resource should be a CapabilityStatement
                   
-@1.6.0-Only @1.6.0-IncrementalAndRegression
+@1.6.2-IncrementalAndRegression
 Scenario Outline: Foundations CapabilityStatement returns correct profile versions
 Given I configure the default "MetadataRead" request
 	When I make the "MetadataRead" request
@@ -178,7 +177,7 @@ Examples:
 #Structured Tests
 ##########################################
 
-@Structured  @1.6.0-Only
+@Structured
 Scenario: Fhir Get Metadata and Check Version of Structured CapabilityStatement
 	Given I configure the default "StructuredMetaDataRead" request
 	When I make the "MetadataRead" request
@@ -313,7 +312,7 @@ Scenario: Structured Fhir content type test where Accept header is JSON and _for
 	Then the response status code should indicate success
 		And the response body should be FHIR XML
 
-@Structured @1.6.0-Only @1.6.0-IncrementalAndRegression
+@Structured 
 Scenario Outline: Structured CapabilityStatement returns correct profile versions
 Given I configure the default "StructuredMetaDataRead" request
 	When I make the "StructuredMetaDataRead" request
@@ -325,7 +324,7 @@ Examples:
 | urlToCheck                                                                                          |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1/_history/1.8                 |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1/_history/1.4            |
-| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1/_history/1.2            |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1/_history/1.3            |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1/_history/1.2        |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1/_history/1.7      |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1/_history/1.2              |
@@ -340,7 +339,7 @@ Examples:
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.6             |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1/_history/1.3        |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1/_history/1.3                |
-| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1/_history/1.3        |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1/_history/1.4        |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ReferralRequest-1/_history/1.2         |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1/_history/1.3       |
 | https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1/_history/1.0		  |
@@ -350,7 +349,7 @@ Examples:
 #Document Tests
 ##########################################
 
- @StructuredDocuments @Structured @1.6.0-Only
+ @StructuredDocuments @Structured
 Scenario: Fhir Get Metadata and Check Version of Documents CapabilityStatement
 	Given I configure the default "DocumentsMetaDataRead" request
 	When I make the "MetadataRead" request

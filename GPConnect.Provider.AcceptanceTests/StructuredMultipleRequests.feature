@@ -1,4 +1,4 @@
-﻿@Structured @StructuredMultipleRequests  @1.6.0-Full-Pack
+﻿@Structured @StructuredMultipleRequests  @1.6.2-Full-Pack
 Feature: StructuredMultipleRequests
 
 
