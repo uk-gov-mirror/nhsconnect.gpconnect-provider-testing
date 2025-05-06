@@ -347,6 +347,36 @@
 
                 //Check Subject/patient
                 Patients.Where(p => p.Id == (specimen.Subject.Reference.Replace("Patient/", ""))).Count().ShouldBe(1, "Patient Not Found in Bundle");
+
+                //1.6.2 - Added for Update to Specimen collection.extension[fastingStatus] to include coded concept
+                if (specimen.Collection != null)
+                {
+                    if (specimen.Collection.Extension != null)
+                    {
+                        specimen.Collection.Extension.ForEach(extension =>
+                        {
+                            //Check extension.url
+                            extension.Url.ShouldNotBeNullOrEmpty("Url Is Null or Empty - Should be populated");
+
+                            //Check extension child list
+                            extension.Children.ToList().Count.ShouldBeGreaterThan(0, "extension child list Is Null or Empty - Should be populated");
+                            var children = extension.Children.ToList();
+
+                            //Check extension.coding
+                            var coding = ((Hl7.Fhir.Model.CodeableConcept)children[0]).Coding;
+                            coding.Count.ShouldBeGreaterThan(0, "coding Is Null or Empty - Should be populated");
+                            coding.ForEach(_coding =>
+                            {
+                                _coding.System.ShouldNotBeNullOrEmpty();
+                                _coding.Code.ShouldNotBeNullOrEmpty();
+                                _coding.Display.ShouldNotBeNullOrEmpty();
+                            });
+
+                            //Check value
+                            extension.Value.ShouldNotBeNull("Value Is Null or Empty - Should be populated");
+                        });
+                    }
+                }
             });
         }
 

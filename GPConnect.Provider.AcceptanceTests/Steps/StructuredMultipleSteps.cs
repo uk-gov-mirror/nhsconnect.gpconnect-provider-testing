@@ -14,13 +14,17 @@
 	using static Hl7.Fhir.Model.Parameters;
 	using Hl7.Fhir.Model;
 	using NUnit.Framework;
+    using Hl7.Fhir.Support;
+    using System.Diagnostics.Eventing.Reader;
+    using System.Collections;
+    using System.Runtime.Versioning;
 
-	[Binding]
+    [Binding]
 	public sealed class StructuredMultipleSteps : BaseSteps
 	{
 		private readonly HttpContext _httpContext;
-
-		public StructuredMultipleSteps(HttpSteps httpSteps, HttpContext httpContext)
+        private List<Hl7.Fhir.Model.List> Lists => _httpContext.FhirResponse.Lists;
+        public StructuredMultipleSteps(HttpSteps httpSteps, HttpContext httpContext)
 			: base(httpSteps)
 		{
 			_httpContext = httpContext;
@@ -339,5 +343,98 @@
 				Log.WriteLine(passMessage);
 			}
 		}
-	}
+
+		//1.6.2 - PA: 29/04/2025 - Added for Resources may contain a ‘no disclosure to patient’ security label when "retrieving" or "migrating" a patients record
+		[Then(@"check that each applicable resource ""(.*)"" contain a no disclosure to patient security label")]
+		public void CheckIfEachApplicableResourceContainANoDisclosureToPatientSecurityLabel(string cardinality)
+		{
+
+			var entries = _httpContext.FhirResponse.Entries;
+			entries.Count().ShouldBeGreaterThan(0, "Entries count cannot be null");
+
+			int resourceTypeCount = 0;
+			int securityLabelCount = 0;
+			entries.ForEach(entry =>
+			{
+				if (cardinality == "may")
+				{
+					if (entry.Resource.Meta.Security != null)
+					{
+						entry.Resource.Meta.Security.ForEach(coding =>
+						{
+							coding.System.ShouldNotBeNull();
+							coding.System.ShouldBe("http://hl7.org/fhir/v3/ActCode");
+							coding.Code.ShouldNotBeNull();
+							coding.Code.ShouldBe("NOPAT");
+							coding.Display.ShouldNotBeNull();
+							coding.Display.ToLower().ShouldBe("no disclosure to patient, family or caregivers without attending provider's authorization");
+						});
+					}
+				}
+				else if (cardinality == "must")
+				{
+					if (entry.Resource.ResourceType == ResourceType.AllergyIntolerance
+                        || entry.Resource.ResourceType == ResourceType.Condition
+						|| entry.Resource.ResourceType == ResourceType.MedicationStatement
+						|| entry.Resource.ResourceType == ResourceType.MedicationRequest
+						|| entry.Resource.ResourceType == ResourceType.Medication
+						|| entry.Resource.ResourceType == ResourceType.Encounter
+						|| entry.Resource.ResourceType == ResourceType.Observation
+						|| entry.Resource.ResourceType == ResourceType.Specimen
+						|| entry.Resource.ResourceType == ResourceType.ProcedureRequest
+						|| entry.Resource.ResourceType == ResourceType.ReferralRequest
+                        || entry.Resource.ResourceType == ResourceType.DocumentReference
+						|| entry.Resource.ResourceType == ResourceType.DiagnosticReport
+						|| entry.Resource.ResourceType == ResourceType.Immunization)
+					{
+						resourceTypeCount++;
+						entry.Resource.Meta.Security.Count.ShouldBeGreaterThan(0, "entry.Resource.Meta.Security.Count should be greater than 0");
+						entry.Resource.Meta.Security.ForEach(coding =>
+						{
+							coding.System.ShouldNotBeNull();
+							coding.System.ShouldBe("http://hl7.org/fhir/v3/ActCode");
+							coding.Code.ShouldNotBeNull();
+							coding.Code.ShouldBe("NOPAT");
+							coding.Display.ShouldNotBeNull();
+							coding.Display.ToLower().ShouldBe("no disclosure to patient, family or caregivers without attending provider's authorization");
+							securityLabelCount++;
+						});
+					}		
+
+				}
+
+			});
+
+			Lists.ForEach(list =>
+			{
+				if (list.Code != null)
+				{
+					CodeableConcept code = (CodeableConcept)list.Code;
+					code.Coding.ForEach(_coding =>
+					{
+						if (_coding.Code == FhirConst.GetSnoMedParams.kConsultation
+						|| _coding.Code == FhirConst.GetSnoMedParams.kTopics
+						|| _coding.Code == FhirConst.GetSnoMedParams.kHeadings)
+						{
+							resourceTypeCount++;
+
+							list.Meta.Security.Count.ShouldBeGreaterThan(0, "entry.Resource.Meta.Security.Count should be greater than 0");
+							list.Meta.Security.ForEach(coding =>
+							{
+								coding.System.ShouldNotBeNull();
+								coding.System.ShouldBe("http://hl7.org/fhir/v3/ActCode");
+								coding.Code.ShouldNotBeNull();
+								coding.Code.ShouldBe("NOPAT");
+								coding.Display.ShouldNotBeNull();
+								coding.Display.ToLower().ShouldBe("no disclosure to patient, family or caregivers without attending provider's authorization");
+								securityLabelCount++;
+							});
+						}
+					});
+				}
+			});
+
+            resourceTypeCount.ShouldBe(securityLabelCount);
+        }
+    }
 }

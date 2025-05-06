@@ -149,6 +149,31 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
                                 {
                                     AllergyIntolerance allergyIntolerance = (AllergyIntolerance)allergy;
                                     allergyIntolerance.ClinicalStatus.Equals(AllergyIntolerance.AllergyIntoleranceClinicalStatus.Resolved);
+
+                                    //1.6.2 for resolved allergies to be returned as transfer-degraded drug allergies
+                                    
+                                        allergyIntolerance.Code.ShouldNotBe(null);
+                                        allergyIntolerance.Code.Coding.ForEach(coding =>
+                                        {
+                                            if (coding.System.Equals("http://snomed.info/sct"))
+                                            {
+                                                coding.Code.ShouldBe("196461000000101");
+                                                coding.Display.ShouldBe("Transfer-degraded drug allergy");
+                                            }
+                                            else if (coding.System.Equals("http://read.info/readv2") || coding.System.Equals("http://read.info/ctv3"))
+                                            {
+                                                coding.Code.ShouldBe("9bJ4");
+                                                coding.Display.ShouldBe("Transfer-degraded drug allergy");
+                                            }
+
+                                        });
+
+									if (allergyIntolerance.Code.Text != null)
+									{
+										allergyIntolerance.Code.Text.ToString().ShouldStartWith("`Resolved");
+
+									}
+                                    
                                 });
                             }
                         });

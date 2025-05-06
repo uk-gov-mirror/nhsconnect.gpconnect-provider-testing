@@ -32,13 +32,7 @@ Scenario Outline: Retrieve the allergy structured record section for a patient i
 		And I Check No Problem Resources are Included
 	Examples:
 		| Patient   |
-		| patient3  |
-		| patient4  |
-		| patient6  |
-		| patient7  |
-		| patient8  |
-		| patient12 |
-		| patient13 |
+		| patient39 |
 
 
 Scenario Outline: Retrieve the allergy structured record section for a patient including resolved allergies with linked Problems

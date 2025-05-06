@@ -21,7 +21,7 @@ namespace GPConnect.Provider.AcceptanceTests
     [NUnit.Framework.DescriptionAttribute("StructuredImmunizations")]
     [NUnit.Framework.CategoryAttribute("Structured")]
     [NUnit.Framework.CategoryAttribute("StructuredImmunizations")]
-    [NUnit.Framework.CategoryAttribute("1.6.0-Full-Pack")]
+    [NUnit.Framework.CategoryAttribute("1.6.2-Full-Pack")]
     public partial class StructuredImmunizationsFeature
     {
         
@@ -37,7 +37,7 @@ namespace GPConnect.Provider.AcceptanceTests
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "StructuredImmunizations", null, ProgrammingLanguage.CSharp, new string[] {
                         "Structured",
                         "StructuredImmunizations",
-                        "1.6.0-Full-Pack"});
+                        "1.6.2-Full-Pack"});
             testRunner.OnFeatureStart(featureInfo);
         }
         

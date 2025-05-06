@@ -13,6 +13,8 @@
     using GPConnect.Provider.AcceptanceTests.Steps;
   	using GPConnect.Provider.AcceptanceTests.Logger;
     using NUnit.Framework;
+    using static Hl7.Fhir.Model.Timing;
+    using System.Net;
 
     [Binding]
     public sealed class StructuredMedicationSteps : BaseSteps
@@ -183,6 +185,14 @@
             
             _httpContext.HttpRequestConfiguration.BodyParameters.Add(FhirConst.GetStructuredRecordParams.kMedication, tuples);
             
+        }
+
+        //1.6.2 - PA 02/05/2025 - Ensure OperationDefinition aligns with profile
+        [Given(@"I add the medication parameter with filterPrescriptionType set to ""(.*)""")]
+        public void GivenIAddTheMedicationsParameterWithfilterPrescriptionTypeSetTo(string partValue)
+        {
+            IEnumerable<Tuple<string, Base>> tuples = new Tuple<string, Base>[] { Tuple.Create("filterPrescriptionType", (Base)new Code((partValue))) };
+            _httpContext.HttpRequestConfiguration.BodyParameters.Add(FhirConst.GetStructuredRecordParams.kMedication, tuples);
         }
 
         #endregion
@@ -1125,6 +1135,333 @@
 
             });
         }
-		#endregion
-	}
+
+        //1.6.2 - PA 25/04/2025 - Added as per update for dose syntax to support Information Standards Notice DAPB4013
+        [Then(@"the MedicationStatement Legacy Dosage should be valid")]
+        public void TheMedicationStatementLegacyDosageShouldbeValid()
+        {
+            MedicationStatements.Count().ShouldBeGreaterThan(0, "MedicationStatements count cannot be null");
+            MedicationStatements.ForEach(medStatement =>
+            {
+                medStatement.Dosage.Count().ShouldNotBe(0, "MedicationStatement Dosage cannot be null");
+                medStatement.Dosage.ForEach(dosageInstruction =>
+                {
+                    dosageInstruction.Text.ShouldNotBeNullOrEmpty();
+                    if (dosageInstruction.PatientInstruction != null)
+                    {
+                        dosageInstruction.Children.Count().ShouldBe(2, "Count for legacy medications is: " + dosageInstruction.Children.Count() + " and shouldn't be 0 or greater than 2");
+                    }                    
+                });
+            });
+        }
+
+        //1.6.2 - PA 25/04/2025 - Added as per update for dose syntax to support Information Standards Notice DAPB4013      
+        [Then(@"the MedicationRequest Legacy Dosage Instruction should be valid")]
+        public void TheMedicationRequestLegacyDosageInstructionShouldbeValid()
+        {
+            MedicationRequests.Count().ShouldBeGreaterThan(0, "MedicationRequests count cannot be null");
+            MedicationRequests.ForEach(medRequest =>
+            {
+                medRequest.DosageInstruction.Count().ShouldNotBe(0, "MedicationRequests DosageInstruction count cannot be null");
+                medRequest.DosageInstruction.ForEach(dosageInstruction =>
+                {
+                    dosageInstruction.Text.ShouldNotBeNullOrEmpty();
+                    if (dosageInstruction.PatientInstruction != null)
+                    {
+                        dosageInstruction.Children.Count().ShouldBe(2, "Count for legacy medications is: " + dosageInstruction.Children.Count() + " shouldn't be null or greater than 2");
+                    }
+                });
+            });
+        }
+
+        //1.6.2 - PA 25/04/2025 - Added as per update for dose syntax to support Information Standards Notice DAPB4013
+        [Then(@"the MedicationStatement Structured Dosage should be valid")]
+        public void TheMedicationStatementStructuredDosageShouldbeValid()
+        {
+            MedicationStatements.Count().ShouldBeGreaterThan(0, "MedicationStatement cannot be null");
+            MedicationStatements.ForEach(medStatement =>
+            {
+                medStatement.Dosage.Count().ShouldNotBe(0, "MedicationStatement Dosage cannot be null");
+                medStatement.Dosage.ForEach(dosage =>
+                {
+                    dosage.Text.ShouldNotBeNullOrEmpty("Fail : dosage Text should contain Free text dosage instructions");
+
+                    if (dosage.PatientInstruction != null)
+                    {
+                        dosage.PatientInstruction.ShouldNotBeEmpty("Fail : PatientInstruction should contain Patient or consumer oriented instructions");
+                    }
+                    ;
+                    if (dosage.Timing != null)
+                    {
+                        if (dosage.Timing.Repeat != null)
+                        {
+                            if (dosage.Timing.Repeat.Frequency != null)
+                            {
+                                dosage.Timing.Repeat.Frequency.Value.ShouldBeGreaterThan(0, "Fail : Dosage Frequency cannot be 0");
+                            }
+                            ;
+                            if (dosage.Timing.Repeat.Period != null)
+                            {
+                                dosage.Timing.Repeat.Period.Value.ShouldBeGreaterThan(0, "Fail : Dosage Period cannot be 0");
+                            }
+                            ;
+                            if (dosage.Timing.Repeat.PeriodUnit != null)
+                            {
+                                dosage.Timing.Repeat.PeriodUnit.ShouldBeOneOf(UnitsOfTime.S, UnitsOfTime.D, UnitsOfTime.H, UnitsOfTime.Min, UnitsOfTime.Wk, UnitsOfTime.Mo, UnitsOfTime.A);
+                            }
+                            ;
+                        }
+                    }
+                    if (dosage.Dose != null)
+                    {
+                        Quantity doseQuantity = (Quantity)dosage.Dose;
+                        if (doseQuantity.Value != null)
+                        {
+                            doseQuantity.Value.Value.ShouldBeGreaterThan(0, "Fail : doseQuantity Value cannot be 0");
+                        }
+                        ;
+                        if (doseQuantity.Unit != null)
+                        {
+                            doseQuantity.Unit.ShouldNotBeEmpty();
+                        }
+                        ;
+                        if (doseQuantity.System != null)
+                        {
+                            doseQuantity.System.ShouldBe(FhirConst.CodeSystems.kCCSnomed);
+                        }
+                        ;
+                        if (doseQuantity.Code != null)
+                        {
+                            doseQuantity.Code.ShouldNotBeEmpty();
+                        }
+                        ;
+                    }
+                    if (dosage.MaxDosePerPeriod != null)
+                    {
+                        if (dosage.MaxDosePerPeriod.Numerator != null)
+                        {
+                            if (dosage.MaxDosePerPeriod.Numerator.Value != null)
+                            {
+                                dosage.MaxDosePerPeriod.Numerator.Value.Value.ShouldBeGreaterThan(0, "Fail : MaxDosePerPeriod Numerator Value cannot be 0");
+                            }
+                            ;
+                            if (dosage.MaxDosePerPeriod.Numerator.Unit != null)
+                            {
+                                dosage.MaxDosePerPeriod.Numerator.Unit.ShouldNotBeEmpty();
+                            }
+                            ;
+                            if (dosage.MaxDosePerPeriod.Numerator.System != null)
+                            {
+                                dosage.MaxDosePerPeriod.Numerator.System.ShouldBe(FhirConst.CodeSystems.kCCSnomed);
+                            }
+                            ;
+                            if (dosage.MaxDosePerPeriod.Numerator.Code != null)
+                            {
+                                dosage.MaxDosePerPeriod.Numerator.Unit.ShouldNotBeEmpty();
+                            }
+                            ;
+                        }
+                        if (dosage.MaxDosePerPeriod.Denominator != null)
+                        {
+                            if (dosage.MaxDosePerPeriod.Denominator.Value != null)
+                            {
+                                dosage.MaxDosePerPeriod.Denominator.Value.Value.ShouldBeGreaterThan(0, "Fail : MaxDosePerPeriod Denominator Value cannot be 0");
+                            }
+                            ;
+                            if (dosage.MaxDosePerPeriod.Denominator.Unit != null)
+                            {
+                                dosage.MaxDosePerPeriod.Denominator.Unit.ShouldNotBeEmpty();
+                            }
+                            ;
+                            if (dosage.MaxDosePerPeriod.Denominator.System != null)
+                            {
+                                dosage.MaxDosePerPeriod.Denominator.System.ShouldBe("http://unitsofmeasure.org/");
+                            }
+                            ;
+                            if (dosage.MaxDosePerPeriod.Denominator.Code != null)
+                            {
+                                dosage.MaxDosePerPeriod.Denominator.Unit.ShouldNotBeEmpty();
+                            }
+                            ;
+
+                        }
+                    }
+                });
+            });
+        }
+
+        //1.6.2 - PA 25/04/2025 - Added as per update for dose syntax to support Information Standards Notice DAPB4013       
+        [Then(@"the MedicationRequest Structured Dosage Instruction should be valid")]
+        public void TheMedicationRequestStructuredDosageInstructionShouldbeValid()
+        {
+            MedicationRequests.Count().ShouldBeGreaterThan(0, "MedicationRequests count cannot be null");
+            MedicationRequests.ForEach(medRequest =>
+            {
+                medRequest.DosageInstruction.Count().ShouldNotBe(0, "MedicationRequests DosageInstruction count cannot be null");
+                medRequest.DosageInstruction.ForEach(dosageInstruction =>
+                {
+                    dosageInstruction.Text.ShouldNotBeNullOrEmpty("Fail : dosageInstruction Text should contain Free text dosage instructions");
+
+                    if (dosageInstruction.PatientInstruction != null)
+                    {
+                        dosageInstruction.PatientInstruction.ShouldNotBeEmpty("Fail : PatientInstruction should contain Patient or consumer oriented instructions");
+                    }
+                    ;
+                    if (dosageInstruction.Timing != null)
+                    {
+                        if (dosageInstruction.Timing.Repeat != null)
+                        {
+                            if (dosageInstruction.Timing.Repeat.Frequency != null)
+                            {
+                                dosageInstruction.Timing.Repeat.Frequency.Value.ShouldBeGreaterThan(0, "Fail : dosageInstruction Frequency cannot be 0");
+                            }
+                            ;
+                            if (dosageInstruction.Timing.Repeat.Period != null)
+                            {
+                                dosageInstruction.Timing.Repeat.Period.Value.ShouldBeGreaterThan(0, "Fail : dosageInstruction Period cannot be 0");
+                            }
+                            ;
+                            if (dosageInstruction.Timing.Repeat.PeriodUnit != null)
+                            {
+                                dosageInstruction.Timing.Repeat.PeriodUnit.ShouldBeOneOf(UnitsOfTime.S, UnitsOfTime.D, UnitsOfTime.H, UnitsOfTime.Min, UnitsOfTime.Wk, UnitsOfTime.Mo, UnitsOfTime.A);
+                            }
+                            ;
+                        }
+                    }
+                    if (dosageInstruction.Dose != null)
+                    {
+                        Quantity doseQuantity = (Quantity)dosageInstruction.Dose;
+                        if (doseQuantity.Value != null)
+                        {
+                            doseQuantity.Value.Value.ShouldBeGreaterThan(0, "Fail : doseQuantity Value cannot be 0");
+                        }
+                        ;
+                        if (doseQuantity.Unit != null)
+                        {
+                            doseQuantity.Unit.ShouldNotBeEmpty();
+                        }
+                        ;
+                        if (doseQuantity.System != null)
+                        {
+                            doseQuantity.System.ShouldBe(FhirConst.CodeSystems.kCCSnomed);
+                        }
+                        ;
+                        if (doseQuantity.Code != null)
+                        {
+                            doseQuantity.Code.ShouldNotBeEmpty();
+                        }
+                        ;
+                    }
+                    if (dosageInstruction.MaxDosePerPeriod != null)
+                    {
+                        if (dosageInstruction.MaxDosePerPeriod.Numerator != null)
+                        {
+                            if (dosageInstruction.MaxDosePerPeriod.Numerator.Value != null)
+                            {
+                                dosageInstruction.MaxDosePerPeriod.Numerator.Value.Value.ShouldBeGreaterThan(0, "Fail : MaxDosePerPeriod Numerator Value cannot be 0");
+                            }
+                            ;
+                            if (dosageInstruction.MaxDosePerPeriod.Numerator.Unit != null)
+                            {
+                                dosageInstruction.MaxDosePerPeriod.Numerator.Unit.ShouldNotBeEmpty();
+                            }
+                            ;
+                            if (dosageInstruction.MaxDosePerPeriod.Numerator.System != null)
+                            {
+                                dosageInstruction.MaxDosePerPeriod.Numerator.System.ShouldBe(FhirConst.CodeSystems.kCCSnomed);
+                            }
+                            ;
+                            if (dosageInstruction.MaxDosePerPeriod.Numerator.Code != null)
+                            {
+                                dosageInstruction.MaxDosePerPeriod.Numerator.Unit.ShouldNotBeEmpty();
+                            }
+                            ;
+                        }
+                        if (dosageInstruction.MaxDosePerPeriod.Denominator != null)
+                        {
+                            if (dosageInstruction.MaxDosePerPeriod.Denominator.Value != null)
+                            {
+                                dosageInstruction.MaxDosePerPeriod.Denominator.Value.Value.ShouldBeGreaterThan(0, "Fail : MaxDosePerPeriod Denominator Value cannot be 0");
+                            }
+                            ;
+                            if (dosageInstruction.MaxDosePerPeriod.Denominator.Unit != null)
+                            {
+                                dosageInstruction.MaxDosePerPeriod.Denominator.Unit.ShouldNotBeEmpty();
+                            }
+                            ;
+                            if (dosageInstruction.MaxDosePerPeriod.Denominator.System != null)
+                            {
+                                dosageInstruction.MaxDosePerPeriod.Denominator.System.ShouldBe("http://unitsofmeasure.org/");
+                            }
+                            ;
+                            if (dosageInstruction.MaxDosePerPeriod.Denominator.Code != null)
+                            {
+                                dosageInstruction.MaxDosePerPeriod.Denominator.Unit.ShouldNotBeEmpty();
+                            }
+                            ;
+                        }
+                    }
+                });
+            });
+        }
+
+        //1.6.2 - PA 25/04/2025 - Added as per update to MedicationRequest.medication and MedicationStatement.medication datatype      
+        [Then(@"the Medication MedicationRequest Medication type should be valid")]
+        public void TheMedicationMedicationRequestMedicationTypeShouldBeValid()
+        {
+            MedicationRequests.Count().ShouldBeGreaterThan(0, "MedicationRequests count cannot be null");
+            MedicationRequests.ForEach(medRequest =>
+            {
+                medRequest.Medication.ShouldNotBeNull("Medication cannot be null");
+                if (medRequest.Medication.TypeName.Contains("CodeableConcept"))
+                {
+                    CodeableConcept medication = (CodeableConcept)medRequest.Medication;
+                    medication.Coding.ShouldNotBeNull("Medication coding cannot be null");
+                    medication.Coding.ForEach(coding =>
+                    {
+                        coding.System.ShouldNotBeNull("System should not be null");
+                        coding.Code.ShouldNotBeNull("Code should not be null");
+                        coding.Display.ShouldNotBeNull("Display should not be null");
+
+                        if (coding.UserSelected != null)
+                        {
+                            coding.UserSelected.ShouldBe(true, "UserSelected should not be null");
+                        }
+                    });
+                }
+                else medRequest.Medication.TypeName.ShouldContain("Reference");
+            });
+        }
+
+        //1.6.2 - PA 25/04/2025 - Added as per specification, update to MedicationRequest.medication and MedicationStatement.medication datatype   
+        [Then(@"the Medication MedicationStatement Medication type should be valid")]
+        public void TheMedicationMedicationStatementMedicationTypeShouldBeValid()
+        {
+            MedicationStatements.Count().ShouldBeGreaterThan(0, "MedicationStatement count cannot be null");
+            MedicationStatements.ForEach(medStatement =>
+            {
+                medStatement.Medication.ShouldNotBeNull("Medication cannot be null");
+                if (medStatement.Medication.TypeName.Contains("CodeableConcept"))
+                {
+                    CodeableConcept medication = (CodeableConcept)medStatement.Medication;
+                    medication.Coding.ShouldNotBeNull("Medication coding cannot be null");
+                    medication.Coding.ForEach(coding =>
+                    {
+                        coding.System.ShouldNotBeNull("System should not be null");
+                        coding.Code.ShouldNotBeNull("Code should not be null");
+                        coding.Display.ShouldNotBeNull("Display should not be null");
+
+                        if (coding.UserSelected != null)
+                        {
+                            coding.UserSelected.ShouldBe(true, "UserSelected should not be null");
+                        }
+                    });
+                }
+                else medStatement.Medication.TypeName.ShouldContain("Reference");
+            });
+        }
+    }
+
+    #endregion
 }
+

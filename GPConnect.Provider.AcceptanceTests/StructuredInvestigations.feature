@@ -4,10 +4,10 @@ Feature: StructuredInvestigations
 # These Tests are only Testing this Structured Area in isolation and Not with other Areas or Combinations of Include Parameters
 # Tests around Multiple Structured Areas in one Request are tested in the MultipleRequests Feature
 	
-
+#1.6.2 - PA 25/04/2025 - Updated patient for Specimen collection.extension[fastingStatus] to include coded concept
 Scenario: Verify Investigations structured record for a Patient with Investigations not linked to any problems
 	Given I configure the default "GpcGetStructuredRecord" request
-		And I add an NHS Number parameter for "patient3"
+		And I add an NHS Number parameter for "patient38"
 		And I add the Investigations parameter
 	When I make the "GpcGetStructuredRecord" request
 	Then the response status code should indicate success
@@ -16,7 +16,7 @@ Scenario: Verify Investigations structured record for a Patient with Investigati
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		And the Bundle should be valid for patient "patient3"
+		And the Bundle should be valid for patient "patient38"
 	    And check that the bundle does not contain any duplicate resources
 		And check the response does not contain an operation outcome
 		And the Patient Id should be valid

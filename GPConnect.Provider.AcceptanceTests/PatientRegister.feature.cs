@@ -20,7 +20,7 @@ namespace GPConnect.Provider.AcceptanceTests
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("PatientRegister")]
     [NUnit.Framework.CategoryAttribute("patient")]
-    [NUnit.Framework.CategoryAttribute("1.6.0-Full-Pack")]
+    [NUnit.Framework.CategoryAttribute("1.6.2-Full-Pack")]
     public partial class PatientRegisterFeature
     {
         
@@ -35,7 +35,7 @@ namespace GPConnect.Provider.AcceptanceTests
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "PatientRegister", null, ProgrammingLanguage.CSharp, new string[] {
                         "patient",
-                        "1.6.0-Full-Pack"});
+                        "1.6.2-Full-Pack"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -1126,11 +1126,9 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Register deceased patient")]
-        [NUnit.Framework.CategoryAttribute("1.6.0-IncrementalAndRegression")]
         public virtual void RegisterDeceasedPatient()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Register deceased patient", null, new string[] {
-                        "1.6.0-IncrementalAndRegression"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Register deceased patient", null, ((string[])(null)));
 #line 506
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1182,11 +1180,9 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Register superseded patient")]
-        [NUnit.Framework.CategoryAttribute("1.6.0-IncrementalAndRegression")]
         public virtual void RegisterSupersededPatient()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Register superseded patient", null, new string[] {
-                        "1.6.0-IncrementalAndRegression"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Register superseded patient", null, ((string[])(null)));
 #line 526
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
