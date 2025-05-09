@@ -727,12 +727,12 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Migrate Patient39 With Sensitive and then migrate first document where each resou" +
-            "rce may contain a no disclosure to patient security label")]
-        public virtual void MigratePatient39WithSensitiveAndThenMigrateFirstDocumentWhereEachResourceMayContainANoDisclosureToPatientSecurityLabel()
+        [NUnit.Framework.DescriptionAttribute("Migrate Patient39 With Sensitive where each applicable resource must contain a no" +
+            " disclosure to patient security label")]
+        public virtual void MigratePatient39WithSensitiveWhereEachApplicableResourceMustContainANoDisclosureToPatientSecurityLabel()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Migrate Patient39 With Sensitive and then migrate first document where each resou" +
-                    "rce may contain a no disclosure to patient security label", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Migrate Patient39 With Sensitive where each applicable resource must contain a no" +
+                    " disclosure to patient security label", null, ((string[])(null)));
 #line 426
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

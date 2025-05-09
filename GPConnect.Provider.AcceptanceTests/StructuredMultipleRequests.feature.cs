@@ -812,12 +812,12 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Structured request sent for multiple clinical areas where each resource contains " +
-            "a no disclosure to patient security label")]
-        public virtual void StructuredRequestSentForMultipleClinicalAreasWhereEachResourceContainsANoDisclosureToPatientSecurityLabel()
+        [NUnit.Framework.DescriptionAttribute("Structured request sent for multiple clinical areas where each applicable resourc" +
+            "e may contain a no disclosure to patient security label")]
+        public virtual void StructuredRequestSentForMultipleClinicalAreasWhereEachApplicableResourceMayContainANoDisclosureToPatientSecurityLabel()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Structured request sent for multiple clinical areas where each resource contains " +
-                    "a no disclosure to patient security label", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Structured request sent for multiple clinical areas where each applicable resourc" +
+                    "e may contain a no disclosure to patient security label", null, ((string[])(null)));
 #line 275
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

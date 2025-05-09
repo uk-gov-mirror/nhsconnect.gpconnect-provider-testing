@@ -272,7 +272,7 @@ Scenario: Structured request sent for multiple clinical areas expect success
 		And check the response does not contain an operation outcome	
 
 #1.6.2 - PA 29/04/2025 - Added for change where applicable resources may contain a ‘no disclosure to patient’ security label
-Scenario: Structured request sent for multiple clinical areas where each resource contains a no disclosure to patient security label
+Scenario: Structured request sent for multiple clinical areas where each applicable resource may contain a no disclosure to patient security label
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient39"
 		And I add the allergies parameter with resolvedAllergies set to "true"
