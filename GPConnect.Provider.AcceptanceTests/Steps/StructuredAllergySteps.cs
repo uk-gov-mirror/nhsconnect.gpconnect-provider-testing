@@ -14,6 +14,7 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
 	using GPConnect.Provider.AcceptanceTests.Steps;
 	using GPConnect.Provider.AcceptanceTests.Logger;
     using System.Text.RegularExpressions;
+    using static GPConnect.Provider.AcceptanceTests.Constants.FhirConst;
 
 	[Binding]
 	public sealed class StructuredAllergySteps : BaseSteps
@@ -140,42 +141,38 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
                         {
                             entry.Item.ShouldNotBeNull("The item field must be populated for each list entry.");
                             entry.Item.Reference.ShouldMatch("AllergyIntolerance/.+|#.+");
-                            if (entry.Item.IsContainedReference)
-                            {
-                                string id = entry.Item.Reference.Substring(1);
-                                List<Resource> contained = list.Contained.Where(allergy => allergy.Id.Equals(id)).ToList();
-                                contained.Count.ShouldBe(1);
-                                contained.ForEach(allergy =>
-                                {
-                                    AllergyIntolerance allergyIntolerance = (AllergyIntolerance)allergy;
-                                    allergyIntolerance.ClinicalStatus.Equals(AllergyIntolerance.AllergyIntoleranceClinicalStatus.Resolved);
+							if (entry.Item.IsContainedReference)
+							{
+								string id = entry.Item.Reference.Substring(1);
+								List<Resource> contained = list.Contained.Where(allergy => allergy.Id.Equals(id)).ToList();
+								contained.Count.ShouldBe(1);
+								contained.ForEach(allergy =>
+								{
+									AllergyIntolerance allergyIntolerance = (AllergyIntolerance)allergy;
+									allergyIntolerance.ClinicalStatus.Equals(AllergyIntolerance.AllergyIntoleranceClinicalStatus.Resolved);
 
-                                    //1.6.2 for resolved allergies to be returned as transfer-degraded drug allergies
-                                    
-                                        allergyIntolerance.Code.ShouldNotBe(null);
-                                        allergyIntolerance.Code.Coding.ForEach(coding =>
-                                        {
-                                            if (coding.System.Equals("http://snomed.info/sct"))
-                                            {
-                                                coding.Code.ShouldBe("196461000000101");
-                                                coding.Display.ShouldBe("Transfer-degraded drug allergy");
-                                            }
-                                            else if (coding.System.Equals("http://read.info/readv2") || coding.System.Equals("http://read.info/ctv3"))
-                                            {
-                                                coding.Code.ShouldBe("9bJ4");
-                                                coding.Display.ShouldBe("Transfer-degraded drug allergy");
-                                            }
+									//1.6.2 for resolved allergies to be returned as transfer-degraded drug allergies
 
-                                        });
-
-									if (allergyIntolerance.Code.Text != null)
+									allergyIntolerance.Code.ShouldNotBe(null);
+									allergyIntolerance.Code.Coding.ForEach(coding =>
 									{
-										allergyIntolerance.Code.Text.ToString().ShouldStartWith("`Resolved");
+										if (coding.System.Equals("http://snomed.info/sct"))
+										{
+											coding.Code.ShouldBe("196461000000101");
+											coding.Display.ShouldBe("Transfer-degraded drug allergy");
+										}
+										else if (coding.System.Equals("http://read.info/readv2") || coding.System.Equals("http://read.info/ctv3"))
+										{
+											coding.Code.ShouldBe("9bJ4");
+											coding.Display.ShouldBe("Transfer-degraded drug allergy");
+										}
 
-									}
-                                    
+									});
+
+									Regex.IsMatch(allergyIntolerance.Code.ToString(), @"Resolved '.+' original code .+\?");
+
                                 });
-                            }
+							}
                         });
                     }
 
