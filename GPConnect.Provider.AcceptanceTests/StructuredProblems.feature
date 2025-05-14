@@ -81,60 +81,6 @@ Examples:
 	| active   |
 	| inactive |
 
-#1.6.2 - PA 25/04/2025 - Removed due to removal of problem significance filter
-#Scenario Outline: Retrieve problems structured record with significance partParameter expected success
-#	Given I configure the default "GpcGetStructuredRecord" request
-#		And I add an NHS Number parameter for "patient2"
-#		And I add the problems parameter with filterSignificance "<value>"
-#	When I make the "GpcGetStructuredRecord" request
-#	Then the response status code should indicate success
-#		And the response should be a Bundle resource of type "collection"
-#		And the response meta profile should be for "structured"
-#		And the patient resource in the bundle should contain meta data profile and version id
-#		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
-#		And if the response bundle contains an organization resource it should contain meta data profile and version id
-#		And the Bundle should be valid for patient "patient2"
-#		And the Patient Id should be valid
-#		And the Practitioner Id should be valid
-#		And the Organization Id should be valid 
-#		And I Check The Primary Problems List
-#		And I Check The Primary Problems List Does Not Include Not In Use Fields
-#		And I Check The Problems Resources are Valid
-#		And I check The Problem Resources Do Not Include Not In Use Fields
-#		And check the response does not contain an operation outcome
-#Examples:  
-#	| value |
-#	| major |
-#	| minor |
-
-#1.6.2 - PA 25/04/2025 - Removed due to removal of problem significance filter
-#Scenario Outline: Retrieve problems structured record with status and significance partParameter expected success
-#	Given I configure the default "GpcGetStructuredRecord" request
-#		And I add an NHS Number parameter for "patient2"
-#		And I add the problems parameter including status and significance value "<statusValue>" "<sigValue>"
-#	When I make the "GpcGetStructuredRecord" request
-#	Then the response status code should indicate success
-#		And the response should be a Bundle resource of type "collection"
-#		And the response meta profile should be for "structured"
-#		And the patient resource in the bundle should contain meta data profile and version id
-#		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
-#		And if the response bundle contains an organization resource it should contain meta data profile and version id
-#		And the Bundle should be valid for patient "patient2"
-#		And the Patient Id should be valid
-#		And the Practitioner Id should be valid
-#		And the Organization Id should be valid 
-#		And I Check The Primary Problems List
-#		And I Check The Primary Problems List Does Not Include Not In Use Fields
-#		And I Check The Problems Resources are Valid
-#		And I check The Problem Resources Do Not Include Not In Use Fields
-#		And check the response does not contain an operation outcome
-#Examples: 
-#	| statusValue | sigValue |
-#	| active      | major    |
-#	| active      | minor    |
-#	#| inactive    | major    |
-#	#| inactive    | minor    |
-
 Scenario: Retrieve problems structured record for a patient that has no problems data
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient4"
@@ -188,36 +134,6 @@ Examples:
 	| remission  |
 	| null       |
 	| off        |
-
-##1.6.2 - PA 25/04/2025 - Removed due to removal of problem significance filter	
-#Scenario Outline: Retrieve problems structured record with invalid significance partParameter expected failure
-#	Given I configure the default "GpcGetStructuredRecord" request
-#		And I add an NHS Number parameter for "patient2"
-#		And I add the problems parameter with filterSignificance "<value>"
-#	When I make the "GpcGetStructuredRecord" request
-#	Then the response status code should indicate failure
-#		And the response status code should be "422"
-#		And the response should be a OperationOutcome resource with error code "INVALID_PARAMETER"	
-#Examples:  
-#	| value |
-#	| HIGH	|
-#	| null  |
-#	| off   |
-
-#1.6.2 - PA 25/04/2025 - Removed due to removal of problem significance filter	
-#Scenario Outline: Retrieve problems structured record with invalid status and significance partParameter expected failure
-#	Given I configure the default "GpcGetStructuredRecord" request
-#		And I add an NHS Number parameter for "patient2"
-#		And I add the problems parameter including status and significance value "<statusValue>" "<sigValue>"
-#	When I make the "GpcGetStructuredRecord" request
-#	Then the response status code should indicate failure
-#		And the response status code should be "422"
-#		And the response should be a OperationOutcome resource with error code "INVALID_PARAMETER"	
-#Examples: 
-#	| statusValue | sigValue |
-#	| invalid     | invalid  |
-#	| active      | low      |
-#	| resolved    | major    |
 
 Scenario: Retrieve Problems structured record with made up partParameter expected success
 	Given I configure the default "GpcGetStructuredRecord" request
