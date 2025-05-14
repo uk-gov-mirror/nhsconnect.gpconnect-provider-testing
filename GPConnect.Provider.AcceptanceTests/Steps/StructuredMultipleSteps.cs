@@ -18,7 +18,7 @@
     using System.Diagnostics.Eventing.Reader;
     using System.Collections;
     using System.Runtime.Versioning;
-  
+    using NUnit.Framework.Constraints;
 
     [Binding]
 	public sealed class StructuredMultipleSteps : BaseSteps
@@ -350,7 +350,7 @@
         //1.6.2 - PA: 13/05/2025 - Added for validation of ‘no disclosure to patient’ security label
         private void TheResourceMetaSecurityLabelIsValid(Bundle.EntryComponent entry)
         {
-			entry.Resource.Meta.Security.ShouldNotBeNull();
+			entry.Resource.Meta.Security.Count().ShouldBeGreaterThan(0, "entry Resource Meta Security Count of: " + entry.Resource.Meta.Security.Count().ToString() + " is not greater than 0 as expected");
             entry.Resource.Meta.Security.ForEach(coding =>
             {
                 coding.System.ShouldNotBeNull();
@@ -377,7 +377,7 @@
 			{
 				entries.ForEach(entry =>
 				{
-					if (entry.Resource.Meta.Security != null)
+					if (entry.Resource.Meta.Security.Count() > 0)
 					{
 						TheResourceMetaSecurityLabelIsValid(entry);
 					}
