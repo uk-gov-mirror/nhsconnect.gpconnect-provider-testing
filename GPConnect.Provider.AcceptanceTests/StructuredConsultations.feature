@@ -43,9 +43,10 @@ Scenario: Verify Consultations Response for a Patient with Topic or Headings lin
 		And I Check The Problems Secondary Problems List
 		And I Check The Problems Secondary Problems List Does Not Include Not In Use Fields
 
+#1.6.2 - PA - 05/05/2025 - Updated patient
 Scenario: Verify Consultations structured record for a Patient includeConsultation and consultationSearchPeriod partParameter
 	Given I configure the default "GpcGetStructuredRecord" request
-		And I add an NHS Number parameter for "patient2"
+		And I add an NHS Number parameter for "patient39"
 		And I add the consultation parameter with consultationSearchPeriod partParameter
 	When I make the "GpcGetStructuredRecord" request
 	Then the response status code should indicate success
@@ -54,7 +55,7 @@ Scenario: Verify Consultations structured record for a Patient includeConsultati
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		And the Bundle should be valid for patient "patient2"
+		And the Bundle should be valid for patient "patient39"
 		And the Patient Id should be valid
 		And the Practitioner Id should be valid
 		And the Organization Id should be valid 
@@ -111,9 +112,10 @@ Scenario: Retrieve consultations structured record for a patient that has no con
 		And check structured list contains a note and emptyReason when no data in section
 		And check the response does not contain an operation outcome
 
+#1.6.2 - PA - 05/05/2025 - Updated patient
 Scenario: Retrieve consultations structured record with startDate only expected success
 	Given I configure the default "GpcGetStructuredRecord" request
-		And I add an NHS Number parameter for "patient2"
+		And I add an NHS Number parameter for "patient39"
 		And I add the consultation parameter with startDate only 		
 	When I make the "GpcGetStructuredRecord" request
 	Then the response status code should indicate success
@@ -122,7 +124,7 @@ Scenario: Retrieve consultations structured record with startDate only expected 
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		And the Bundle should be valid for patient "patient2"
+		And the Bundle should be valid for patient "patient39"
 		And the Patient Id should be valid
 		And the Practitioner Id should be valid
 		And the Organization Id should be valid 

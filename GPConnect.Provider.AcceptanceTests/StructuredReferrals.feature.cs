@@ -21,7 +21,7 @@ namespace GPConnect.Provider.AcceptanceTests
     [NUnit.Framework.DescriptionAttribute("StructuredReferrals")]
     [NUnit.Framework.CategoryAttribute("Structured")]
     [NUnit.Framework.CategoryAttribute("StructuredReferrals")]
-    [NUnit.Framework.CategoryAttribute("1.6.0-Full-Pack")]
+    [NUnit.Framework.CategoryAttribute("1.6.2-Full-Pack")]
     public partial class StructuredReferralsFeature
     {
         
@@ -37,7 +37,7 @@ namespace GPConnect.Provider.AcceptanceTests
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "StructuredReferrals", null, ProgrammingLanguage.CSharp, new string[] {
                         "Structured",
                         "StructuredReferrals",
-                        "1.6.0-Full-Pack"});
+                        "1.6.2-Full-Pack"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -363,11 +363,9 @@ testRunner.Given("I configure the default \"GpcGetStructuredRecord\" request", (
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Retrieve Referrals data structured record for a patient that has sensitive flag")]
-        [NUnit.Framework.CategoryAttribute("1.6.0-IncrementalAndRegression")]
         public virtual void RetrieveReferralsDataStructuredRecordForAPatientThatHasSensitiveFlag()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Retrieve Referrals data structured record for a patient that has sensitive flag", null, new string[] {
-                        "1.6.0-IncrementalAndRegression"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Retrieve Referrals data structured record for a patient that has sensitive flag", null, ((string[])(null)));
 #line 124
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

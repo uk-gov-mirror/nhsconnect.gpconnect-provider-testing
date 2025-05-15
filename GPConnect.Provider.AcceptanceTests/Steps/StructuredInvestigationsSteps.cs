@@ -12,6 +12,7 @@
     using static Hl7.Fhir.Model.Parameters;
     using GPConnect.Provider.AcceptanceTests.Helpers;
     using System.Text.RegularExpressions;
+    using System.Text;
 
     [Binding]
     public sealed class StructuredInvestigationsSteps : BaseSteps
@@ -347,6 +348,57 @@
 
                 //Check Subject/patient
                 Patients.Where(p => p.Id == (specimen.Subject.Reference.Replace("Patient/", ""))).Count().ShouldBe(1, "Patient Not Found in Bundle");
+
+            //1.6.2 - Added for Update to Specimen collection.extension[fastingStatus] to include coded concept
+            if (specimen.Collection != null)
+            {
+                    if (specimen.Collection.Extension != null)
+                    {
+                        specimen.Collection.Extension.ForEach(extension =>
+                        {
+                            var text = "";
+
+                            //Check extension.url
+                            extension.Url.ShouldBe(FhirConst.StructureDefinitionSystems.kExtSpecimenFastingStatus);                   
+
+                            //Check extension.coding
+                            var coding = ((Hl7.Fhir.Model.CodeableConcept)extension.Value).Coding;
+                            coding.Count.ShouldBeGreaterThan(0, "coding Is Null or Empty - Should be populated");
+                            coding.ForEach(_coding =>
+                            {
+                                _coding.System.ShouldNotBeNullOrEmpty();
+                                _coding.System.ShouldBe("http://terminology.hl7.org/CodeSystem/v2-0916");
+                                _coding.Code.ShouldNotBeNullOrEmpty();
+                                _coding.Code.ShouldBeOneOf("F", "NF", "NG", "FNA");
+                                _coding.Display.ShouldNotBeNullOrEmpty();
+                                text = _coding.Display;
+
+                                switch (_coding.Code)
+                                {
+                                    case "F":
+                                        _coding.Display.ShouldBe("Patient was fasting prior to the procedure.");
+                                        break;
+
+                                    case "NF":
+                                        _coding.Display.ShouldBe("The patient indicated they did not fast prior to the procedure.");
+                                        break;
+
+                                    case "NG":
+                                        _coding.Display.ShouldBe("Not Given - Patient was not asked at the time of the procedure.");
+                                        break;
+
+                                    case "FNA":
+                                        _coding.Display.ShouldBe("Fasting not asked of the patient at time of procedure.");
+                                        break;
+                                }
+                            });
+                            extension.Value.ShouldNotBeNull();
+
+                            ((Hl7.Fhir.Model.CodeableConcept)extension.Value).Text.ShouldBe(text, "The extension.Value text: " + ((Hl7.Fhir.Model.CodeableConcept)extension.Value).Text + ", does not match the Collection Extension Coding Display: " + text + " as expected");
+                        });
+
+                    }
+                }
             });
         }
 

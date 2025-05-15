@@ -411,3 +411,43 @@ Scenario Outline: Structured Medications Patient Has multiple Warnings and Assoc
 	When I make the "GpcGetStructuredRecord" request
 	Then the response status code should be "422"
 	And the response should be a OperationOutcome resource with error code "INVALID_RESOURCE"
+
+#1.6.2 - PA 25/04/2025 - Added for Update to MedicationRequest.medication and MedicationStatement.medication datatype
+Scenario: Retrieve the medication structured record section for a patient whose record has single or multiple medications
+	Given I configure the default "GpcGetStructuredRecord" request
+		And I add an NHS Number parameter for "patient37"
+		And I add the medication parameter with includePrescriptionIssues set to "true"
+	When I make the "GpcGetStructuredRecord" request
+	Then the response status code should indicate success
+		And the Medication MedicationRequest Medication type should be valid
+		And the Medication MedicationStatement Medication type should be valid
+	
+#1.6.2 - PA 25/04/2025 - Added for Update to dose syntax to support Information Standards Notice DAPB4013
+Scenario: Retrieve the medication structured record section for patient with legacy medications
+	Given I configure the default "GpcGetStructuredRecord" request
+		And I add an NHS Number parameter for "patient12"
+		And I add the medication parameter with includePrescriptionIssues set to "true"
+	When I make the "GpcGetStructuredRecord" request
+	Then the response status code should indicate success
+		And the MedicationRequest Legacy Dosage Instruction should be valid
+		And the MedicationStatement Legacy Dosage should be valid
+
+#1.6.2 - PA 25/04/2025 - Added for Update to dose syntax to support Information Standards Notice DAPB4013
+Scenario: Retrieve the medication structured record section for patients with structured medications
+	Given I configure the default "GpcGetStructuredRecord" request
+		And I add an NHS Number parameter for "patient37"
+		And I add the medication parameter with includePrescriptionIssues set to "true"
+	When I make the "GpcGetStructuredRecord" request
+	Then the response status code should indicate success
+		And the MedicationRequest Structured Dosage Instruction should be valid
+		And the MedicationStatement Structured Dosage should be valid
+
+#1.6.2 - PA 01/05/2025 - Ensure OperationDefinition aligns with profile
+Scenario: Retrieve medication structured record with invalid filterPrescriptionType partParameter
+	Given I configure the default "GpcGetStructuredRecord" request
+	And I add an NHS Number parameter for "patient39"
+	And I add the medication parameter with filterPrescriptionType set to "repeat"
+	When I make the "GpcGetStructuredRecord" request
+	Then the response status code should indicate success
+	And Check the operation outcome returns the correct text and diagnostics includes "includeMedication" and "filterPrescriptionType"
+
