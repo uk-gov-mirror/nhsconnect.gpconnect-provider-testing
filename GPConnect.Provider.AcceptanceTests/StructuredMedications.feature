@@ -413,7 +413,7 @@ Scenario Outline: Structured Medications Patient Has multiple Warnings and Assoc
 	And the response should be a OperationOutcome resource with error code "INVALID_RESOURCE"
 
 #1.6.2 - PA 25/04/2025 - Added for Update to MedicationRequest.medication and MedicationStatement.medication datatype
-Scenario: Retrieve the medication structured record section for a patient whose record has single or multple medications
+Scenario: Retrieve the medication structured record section for a patient whose record has single or multiple medications
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient37"
 		And I add the medication parameter with includePrescriptionIssues set to "true"
@@ -443,7 +443,7 @@ Scenario: Retrieve the medication structured record section for patients with st
 		And the MedicationStatement Structured Dosage should be valid
 
 #1.6.2 - PA 01/05/2025 - Ensure OperationDefinition aligns with profile
-Scenario: Retrieve problems structured record with invalid filterPrescriptionType partParameter
+Scenario: Retrieve medication structured record with invalid filterPrescriptionType partParameter
 	Given I configure the default "GpcGetStructuredRecord" request
 	And I add an NHS Number parameter for "patient39"
 	And I add the medication parameter with filterPrescriptionType set to "repeat"

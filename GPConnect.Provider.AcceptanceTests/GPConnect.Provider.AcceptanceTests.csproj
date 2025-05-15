@@ -316,6 +316,7 @@
     <Compile Include="StructuredUncategorised.feature.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Structured162Specification.feature" />
     <None Include="StructuredDiary.feature" />
     <None Include="StructuredDocuments.feature" />
     <None Include="StructuredConsultations.feature" />

@@ -1062,11 +1062,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Retrieve the medication structured record section for a patient whose record has " +
-            "single or multple medications")]
-        public virtual void RetrieveTheMedicationStructuredRecordSectionForAPatientWhoseRecordHasSingleOrMultpleMedications()
+            "single or multiple medications")]
+        public virtual void RetrieveTheMedicationStructuredRecordSectionForAPatientWhoseRecordHasSingleOrMultipleMedications()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Retrieve the medication structured record section for a patient whose record has " +
-                    "single or multple medications", null, ((string[])(null)));
+                    "single or multiple medications", null, ((string[])(null)));
 #line 416
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1145,12 +1145,12 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Retrieve problems structured record with invalid filterPrescriptionType partParam" +
-            "eter")]
-        public virtual void RetrieveProblemsStructuredRecordWithInvalidFilterPrescriptionTypePartParameter()
+        [NUnit.Framework.DescriptionAttribute("Retrieve medication structured record with invalid filterPrescriptionType partPar" +
+            "ameter")]
+        public virtual void RetrieveMedicationStructuredRecordWithInvalidFilterPrescriptionTypePartParameter()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Retrieve problems structured record with invalid filterPrescriptionType partParam" +
-                    "eter", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Retrieve medication structured record with invalid filterPrescriptionType partPar" +
+                    "ameter", null, ((string[])(null)));
 #line 446
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
