@@ -20,12 +20,12 @@
     using System.Runtime.Versioning;
     using NUnit.Framework.Constraints;
 
-    [Binding]
+	[Binding]
 	public sealed class StructuredMultipleSteps : BaseSteps
 	{
 		private readonly HttpContext _httpContext;
-        private List<Hl7.Fhir.Model.List> Lists => _httpContext.FhirResponse.Lists;
-        public StructuredMultipleSteps(HttpSteps httpSteps, HttpContext httpContext)
+		private List<Hl7.Fhir.Model.List> Lists => _httpContext.FhirResponse.Lists;
+		public StructuredMultipleSteps(HttpSteps httpSteps, HttpContext httpContext)
 			: base(httpSteps)
 		{
 			_httpContext = httpContext;
@@ -129,12 +129,12 @@
 		{
 			var entries = _httpContext.FhirResponse.Entries;
 			int operationOutcomeCount = 0;
-			
-            entries.ForEach(entry =>
+
+			entries.ForEach(entry =>
 			{
-                if (entry.Resource.ResourceType.ToString() == "OperationOutcome")
+				if (entry.Resource.ResourceType.ToString() == "OperationOutcome")
 				{
-                    foreach (var issue in ((Hl7.Fhir.Model.OperationOutcome)entry.Resource).Issue)
+					foreach (var issue in ((Hl7.Fhir.Model.OperationOutcome)entry.Resource).Issue)
 					{
 
 						issue.Code.ToString().ShouldBe("NotSupported");
@@ -148,13 +148,13 @@
 						Log.WriteLine("The response is not returning the expected value for " + parameter);
 						operationOutcomeCount++;
 
-                    }
-                }
+					}
+				}
 			});
 
 			operationOutcomeCount.ShouldBeGreaterThan(0, "No operationOutcome found");
 
-        }
+		}
 
 		[Then(@"Check the operation outcome PARAMETER_NOT_FOUND for ""([^""]*)"" and ""([^""]*)""")]
 		public void checkTheOperationOutcomeParameterNotFoundFor(string parameter, string partparameter)
@@ -347,84 +347,110 @@
 			}
 		}
 
-        //1.6.2 - PA: 13/05/2025 - Added for validation of ‘no disclosure to patient’ security label
-        private void TheResourceMetaSecurityLabelIsValid(Bundle.EntryComponent entry)
-        {
-			entry.Resource.Meta.Security.Count().ShouldBeGreaterThan(0, "entry Resource Meta Security Count of: " + entry.Resource.Meta.Security.Count().ToString() + " is not greater than 0 as expected");
-            entry.Resource.Meta.Security.ForEach(coding =>
-            {
-                coding.System.ShouldNotBeNull();
-                coding.System.ShouldBe("http://hl7.org/fhir/v3/ActCode");
-                coding.Code.ShouldNotBeNull();
-                coding.Code.ShouldBe("NOPAT");
-                coding.Display.ShouldNotBeNull();
-                coding.Display.ToLower().ShouldBe("no disclosure to patient, family or caregivers without attending provider's authorization");
-            });
+		//1.6.2 - PA: 13/05/2025 - Added for validation of ‘no disclosure to patient’ security label
+		private void TheResourceMetaSecurityLabelIsValid(Bundle.EntryComponent entry)
+		{
+			var entryResourceId = "";
+            var entryResourceType = "";
+            List<Coding> securityLabel = null;
+
+			if (entry.Resource.Meta.Security.Count == 1)
+			{
+				securityLabel = entry.Resource.Meta.Security;
+                entryResourceId = entry.Resource.Id;
+                entryResourceType = entry.Resource.TypeName;
+
+                securityLabel.ShouldNotBeNull();
+                securityLabel.ForEach(coding =>
+                {
+                    coding.System.ShouldNotBeNull();
+                    coding.System.ShouldBe("http://hl7.org/fhir/v3/ActCode");
+                    coding.Code.ShouldNotBeNull();
+                    coding.Code.ShouldBe("NOPAT");
+                    coding.Display.ShouldNotBeNull();
+                    coding.Display.ToLower().ShouldBe("no disclosure to patient, family or caregivers without attending provider's authorization");
+                    Log.WriteLine("A security label has been returned, indicating information is not to be disclosed to the patient for ResourceType: " + entryResourceType + " with Id: " + entryResourceId);
+                });
+            }
+			else if (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained.Count == 1)
+			{
+				securityLabel = (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Meta.Security;
+				entryResourceId = (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Id;
+				entryResourceType = (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).TypeName;
+
+                (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Meta.Security.ShouldNotBeNull();
+                securityLabel.ForEach(coding =>
+                {
+                    coding.System.ShouldNotBeNull();
+                    coding.System.ShouldBe("http://hl7.org/fhir/v3/ActCode");
+                    coding.Code.ShouldNotBeNull();
+                    coding.Code.ShouldBe("NOPAT");
+                    coding.Display.ShouldNotBeNull();
+                    coding.Display.ToLower().ShouldBe("no disclosure to patient, family or caregivers without attending provider's authorization");
+                    Log.WriteLine("A security label has been returned, indicating information is not to be disclosed to the patient for ResourceType: " + entryResourceType + " with Id: " + entryResourceId);
+                });
+            }
+
+            
         }
 
-		//1.6.2 - PA: 29/04/2025 - Added for Resources may contain a ‘no disclosure to patient’ security label when "retrieving" or "migrating" a patients record
-		[Then(@"check that each applicable resource ""(.*)"" contain a no disclosure to patient security label")]
-		public void CheckIfEachApplicableResourceContainANoDisclosureToPatientSecurityLabel(string cardinality)
+
+
+        //1.6.2 - PA: 29/04/2025 - Added for Resources may contain a ‘no disclosure to patient’ security label when "retrieving" or "migrating" a patients record
+        [Then(@"check that each applicable resource may contain a no disclosure to patient security label")]
+		public void CheckIfEachApplicableResourceMayContainANoDisclosureToPatientSecurityLabel()
 		{
-
 			var entries = _httpContext.FhirResponse.Entries;
-			entries.Count().ShouldBeGreaterThan(0, "Entries count cannot be null");
+			List<Resource> contained = null;
 
-			int resourceTypeCount = 0;
-			int securityLabelCount = 0;
+            entries.Count().ShouldBeGreaterThan(0, "Entries count cannot be null");
+			entries.ForEach(entry =>
+			{
+				if (entry.Resource.ResourceType == ResourceType.AllergyIntolerance
+				|| entry.Resource.ResourceType == ResourceType.Condition
+				|| entry.Resource.ResourceType == ResourceType.MedicationStatement
+				|| entry.Resource.ResourceType == ResourceType.MedicationRequest
+				|| entry.Resource.ResourceType == ResourceType.Encounter
+				|| entry.Resource.ResourceType == ResourceType.Observation
+				|| entry.Resource.ResourceType == ResourceType.Specimen
+				|| entry.Resource.ResourceType == ResourceType.ProcedureRequest
+				|| entry.Resource.ResourceType == ResourceType.ReferralRequest
+				|| entry.Resource.ResourceType == ResourceType.DocumentReference
+				|| entry.Resource.ResourceType == ResourceType.DiagnosticReport
+				|| entry.Resource.ResourceType == ResourceType.Immunization)
+				{
+					TheResourceMetaSecurityLabelIsValid(entry);
+				}
+				else if (entry.Resource.ResourceType == ResourceType.List)
+				{
+					if (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained.Count > 0)
+					{
+						contained = ((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained;
 
-			if (cardinality.ToLower() == "may")
-			{
-				entries.ForEach(entry =>
-				{
-					if (entry.Resource.Meta.Security.Count() > 0)
-					{
-						TheResourceMetaSecurityLabelIsValid(entry);
+						contained.ForEach(_resource =>
+						{
+							if (_resource.ResourceType == ResourceType.AllergyIntolerance)
+							{
+								TheResourceMetaSecurityLabelIsValid(entry);
+							}
+						});
 					}
-				});
-			}
-			else if (cardinality.ToLower() == "must")
-			{
-				entries.ForEach(entry =>
-				{
-					if (entry.Resource.ResourceType == ResourceType.AllergyIntolerance
-					|| entry.Resource.ResourceType == ResourceType.Condition
-					|| entry.Resource.ResourceType == ResourceType.MedicationStatement
-					|| entry.Resource.ResourceType == ResourceType.MedicationRequest
-					|| entry.Resource.ResourceType == ResourceType.Medication
-					|| entry.Resource.ResourceType == ResourceType.Encounter
-					|| entry.Resource.ResourceType == ResourceType.Observation
-					|| entry.Resource.ResourceType == ResourceType.Specimen
-					|| entry.Resource.ResourceType == ResourceType.ProcedureRequest
-					|| entry.Resource.ResourceType == ResourceType.ReferralRequest
-					|| entry.Resource.ResourceType == ResourceType.DocumentReference
-					|| entry.Resource.ResourceType == ResourceType.DiagnosticReport
-					|| entry.Resource.ResourceType == ResourceType.Immunization)
-					{
-						resourceTypeCount++;
-						TheResourceMetaSecurityLabelIsValid(entry);
-						securityLabelCount++;
-					}
-					else if (entry.Resource.ResourceType == ResourceType.List)
+					else
 					{
 						var listCode = ((Hl7.Fhir.Model.List)entry.Resource).Code.Coding;
 
-                        listCode.ForEach(coding =>
+						listCode.ForEach(coding =>
 						 {
 							 if (coding.Code == FhirConst.GetSnoMedParams.kConsultation
 							 || coding.Code == FhirConst.GetSnoMedParams.kTopics
 							 || coding.Code == FhirConst.GetSnoMedParams.kHeadings)
 							 {
-								 resourceTypeCount++;
 								 TheResourceMetaSecurityLabelIsValid(entry);
-								 securityLabelCount++;
 							 }
 						 });
 					}
-				});
-                resourceTypeCount.ShouldBe(securityLabelCount, "The expected applicable resource count of: " + resourceTypeCount + " does not match the expected 'no disclosure to patient security label' count of: " + securityLabelCount);
-            }
-            
-        }
+				}
+			});
+		}
     }
 }

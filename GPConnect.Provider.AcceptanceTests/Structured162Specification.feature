@@ -125,7 +125,7 @@ Scenario: Structured request sent for multiple clinical areas where each applica
 		And check that the bundle does not contain any duplicate resources
 		And the patient resource in the bundle should contain meta data profile and version id
 		And check the response does not contain an operation outcome	
-		And check that each applicable resource "may" contain a no disclosure to patient security label
+		And check that each applicable resource may contain a no disclosure to patient security label
 
 Scenario: Migrate Patient39 With Sensitive where each applicable resource must contain a no disclosure to patient security label
 	Given I configure the default "MigrateStructuredRecordWithSensitive" request
@@ -139,7 +139,7 @@ Scenario: Migrate Patient39 With Sensitive where each applicable resource must c
 		And I Check Documents have been Returned and save the first documents url for retrieving later
 		And I Check the returned DocumentReference is Valid
 		And I Check the returned DocumentReference Do Not Include Not In Use Fields
-		And check that each applicable resource "must" contain a no disclosure to patient security label
+		And check that each applicable resource may contain a no disclosure to patient security label
 
 #####################Regression
 

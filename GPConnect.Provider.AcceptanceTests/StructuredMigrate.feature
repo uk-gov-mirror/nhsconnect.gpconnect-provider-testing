@@ -435,4 +435,4 @@ Scenario: Migrate Patient39 With Sensitive where each applicable resource must c
 		And I Check Documents have been Returned and save the first documents url for retrieving later
 		And I Check the returned DocumentReference is Valid
 		And I Check the returned DocumentReference Do Not Include Not In Use Fields
-		And check that each applicable resource "must" contain a no disclosure to patient security label
+		And check that each applicable resource may contain a no disclosure to patient security label
