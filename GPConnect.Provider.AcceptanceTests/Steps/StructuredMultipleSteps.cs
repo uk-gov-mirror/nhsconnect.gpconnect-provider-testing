@@ -350,54 +350,63 @@
 		//1.6.2 - PA: 13/05/2025 - Added for validation of ‘no disclosure to patient’ security label
 		private void TheResourceMetaSecurityLabelIsValid(Bundle.EntryComponent entry)
 		{
-			var entryResourceId = "";
-            var entryResourceType = "";
-            List<Coding> securityLabel = null;
-
+			//Check if resource contains a security label
 			if (entry.Resource.Meta.Security.Count == 1)
 			{
-				securityLabel = entry.Resource.Meta.Security;
-                entryResourceId = entry.Resource.Id;
-                entryResourceType = entry.Resource.TypeName;
-
-                securityLabel.ShouldNotBeNull();
-                securityLabel.ForEach(coding =>
-                {
-                    coding.System.ShouldNotBeNull();
-                    coding.System.ShouldBe("http://hl7.org/fhir/v3/ActCode");
-                    coding.Code.ShouldNotBeNull();
-                    coding.Code.ShouldBe("NOPAT");
-                    coding.Display.ShouldNotBeNull();
-                    coding.Display.ToLower().ShouldBe("no disclosure to patient, family or caregivers without attending provider's authorization");
-                    Log.WriteLine("A security label has been returned, indicating information is not to be disclosed to the patient for ResourceType: " + entryResourceType + " with Id: " + entryResourceId);
-                });
-            }
-			else if (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained.Count == 1)
-			{
-				securityLabel = (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Meta.Security;
-				entryResourceId = (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Id;
-				entryResourceType = (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).TypeName;
-
-                (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Meta.Security.ShouldNotBeNull();
-                securityLabel.ForEach(coding =>
-                {
-                    coding.System.ShouldNotBeNull();
-                    coding.System.ShouldBe("http://hl7.org/fhir/v3/ActCode");
-                    coding.Code.ShouldNotBeNull();
-                    coding.Code.ShouldBe("NOPAT");
-                    coding.Display.ShouldNotBeNull();
-                    coding.Display.ToLower().ShouldBe("no disclosure to patient, family or caregivers without attending provider's authorization");
-                    Log.WriteLine("A security label has been returned, indicating information is not to be disclosed to the patient for ResourceType: " + entryResourceType + " with Id: " + entryResourceId);
-                });
-            }
-
-            
+                var securityLabel = entry.Resource.Meta.Security;
+				TheResourceSecurityLabelIsValid(entry, securityLabel);
+            }   
         }
 
+        //1.6.2 - PA: 13/05/2025 - Added for validation of ‘no disclosure to patient’ security label
+        private void TheContainedResourceMetaSecurityLabelsIsValid(Bundle.EntryComponent entry)
+        {
+            //Check if contained resource contains a security label
+            if ((((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Meta.Security.Count == 1)
+            {
+                var securityLabel = (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Meta.Security;
+                (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Meta.Security.ShouldNotBeNull();
+                TheResourceSecurityLabelIsValid(entry, securityLabel);               
+            }
+        }
 
+        //1.6.2 - PA: 13/05/2025 - Added for validation of ‘no disclosure to patient’ security label
+        private void TheResourceDocumentReferenceSecurityLabelsAreValid(Bundle.EntryComponent entry)
+        {
+            //Check if document reference contains multiple security labels
+            if (entry.Resource.TypeName == "DocumentReference")
+            {
+				var Documents = _httpContext.FhirResponse.Documents;
+                Documents.ForEach(doc =>
+				{
+					if(doc.SecurityLabel.Count > 0)
+					{                        
+                        doc.SecurityLabel.ForEach(securityLabel =>
+						{
+							securityLabel.Coding.ShouldNotBeNull();
+                            TheResourceSecurityLabelIsValid(entry, securityLabel.Coding);
+                        });
+                    }                 
+                });
+            }
+        }
 
-        //1.6.2 - PA: 29/04/2025 - Added for Resources may contain a ‘no disclosure to patient’ security label when "retrieving" or "migrating" a patients record
-        [Then(@"check that each applicable resource may contain a no disclosure to patient security label")]
+        //1.6.2 - PA: 13/05/2025 - Added for validation of ‘no disclosure to patient’ security label - Validate Security Label
+        private void TheResourceSecurityLabelIsValid(Bundle.EntryComponent entry, List<Coding> securityLabel)
+		{
+            securityLabel.ForEach(coding =>
+            {
+                coding.System.ShouldBe("http://hl7.org/fhir/v3/ActCode");
+                coding.Code.ShouldNotBeNull();
+                coding.Code.ShouldBe("NOPAT");
+                coding.Display.ShouldNotBeNull();
+                coding.Display.ToLower().ShouldBe("no disclosure to patient, family or caregivers without attending provider's authorization");
+                Log.WriteLine("A security label has been returned, indicating information is not to be disclosed to the patient for ResourceType: " + entry.Resource.TypeName + " with Id: " + entry.Resource.Id);
+
+            });
+        }
+            //1.6.2 - PA: 29/04/2025 - Added for Resources may contain a ‘no disclosure to patient’ security label when "retrieving" or "migrating" a patients record
+            [Then(@"check that each applicable resource may contain a no disclosure to patient security label")]
 		public void CheckIfEachApplicableResourceMayContainANoDisclosureToPatientSecurityLabel()
 		{
 			var entries = _httpContext.FhirResponse.Entries;
@@ -415,7 +424,6 @@
 				|| entry.Resource.ResourceType == ResourceType.Specimen
 				|| entry.Resource.ResourceType == ResourceType.ProcedureRequest
 				|| entry.Resource.ResourceType == ResourceType.ReferralRequest
-				|| entry.Resource.ResourceType == ResourceType.DocumentReference
 				|| entry.Resource.ResourceType == ResourceType.DiagnosticReport
 				|| entry.Resource.ResourceType == ResourceType.Immunization)
 				{
@@ -431,7 +439,7 @@
 						{
 							if (_resource.ResourceType == ResourceType.AllergyIntolerance)
 							{
-								TheResourceMetaSecurityLabelIsValid(entry);
+								TheContainedResourceMetaSecurityLabelsIsValid(entry);
 							}
 						});
 					}
@@ -450,7 +458,12 @@
 						 });
 					}
 				}
-			});
+				else if (entry.Resource.ResourceType == ResourceType.DocumentReference)
+				{
+                    TheResourceMetaSecurityLabelIsValid(entry);
+					TheResourceDocumentReferenceSecurityLabelsAreValid(entry);
+                }
+            });
 		}
     }
 }
