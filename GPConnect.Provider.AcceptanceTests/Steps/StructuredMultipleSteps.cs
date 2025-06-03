@@ -20,7 +20,7 @@
     using System.Runtime.Versioning;
     using NUnit.Framework.Constraints;
 
-	[Binding]
+    [Binding]
 	public sealed class StructuredMultipleSteps : BaseSteps
 	{
 		private readonly HttpContext _httpContext;
@@ -354,7 +354,8 @@
 			if (entry.Resource.Meta.Security.Count == 1)
 			{
                 var securityLabel = entry.Resource.Meta.Security;
-				TheResourceSecurityLabelIsValid(entry, securityLabel);
+                Log.WriteLine("A security label has been returned for ResourceType: " + entry.Resource.TypeName + " with Id: " + entry.Resource.Id);
+                TheResourceSecurityLabelIsValid(entry, securityLabel);
             }   
         }
 
@@ -366,6 +367,7 @@
             {
                 var securityLabel = (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Meta.Security;
                 (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Meta.Security.ShouldNotBeNull();
+                Log.WriteLine("A security label has been returned for ResourceType: " + (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).TypeName + " with Id: " + (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Id);
                 TheResourceSecurityLabelIsValid(entry, securityLabel);               
             }
         }
@@ -384,6 +386,7 @@
                         doc.SecurityLabel.ForEach(securityLabel =>
 						{
 							securityLabel.Coding.ShouldNotBeNull();
+                            Log.WriteLine("A security label has been returned for ResourceType: " + entry.Resource.TypeName + " with Id: " + entry.Resource.Id);
                             TheResourceSecurityLabelIsValid(entry, securityLabel.Coding);
                         });
                     }                 
@@ -400,9 +403,7 @@
                 coding.Code.ShouldNotBeNull();
                 coding.Code.ShouldBe("NOPAT");
                 coding.Display.ShouldNotBeNull();
-                coding.Display.ToLower().ShouldBe("no disclosure to patient, family or caregivers without attending provider's authorization");
-                Log.WriteLine("A security label has been returned, indicating information is not to be disclosed to the patient for ResourceType: " + entry.Resource.TypeName + " with Id: " + entry.Resource.Id);
-
+                coding.Display.ToLower().ShouldBe("no disclosure to patient, family or caregivers without attending provider's authorization");							
             });
         }
             //1.6.2 - PA: 29/04/2025 - Added for Resources may contain a ‘no disclosure to patient’ security label when "retrieving" or "migrating" a patients record

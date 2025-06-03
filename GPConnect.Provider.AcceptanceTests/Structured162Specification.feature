@@ -127,7 +127,7 @@ Scenario: Structured request sent for multiple clinical areas where each applica
 		And check the response does not contain an operation outcome	
 		And check that each applicable resource may contain a no disclosure to patient security label
 
-Scenario: Migrate Patient39 With Sensitive where each applicable resource must contain a no disclosure to patient security label
+Scenario: Migrate Patient39 With Sensitive where each applicable resource may contain a no disclosure to patient security label
 	Given I configure the default "MigrateStructuredRecordWithSensitive" request
 	And I add an NHS Number parameter for "patient39"
 		And I add the includeFullrecord parameter with includeSensitiveInformation set to "true"
