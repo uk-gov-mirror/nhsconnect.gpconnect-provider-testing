@@ -220,7 +220,9 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
                     content.Attachment.Data.ShouldBeNull("Fail :  DocumentReference - Content.Attachment.Data element Should not be used - Not In Use Field");
                 });
                 doc.RelatesTo.Count().ShouldBe(0, "Fail :  DocumentReference - RelatesTo element Should not be used - Not In Use Field");
-                doc.SecurityLabel.Count().ShouldBe(0, "Fail :  DocumentReference - SecurityLabel element Should not be used - Not In Use Field");
+
+                //1.6.2 - PA: 02/06/2025 - Removed due to change for Resources may contain a ‘no disclosure to patient’ security label
+                //doc.SecurityLabel.Count().ShouldBe(0, "Fail :  DocumentReference - SecurityLabel element Should not be used - Not In Use Field");
             });
         }
 

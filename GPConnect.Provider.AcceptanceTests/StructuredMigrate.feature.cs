@@ -727,12 +727,12 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Migrate Patient39 With Sensitive where each applicable resource must contain a no" +
-            " disclosure to patient security label")]
-        public virtual void MigratePatient39WithSensitiveWhereEachApplicableResourceMustContainANoDisclosureToPatientSecurityLabel()
+        [NUnit.Framework.DescriptionAttribute("Migrate Patient39 With Sensitive where each applicable resource may contain a no " +
+            "disclosure to patient security label")]
+        public virtual void MigratePatient39WithSensitiveWhereEachApplicableResourceMayContainANoDisclosureToPatientSecurityLabel()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Migrate Patient39 With Sensitive where each applicable resource must contain a no" +
-                    " disclosure to patient security label", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Migrate Patient39 With Sensitive where each applicable resource may contain a no " +
+                    "disclosure to patient security label", null, ((string[])(null)));
 #line 426
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -762,8 +762,8 @@ this.ScenarioInitialize(scenarioInfo);
 #line 437
   testRunner.And("I Check the returned DocumentReference Do Not Include Not In Use Fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 438
-  testRunner.And("check that each applicable resource \"must\" contain a no disclosure to patient sec" +
-                    "urity label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("check that each applicable resource may contain a no disclosure to patient securi" +
+                    "ty label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

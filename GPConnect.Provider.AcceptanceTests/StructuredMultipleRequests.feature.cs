@@ -855,8 +855,8 @@ this.ScenarioInitialize(scenarioInfo);
 #line 291
   testRunner.And("check the response does not contain an operation outcome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 292
-  testRunner.And("check that each applicable resource \"may\" contain a no disclosure to patient secu" +
-                    "rity label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("check that each applicable resource may contain a no disclosure to patient securi" +
+                    "ty label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

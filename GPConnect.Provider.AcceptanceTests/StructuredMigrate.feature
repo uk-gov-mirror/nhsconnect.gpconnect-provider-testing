@@ -423,7 +423,7 @@ Scenario: Migrate Patient2 Without Sensitive and then migrate first document
 		And I save the binary document from the retrieve
 
 #1.6.2 - PA 29/04/2025 - Added for change where applicable resources must contain a ‘no disclosure to patient’ security label
-Scenario: Migrate Patient39 With Sensitive where each applicable resource must contain a no disclosure to patient security label
+Scenario: Migrate Patient39 With Sensitive where each applicable resource may contain a no disclosure to patient security label
 	Given I configure the default "MigrateStructuredRecordWithSensitive" request
 	And I add an NHS Number parameter for "patient39"
 		And I add the includeFullrecord parameter with includeSensitiveInformation set to "true"
@@ -435,4 +435,4 @@ Scenario: Migrate Patient39 With Sensitive where each applicable resource must c
 		And I Check Documents have been Returned and save the first documents url for retrieving later
 		And I Check the returned DocumentReference is Valid
 		And I Check the returned DocumentReference Do Not Include Not In Use Fields
-		And check that each applicable resource "must" contain a no disclosure to patient security label
+		And check that each applicable resource may contain a no disclosure to patient security label

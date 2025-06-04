@@ -289,4 +289,4 @@ Scenario: Structured request sent for multiple clinical areas where each applica
 		And check that the bundle does not contain any duplicate resources
 		And the patient resource in the bundle should contain meta data profile and version id
 		And check the response does not contain an operation outcome	
-		And check that each applicable resource "may" contain a no disclosure to patient security label
+		And check that each applicable resource may contain a no disclosure to patient security label
