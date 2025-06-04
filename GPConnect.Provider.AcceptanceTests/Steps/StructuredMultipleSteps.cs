@@ -354,7 +354,6 @@
 			if (entry.Resource.Meta.Security.Count == 1)
 			{
                 var securityLabel = entry.Resource.Meta.Security;
-                Log.WriteLine("A security label has been returned for ResourceType: " + entry.Resource.TypeName + " with Id: " + entry.Resource.Id);
                 TheResourceSecurityLabelIsValid(entry, securityLabel);
             }   
         }
@@ -367,7 +366,6 @@
             {
                 var securityLabel = (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Meta.Security;
                 (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Meta.Security.ShouldNotBeNull();
-                Log.WriteLine("A security label has been returned for ResourceType: " + (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).TypeName + " with Id: " + (((Hl7.Fhir.Model.DomainResource)entry.Resource).Contained[0]).Id);
                 TheResourceSecurityLabelIsValid(entry, securityLabel);               
             }
         }
@@ -386,7 +384,6 @@
                         doc.SecurityLabel.ForEach(securityLabel =>
 						{
 							securityLabel.Coding.ShouldNotBeNull();
-                            Log.WriteLine("A security label has been returned for ResourceType: " + entry.Resource.TypeName + " with Id: " + entry.Resource.Id);
                             TheResourceSecurityLabelIsValid(entry, securityLabel.Coding);
                         });
                     }                 
