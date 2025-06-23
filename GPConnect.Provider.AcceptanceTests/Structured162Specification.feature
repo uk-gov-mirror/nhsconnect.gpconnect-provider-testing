@@ -240,7 +240,6 @@ Scenario Outline: Retrieve the medication structured record section for a patien
 		| Patient   |
 		| patient3  |
 
-
 Scenario Outline: Retrieve the medication structured record section for a patient with problems linked and including prescription issues
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "<Patient>"
@@ -276,7 +275,6 @@ Scenario Outline: Retrieve the medication structured record section for a patien
 		| Patient   |
 		| patient2  |
 
-##Problems
 Scenario Outline: Retrieve problems structured record with status partParameter expected success
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient2"
@@ -298,7 +296,6 @@ Examples:
 	| active   |
 	| inactive |
 
-##Investigations
 Scenario: Verify Investigations structured record for a Patient with Investigations associated to Problems
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient2"
@@ -331,7 +328,6 @@ Scenario: Verify Investigations structured record for a Patient with Investigati
 		And I Check the Test report Filing Do Not Include Not in Use Fields
 		And the Bundle should contain "2" lists
 
-##Allergies
 Scenario Outline: Retrieve the allergy structured record for a patient with problems linked but excluding resolved allergies
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "<Patient>"
@@ -365,7 +361,6 @@ Scenario Outline: Retrieve the allergy structured record for a patient with prob
 		| Patient   |
 		| patient2  |
 
-##MultipleRequests
 Scenario: Structured request sent for consultations and problems expect success
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient2"
@@ -406,7 +401,6 @@ Scenario: Structured request sent for consultations and problems expect success
 		And I Check the Problems Uncategorised Secondary List is Valid
 		And I Check the Problems Medications Secondary List is Valid
 
-##Migrate
 Scenario: Migrate Patient2 With Sensitive and then migrate first document
 	Given I configure the default "MigrateStructuredRecordWithSensitive" request
 	And I add an NHS Number parameter for "patient2"
@@ -444,3 +438,35 @@ Scenario: Migrate Patient2 Without Sensitive and then migrate first document
 		And I Check the returned Binary Document is Valid
 		And I Check the returned Binary Document Do Not Include Not In Use Fields
 		And I save the binary document from the retrieve
+
+Scenario Outline: Foundations CapabilityStatement returns correct profile versions
+Given I configure the default "MetadataRead" request
+	When I make the "MetadataRead" request
+	Then the response status code should indicate success
+	And the CapabilityStatement REST Operations should contain "gpc.getstructuredrecord"
+    And the CapabilityStatement Profile should contain the correct reference and version history "<urlToCheck>" 
+Examples: 
+| urlToCheck                                                                              |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1                  |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1             |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1             |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1         |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1                 |
+| https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1               |
+| https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1                    |
+| https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1                       |
+| https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1                           |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1       |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1               |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1      |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1        |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1                     |
+| https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1        |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1             |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1  |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1                |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1              |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1         |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1			      |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1         |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ReferralRequest-1          |
