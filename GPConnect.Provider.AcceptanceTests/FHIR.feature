@@ -41,7 +41,7 @@ Scenario: Foundations CapabilityStatement profile supports the GetStructuredReco
 	When I make the "MetaDataRead" request
 	Then the response status code should indicate success
 	And the CapabilityStatement REST Operations should contain "gpc.getstructuredrecord"
-	And the CapabilityStatement Operation "gpc.getstructuredrecord" has url "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.15" 
+	And the CapabilityStatement Operation "gpc.getstructuredrecord" has url "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.18" 
 	
 Scenario: Foundations Fhir content type test where Accept header is JSON and request payload is XML
 	Given I configure the default "MetadataRead" request
@@ -212,7 +212,7 @@ Scenario: Structured CapabilityStatement profile supports the GetStructuredRecor
 	When I make the "StructuredMetaDataRead" request
 	Then the response status code should indicate success
 	And the CapabilityStatement REST Operations should contain "gpc.getstructuredrecord"
-	And the CapabilityStatement Operation "gpc.getstructuredrecord" has url "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.16" 
+	And the CapabilityStatement Operation "gpc.getstructuredrecord" has url "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.18" 
 
 @Structured	
 Scenario: Structured Fhir content type test where Accept header is JSON and request payload is XML
@@ -328,15 +328,15 @@ Examples:
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1/_history/1.2        |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1/_history/1.7      |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1/_history/1.2              |
-| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.7     |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.8     |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1/_history/1.6       |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1/_history/1.7                    |
 | https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1/_history/1.3       |
 | https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2              |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1/_history/1.5            |
-| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1/_history/1.7 |
-| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1/_history/1.5               |
-| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.6             |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1/_history/1.8 |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1/_history/1.6.1             |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.7             |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1/_history/1.3        |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1/_history/1.3                |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1/_history/1.4        |
@@ -486,7 +486,7 @@ Examples:
 | urlToCheck                                                                                    |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1/_history/1.8           |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1/_history/1.4      |
-| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1/_history/1.2      |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1/_history/1.3      |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1/_history/1.2  |
 | https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2        |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1/_history/1.3 |
