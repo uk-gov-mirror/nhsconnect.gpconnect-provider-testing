@@ -283,7 +283,6 @@ Scenario: Structured request sent for multiple clinical areas where each applica
 		And I add the uncategorised data parameter
 		And I add the Investigations parameter
 		And I add the Referrals parameter
-		And I add the uncategorised data parameter
     When I make the "GpcGetStructuredRecord" request
 	Then the response status code should indicate success
 		And check that the bundle does not contain any duplicate resources

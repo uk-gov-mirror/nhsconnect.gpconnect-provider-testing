@@ -842,19 +842,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 285
   testRunner.And("I add the Referrals parameter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 286
-  testRunner.And("I add the uncategorised data parameter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 287
     testRunner.When("I make the \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 288
+#line 287
  testRunner.Then("the response status code should indicate success", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 289
+#line 288
   testRunner.And("check that the bundle does not contain any duplicate resources", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 290
+#line 289
   testRunner.And("the patient resource in the bundle should contain meta data profile and version i" +
                     "d", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 291
+#line 290
   testRunner.And("check the response does not contain an operation outcome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 292
+#line 291
   testRunner.And("check that each applicable resource may contain a no disclosure to patient securi" +
                     "ty label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
