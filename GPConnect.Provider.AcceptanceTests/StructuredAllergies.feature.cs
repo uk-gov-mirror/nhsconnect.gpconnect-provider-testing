@@ -78,11 +78,18 @@ namespace GPConnect.Provider.AcceptanceTests
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Retrieve the allergy structured record section for a patient including resolved a" +
             "llergies no problems associated")]
+        [NUnit.Framework.CategoryAttribute("1.6.2-Specification")]
         [NUnit.Framework.TestCaseAttribute("patient39", null)]
         public virtual void RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(string patient, string[] exampleTags)
         {
+            string[] @__tags = new string[] {
+                    "1.6.2-Specification"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Retrieve the allergy structured record section for a patient including resolved a" +
-                    "llergies no problems associated", null, exampleTags);
+                    "llergies no problems associated", null, @__tags);
 #line 8
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -290,11 +297,18 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Retrieve the allergy structured record for a patient with problems linked but exc" +
             "luding resolved allergies")]
+        [NUnit.Framework.CategoryAttribute("1.6.2-Regression")]
         [NUnit.Framework.TestCaseAttribute("patient2", null)]
         public virtual void RetrieveTheAllergyStructuredRecordForAPatientWithProblemsLinkedButExcludingResolvedAllergies(string patient, string[] exampleTags)
         {
+            string[] @__tags = new string[] {
+                    "1.6.2-Regression"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Retrieve the allergy structured record for a patient with problems linked but exc" +
-                    "luding resolved allergies", null, exampleTags);
+                    "luding resolved allergies", null, @__tags);
 #line 108
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

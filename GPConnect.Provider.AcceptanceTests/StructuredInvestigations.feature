@@ -5,6 +5,7 @@ Feature: StructuredInvestigations
 # Tests around Multiple Structured Areas in one Request are tested in the MultipleRequests Feature
 	
 #1.6.2 - PA 25/04/2025 - Updated patient for Specimen collection.extension[fastingStatus] to include coded concept
+@1.6.2-Specification
 Scenario: Verify Investigations structured record for a Patient with Investigations not linked to any problems
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient38"
@@ -34,7 +35,7 @@ Scenario: Verify Investigations structured record for a Patient with Investigati
 		And I Check There is No Problems Secondary Problems List
 		And I Check No Problem Resources are Included
 
-
+@1.6.2-Regression
 Scenario: Verify Investigations structured record for a Patient with Investigations associated to Problems
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient2"

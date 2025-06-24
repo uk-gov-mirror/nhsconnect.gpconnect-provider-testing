@@ -4,7 +4,7 @@ Feature: StructuredMedications
 # These Tests are only Testing this Structured Area in isolation and Not with other Areas or Combinations of Include Parameters
 # Tests around Multiple Structured Areas in one Request are tested in the MultipleRequests Feature
 
- 
+ @1.6.2-Regression
 Scenario Outline: Retrieve the medication structured record section for a patient with no problems and including prescription issues
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "<Patient>"
@@ -38,7 +38,7 @@ Scenario Outline: Retrieve the medication structured record section for a patien
 		| patient12 |
 		| patient16 |
 
-
+@1.6.2-Regression
 Scenario Outline: Retrieve the medication structured record section for a patient with problems linked and including prescription issues
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "<Patient>"
@@ -413,6 +413,7 @@ Scenario Outline: Structured Medications Patient Has multiple Warnings and Assoc
 	And the response should be a OperationOutcome resource with error code "INVALID_RESOURCE"
 
 #1.6.2 - PA 25/04/2025 - Added for Update to MedicationRequest.medication and MedicationStatement.medication datatype
+@1.6.2-Specification
 Scenario: Retrieve the medication structured record section for a patient whose record has single or multiple medications
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient37"
@@ -423,6 +424,7 @@ Scenario: Retrieve the medication structured record section for a patient whose 
 		And the Medication MedicationStatement Medication type should be valid
 	
 #1.6.2 - PA 25/04/2025 - Added for Update to dose syntax to support Information Standards Notice DAPB4013
+@1.6.2-Specification
 Scenario: Retrieve the medication structured record section for patient with legacy medications
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient12"
@@ -433,6 +435,7 @@ Scenario: Retrieve the medication structured record section for patient with leg
 		And the MedicationStatement Legacy Dosage should be valid
 
 #1.6.2 - PA 25/04/2025 - Added for Update to dose syntax to support Information Standards Notice DAPB4013
+@1.6.2-Specification
 Scenario: Retrieve the medication structured record section for patients with structured medications
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient37"
@@ -443,6 +446,7 @@ Scenario: Retrieve the medication structured record section for patients with st
 		And the MedicationStatement Structured Dosage should be valid
 
 #1.6.2 - PA 01/05/2025 - Ensure OperationDefinition aligns with profile
+@1.6.2-Specification
 Scenario: Retrieve medication structured record with invalid filterPrescriptionType partParameter
 	Given I configure the default "GpcGetStructuredRecord" request
 	And I add an NHS Number parameter for "patient39"

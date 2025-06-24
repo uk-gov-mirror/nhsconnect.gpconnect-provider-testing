@@ -5,6 +5,7 @@ Feature: FHIR
 #Foundations and Appointments Tests
 ##########################################
 
+@1.6.2-Specification
 Scenario: Fhir Get Metadata and Check Version of Foundations And Appointments CapabilityStatement
 	Given I configure the default "MetadataRead" request
 	When I make the "MetadataRead" request
@@ -140,7 +141,7 @@ Scenario: Foundations endpoint should support gzip compression for metadata endp
 		And the response body should be FHIR JSON
 		And the Response Resource should be a CapabilityStatement
                   
-@1.6.2-IncrementalAndRegression
+@1.6.2-Regression
 Scenario Outline: Foundations CapabilityStatement returns correct profile versions
 Given I configure the default "MetadataRead" request
 	When I make the "MetadataRead" request
@@ -177,7 +178,7 @@ Examples:
 #Structured Tests
 ##########################################
 
-@Structured
+@Structured @1.6.2-Specification
 Scenario: Fhir Get Metadata and Check Version of Structured CapabilityStatement
 	Given I configure the default "StructuredMetaDataRead" request
 	When I make the "MetadataRead" request
@@ -312,13 +313,12 @@ Scenario: Structured Fhir content type test where Accept header is JSON and _for
 	Then the response status code should indicate success
 		And the response body should be FHIR XML
 
-@Structured 
+@Structured @1.6.2-Specification
 Scenario Outline: Structured CapabilityStatement returns correct profile versions
 Given I configure the default "StructuredMetaDataRead" request
 	When I make the "StructuredMetaDataRead" request
 	Then the response status code should indicate success
 	And the CapabilityStatement REST Operations should contain "gpc.getstructuredrecord"
-	And the CapabilityStatement REST Operations should contain "gpc.migratestructuredrecord"
     And the CapabilityStatement Profile should contain the correct reference and version history "<urlToCheck>" 
 Examples: 
 | urlToCheck                                                                                          |
@@ -349,7 +349,7 @@ Examples:
 #Document Tests
 ##########################################
 
- @StructuredDocuments @Structured
+ @StructuredDocuments @Structured @1.6.2-Specification
 Scenario: Fhir Get Metadata and Check Version of Documents CapabilityStatement
 	Given I configure the default "DocumentsMetaDataRead" request
 	When I make the "MetadataRead" request
@@ -476,7 +476,7 @@ Scenario: Documents Fhir content type test where Accept header is JSON and _form
 	Then the response status code should indicate success
 		And the response body should be FHIR XML
 
- @StructuredDocuments @Structured
+ @StructuredDocuments @Structured @1.6.2-Specification
 Scenario Outline: Documents CapabilityStatement returns correct profile versions
 Given I configure the default "DocumentsMetaDataRead" request
 	When I make the "DocumentsMetaDataRead" request

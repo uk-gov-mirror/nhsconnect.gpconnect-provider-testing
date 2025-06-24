@@ -200,7 +200,6 @@
     <Compile Include="Steps\StructuredCommonSteps.cs" />
     <Compile Include="Steps\StructuredDiarySteps.cs" />
     <Compile Include="Steps\StructuredMiscSteps.cs" />
-    <Compile Include="Structured162Specification.feature.cs" />
     <Compile Include="StructuredDiary.feature.cs" />
     <Compile Include="StructuredDocuments.feature.cs" />
     <Compile Include="Enum\GpConnectInteraction.cs" />
@@ -317,7 +316,6 @@
     <Compile Include="StructuredUncategorised.feature.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Structured162Specification.feature" />
     <None Include="StructuredDiary.feature" />
     <None Include="StructuredDocuments.feature" />
     <None Include="StructuredConsultations.feature" />

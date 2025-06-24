@@ -59,7 +59,7 @@ Scenario: Verify response for a Patient with Problems linked to other Problems
 		And I check The Problem Resources Do Not Include Not In Use Fields
 		And check the response does not contain an operation outcome
 		
-	
+@1.6.2-Regression	
 Scenario Outline: Retrieve problems structured record with status partParameter expected success
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient2"
@@ -186,6 +186,7 @@ Scenario: Retrieve Problems structured record for a patient that has sensitive f
 		And the response should be a OperationOutcome resource with error code "PATIENT_NOT_FOUND"
 
 #1.6.2 - PA 01/05/2025 - Added to Ensure OperationDefinition aligns with profile
+@1.6.2-Specification
 Scenario: Retrieve problems structured record with invalid problem significance partParameter
 	Given I configure the default "GpcGetStructuredRecord" request
 	And I add an NHS Number parameter for "patient39"

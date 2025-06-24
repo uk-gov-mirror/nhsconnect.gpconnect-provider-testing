@@ -75,14 +75,14 @@ namespace GPConnect.Provider.AcceptanceTests
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Practitioner read successful request validate all of response")]
-        [NUnit.Framework.CategoryAttribute("1.6.2--IncrementalAndRegression")]
+        [NUnit.Framework.CategoryAttribute("1.6.2-Regression")]
         [NUnit.Framework.TestCaseAttribute("practitioner1", "0", null)]
         [NUnit.Framework.TestCaseAttribute("practitioner2", "1", null)]
         [NUnit.Framework.TestCaseAttribute("practitioner3", "2", null)]
         public virtual void PractitionerReadSuccessfulRequestValidateAllOfResponse(string practitioner, string numberOfRoleIdentifiers, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "1.6.2--IncrementalAndRegression"};
+                    "1.6.2-Regression"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
