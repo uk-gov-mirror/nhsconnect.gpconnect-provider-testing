@@ -677,9 +677,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Structured request sent for consultations and problems expect success")]
+        [NUnit.Framework.CategoryAttribute("1.6.2-Regression")]
         public virtual void StructuredRequestSentForConsultationsAndProblemsExpectSuccess()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Structured request sent for consultations and problems expect success", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Structured request sent for consultations and problems expect success", null, new string[] {
+                        "1.6.2-Regression"});
 #line 217
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -814,35 +816,35 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Structured request sent for multiple clinical areas where each applicable resourc" +
             "e may contain a no disclosure to patient security label")]
+        [NUnit.Framework.CategoryAttribute("1.6.2-Specification")]
         public virtual void StructuredRequestSentForMultipleClinicalAreasWhereEachApplicableResourceMayContainANoDisclosureToPatientSecurityLabel()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Structured request sent for multiple clinical areas where each applicable resourc" +
-                    "e may contain a no disclosure to patient security label", null, ((string[])(null)));
-#line 275
+                    "e may contain a no disclosure to patient security label", null, new string[] {
+                        "1.6.2-Specification"});
+#line 276
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 276
- testRunner.Given("I configure the default \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 277
-  testRunner.And("I add an NHS Number parameter for \"patient39\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I configure the default \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 278
-  testRunner.And("I add the allergies parameter with resolvedAllergies set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I add an NHS Number parameter for \"patient39\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 279
-  testRunner.And("I add the medication parameter with includePrescriptionIssues set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I add the allergies parameter with resolvedAllergies set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 280
-  testRunner.And("I add the includeConsultations parameter only", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I add the medication parameter with includePrescriptionIssues set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 281
-  testRunner.And("I add the Problems parameter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I add the includeConsultations parameter only", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 282
-  testRunner.And("I add the immunizations parameter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I add the Problems parameter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 283
-  testRunner.And("I add the uncategorised data parameter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I add the immunizations parameter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 284
-  testRunner.And("I add the Investigations parameter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 285
-  testRunner.And("I add the Referrals parameter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 286
   testRunner.And("I add the uncategorised data parameter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 285
+  testRunner.And("I add the Investigations parameter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 286
+  testRunner.And("I add the Referrals parameter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 287
     testRunner.When("I make the \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 288

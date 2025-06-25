@@ -1,7 +1,7 @@
 ﻿@practitioner  @1.6.2-Full-Pack
 Feature: PractitionerRead
 
-@1.6.2--IncrementalAndRegression
+@1.6.2-Regression
 Scenario Outline: Practitioner read successful request validate all of response
 	Given I get the Practitioner for Practitioner Code "<practitioner>"
 		And I store the Practitioner

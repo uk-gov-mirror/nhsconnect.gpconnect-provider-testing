@@ -383,7 +383,7 @@ Scenario: Structured Migrate request for Patient2 exc Sensitive Data where JWT R
 		Then the response status code should indicate success
 		
 #Migrate Document Tests
-
+@1.6.2-Regression
 Scenario: Migrate Patient2 With Sensitive and then migrate first document
 	Given I configure the default "MigrateStructuredRecordWithSensitive" request
 	And I add an NHS Number parameter for "patient2"
@@ -403,6 +403,7 @@ Scenario: Migrate Patient2 With Sensitive and then migrate first document
 		And I Check the returned Binary Document Do Not Include Not In Use Fields
 		And I save the binary document from the retrieve
 
+@1.6.2-Regression
 Scenario: Migrate Patient2 Without Sensitive and then migrate first document
 	Given I configure the default "MigrateStructuredRecordWithoutSensitive" request
 		And I add an NHS Number parameter for "patient2"
@@ -423,6 +424,7 @@ Scenario: Migrate Patient2 Without Sensitive and then migrate first document
 		And I save the binary document from the retrieve
 
 #1.6.2 - PA 29/04/2025 - Added for change where applicable resources must contain a ‘no disclosure to patient’ security label
+@1.6.2-Specification
 Scenario: Migrate Patient39 With Sensitive where each applicable resource may contain a no disclosure to patient security label
 	Given I configure the default "MigrateStructuredRecordWithSensitive" request
 	And I add an NHS Number parameter for "patient39"

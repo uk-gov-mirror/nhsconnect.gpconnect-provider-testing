@@ -4,7 +4,7 @@ Feature: StructuredAllergies
 # These Tests are only Testing this Structured Area in isolation and Not with other Areas or Combinations of Include Parameters
 # Tests around Multiple Structured Areas in one Request are tested in the MultipleRequests Feature
 
- 
+@1.6.2-Specification
 Scenario Outline: Retrieve the allergy structured record section for a patient including resolved allergies no problems associated
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "<Patient>"
@@ -104,7 +104,7 @@ Scenario Outline: Retrieve the allergy structured record for a patient with no p
 		| patient13 |
 ## removed github ref 91 		| patient15 |
 
-
+@1.6.2-Regression
 Scenario Outline: Retrieve the allergy structured record for a patient with problems linked but excluding resolved allergies
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "<Patient>"

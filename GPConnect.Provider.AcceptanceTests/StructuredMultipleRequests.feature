@@ -213,7 +213,7 @@ Scenario: Structured request sent with invalid parameter combination 14 expected
 	Then the response status code should be "422"
 		And the response should be a OperationOutcome resource with error code "INVALID_PARAMETER"
 
-		
+@1.6.2-Regression		
 Scenario: Structured request sent for consultations and problems expect success
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient2"
@@ -272,6 +272,7 @@ Scenario: Structured request sent for multiple clinical areas expect success
 		And check the response does not contain an operation outcome	
 
 #1.6.2 - PA 29/04/2025 - Added for change where applicable resources may contain a ‘no disclosure to patient’ security label
+@1.6.2-Specification
 Scenario: Structured request sent for multiple clinical areas where each applicable resource may contain a no disclosure to patient security label
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient39"
@@ -283,7 +284,6 @@ Scenario: Structured request sent for multiple clinical areas where each applica
 		And I add the uncategorised data parameter
 		And I add the Investigations parameter
 		And I add the Referrals parameter
-		And I add the uncategorised data parameter
     When I make the "GpcGetStructuredRecord" request
 	Then the response status code should indicate success
 		And check that the bundle does not contain any duplicate resources

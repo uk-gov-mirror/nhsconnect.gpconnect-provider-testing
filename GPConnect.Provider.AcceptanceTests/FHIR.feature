@@ -5,6 +5,7 @@ Feature: FHIR
 #Foundations and Appointments Tests
 ##########################################
 
+@1.6.2-Specification
 Scenario: Fhir Get Metadata and Check Version of Foundations And Appointments CapabilityStatement
 	Given I configure the default "MetadataRead" request
 	When I make the "MetadataRead" request
@@ -41,7 +42,7 @@ Scenario: Foundations CapabilityStatement profile supports the GetStructuredReco
 	When I make the "MetaDataRead" request
 	Then the response status code should indicate success
 	And the CapabilityStatement REST Operations should contain "gpc.getstructuredrecord"
-	And the CapabilityStatement Operation "gpc.getstructuredrecord" has url "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.15" 
+	And the CapabilityStatement Operation "gpc.getstructuredrecord" has url "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.18" 
 	
 Scenario: Foundations Fhir content type test where Accept header is JSON and request payload is XML
 	Given I configure the default "MetadataRead" request
@@ -140,7 +141,7 @@ Scenario: Foundations endpoint should support gzip compression for metadata endp
 		And the response body should be FHIR JSON
 		And the Response Resource should be a CapabilityStatement
                   
-@1.6.2-IncrementalAndRegression
+@1.6.2-Regression
 Scenario Outline: Foundations CapabilityStatement returns correct profile versions
 Given I configure the default "MetadataRead" request
 	When I make the "MetadataRead" request
@@ -177,7 +178,7 @@ Examples:
 #Structured Tests
 ##########################################
 
-@Structured
+@Structured @1.6.2-Specification
 Scenario: Fhir Get Metadata and Check Version of Structured CapabilityStatement
 	Given I configure the default "StructuredMetaDataRead" request
 	When I make the "MetadataRead" request
@@ -212,7 +213,7 @@ Scenario: Structured CapabilityStatement profile supports the GetStructuredRecor
 	When I make the "StructuredMetaDataRead" request
 	Then the response status code should indicate success
 	And the CapabilityStatement REST Operations should contain "gpc.getstructuredrecord"
-	And the CapabilityStatement Operation "gpc.getstructuredrecord" has url "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.16" 
+	And the CapabilityStatement Operation "gpc.getstructuredrecord" has url "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.18" 
 
 @Structured	
 Scenario: Structured Fhir content type test where Accept header is JSON and request payload is XML
@@ -312,31 +313,30 @@ Scenario: Structured Fhir content type test where Accept header is JSON and _for
 	Then the response status code should indicate success
 		And the response body should be FHIR XML
 
-@Structured 
+@Structured @1.6.2-Specification
 Scenario Outline: Structured CapabilityStatement returns correct profile versions
 Given I configure the default "StructuredMetaDataRead" request
 	When I make the "StructuredMetaDataRead" request
 	Then the response status code should indicate success
 	And the CapabilityStatement REST Operations should contain "gpc.getstructuredrecord"
-	And the CapabilityStatement REST Operations should contain "gpc.migratestructuredrecord"
     And the CapabilityStatement Profile should contain the correct reference and version history "<urlToCheck>" 
 Examples: 
 | urlToCheck                                                                                          |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1/_history/1.8                 |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1/_history/1.4            |
-| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1/_history/1.3            |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1/_history/1.2            |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1/_history/1.2        |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1/_history/1.7      |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1/_history/1.2              |
-| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.7     |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.8     |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1/_history/1.6       |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1/_history/1.7                    |
 | https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1/_history/1.3       |
 | https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2              |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1/_history/1.5            |
-| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1/_history/1.7 |
-| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1/_history/1.5               |
-| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.6             |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1/_history/1.8 |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1/_history/1.6.1             |
+| https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.7             |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1/_history/1.3        |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1/_history/1.3                |
 | https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1/_history/1.4        |
@@ -349,7 +349,7 @@ Examples:
 #Document Tests
 ##########################################
 
- @StructuredDocuments @Structured
+ @StructuredDocuments @Structured @1.6.2-Specification
 Scenario: Fhir Get Metadata and Check Version of Documents CapabilityStatement
 	Given I configure the default "DocumentsMetaDataRead" request
 	When I make the "MetadataRead" request
@@ -476,7 +476,7 @@ Scenario: Documents Fhir content type test where Accept header is JSON and _form
 	Then the response status code should indicate success
 		And the response body should be FHIR XML
 
- @StructuredDocuments @Structured
+ @StructuredDocuments @Structured @1.6.2-Specification
 Scenario Outline: Documents CapabilityStatement returns correct profile versions
 Given I configure the default "DocumentsMetaDataRead" request
 	When I make the "DocumentsMetaDataRead" request

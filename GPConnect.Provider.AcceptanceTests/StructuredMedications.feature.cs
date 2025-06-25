@@ -78,14 +78,21 @@ namespace GPConnect.Provider.AcceptanceTests
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Retrieve the medication structured record section for a patient with no problems " +
             "and including prescription issues")]
+        [NUnit.Framework.CategoryAttribute("1.6.2-Regression")]
         [NUnit.Framework.TestCaseAttribute("patient3", null)]
         [NUnit.Framework.TestCaseAttribute("patient5", null)]
         [NUnit.Framework.TestCaseAttribute("patient12", null)]
         [NUnit.Framework.TestCaseAttribute("patient16", null)]
         public virtual void RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues(string patient, string[] exampleTags)
         {
+            string[] @__tags = new string[] {
+                    "1.6.2-Regression"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Retrieve the medication structured record section for a patient with no problems " +
-                    "and including prescription issues", null, exampleTags);
+                    "and including prescription issues", null, @__tags);
 #line 8
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -147,11 +154,18 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Retrieve the medication structured record section for a patient with problems lin" +
             "ked and including prescription issues")]
+        [NUnit.Framework.CategoryAttribute("1.6.2-Regression")]
         [NUnit.Framework.TestCaseAttribute("patient2", null)]
         public virtual void RetrieveTheMedicationStructuredRecordSectionForAPatientWithProblemsLinkedAndIncludingPrescriptionIssues(string patient, string[] exampleTags)
         {
+            string[] @__tags = new string[] {
+                    "1.6.2-Regression"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Retrieve the medication structured record section for a patient with problems lin" +
-                    "ked and including prescription issues", null, exampleTags);
+                    "ked and including prescription issues", null, @__tags);
 #line 42
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1063,26 +1077,28 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Retrieve the medication structured record section for a patient whose record has " +
             "single or multiple medications")]
+        [NUnit.Framework.CategoryAttribute("1.6.2-Specification")]
         public virtual void RetrieveTheMedicationStructuredRecordSectionForAPatientWhoseRecordHasSingleOrMultipleMedications()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Retrieve the medication structured record section for a patient whose record has " +
-                    "single or multiple medications", null, ((string[])(null)));
-#line 416
+                    "single or multiple medications", null, new string[] {
+                        "1.6.2-Specification"});
+#line 417
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 417
- testRunner.Given("I configure the default \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 418
-  testRunner.And("I add an NHS Number parameter for \"patient37\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I configure the default \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 419
-  testRunner.And("I add the medication parameter with includePrescriptionIssues set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I add an NHS Number parameter for \"patient37\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 420
- testRunner.When("I make the \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("I add the medication parameter with includePrescriptionIssues set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 421
- testRunner.Then("the response status code should indicate success", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I make the \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 422
-  testRunner.And("the Medication MedicationRequest Medication type should be valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("the response status code should indicate success", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 423
+  testRunner.And("the Medication MedicationRequest Medication type should be valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 424
   testRunner.And("the Medication MedicationStatement Medication type should be valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1091,26 +1107,28 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Retrieve the medication structured record section for patient with legacy medicat" +
             "ions")]
+        [NUnit.Framework.CategoryAttribute("1.6.2-Specification")]
         public virtual void RetrieveTheMedicationStructuredRecordSectionForPatientWithLegacyMedications()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Retrieve the medication structured record section for patient with legacy medicat" +
-                    "ions", null, ((string[])(null)));
-#line 426
+                    "ions", null, new string[] {
+                        "1.6.2-Specification"});
+#line 428
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 427
- testRunner.Given("I configure the default \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 428
-  testRunner.And("I add an NHS Number parameter for \"patient12\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 429
-  testRunner.And("I add the medication parameter with includePrescriptionIssues set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I configure the default \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 430
- testRunner.When("I make the \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("I add an NHS Number parameter for \"patient12\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 431
- testRunner.Then("the response status code should indicate success", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.And("I add the medication parameter with includePrescriptionIssues set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 432
-  testRunner.And("the MedicationRequest Legacy Dosage Instruction should be valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I make the \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 433
+ testRunner.Then("the response status code should indicate success", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 434
+  testRunner.And("the MedicationRequest Legacy Dosage Instruction should be valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 435
   testRunner.And("the MedicationStatement Legacy Dosage should be valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1119,26 +1137,28 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Retrieve the medication structured record section for patients with structured me" +
             "dications")]
+        [NUnit.Framework.CategoryAttribute("1.6.2-Specification")]
         public virtual void RetrieveTheMedicationStructuredRecordSectionForPatientsWithStructuredMedications()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Retrieve the medication structured record section for patients with structured me" +
-                    "dications", null, ((string[])(null)));
-#line 436
+                    "dications", null, new string[] {
+                        "1.6.2-Specification"});
+#line 439
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 437
- testRunner.Given("I configure the default \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 438
-  testRunner.And("I add an NHS Number parameter for \"patient37\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 439
-  testRunner.And("I add the medication parameter with includePrescriptionIssues set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 440
- testRunner.When("I make the \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I configure the default \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 441
- testRunner.Then("the response status code should indicate success", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.And("I add an NHS Number parameter for \"patient37\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 442
-  testRunner.And("the MedicationRequest Structured Dosage Instruction should be valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I add the medication parameter with includePrescriptionIssues set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 443
+ testRunner.When("I make the \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 444
+ testRunner.Then("the response status code should indicate success", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 445
+  testRunner.And("the MedicationRequest Structured Dosage Instruction should be valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 446
   testRunner.And("the MedicationStatement Structured Dosage should be valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1147,24 +1167,26 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Retrieve medication structured record with invalid filterPrescriptionType partPar" +
             "ameter")]
+        [NUnit.Framework.CategoryAttribute("1.6.2-Specification")]
         public virtual void RetrieveMedicationStructuredRecordWithInvalidFilterPrescriptionTypePartParameter()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Retrieve medication structured record with invalid filterPrescriptionType partPar" +
-                    "ameter", null, ((string[])(null)));
-#line 446
+                    "ameter", null, new string[] {
+                        "1.6.2-Specification"});
+#line 450
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 447
- testRunner.Given("I configure the default \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 448
- testRunner.And("I add an NHS Number parameter for \"patient39\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 449
- testRunner.And("I add the medication parameter with filterPrescriptionType set to \"repeat\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 450
- testRunner.When("I make the \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 451
- testRunner.Then("the response status code should indicate success", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("I configure the default \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 452
+ testRunner.And("I add an NHS Number parameter for \"patient39\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 453
+ testRunner.And("I add the medication parameter with filterPrescriptionType set to \"repeat\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 454
+ testRunner.When("I make the \"GpcGetStructuredRecord\" request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 455
+ testRunner.Then("the response status code should indicate success", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 456
  testRunner.And("Check the operation outcome returns the correct text and diagnostics includes \"in" +
                     "cludeMedication\" and \"filterPrescriptionType\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
