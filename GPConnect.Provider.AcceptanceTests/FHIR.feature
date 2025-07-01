@@ -181,7 +181,7 @@ Examples:
 @Structured @1.6.2-Specification
 Scenario: Fhir Get Metadata and Check Version of Structured CapabilityStatement
 	Given I configure the default "StructuredMetaDataRead" request
-	When I make the "MetadataRead" request
+	When I make the "StructuredMetaDataRead" request
 	Then the response status code should indicate success
 		And the Response Resource should be a CapabilityStatement
 		And the Structured CapabilityStatement version should match the GP Connect specification release
@@ -352,7 +352,7 @@ Examples:
  @StructuredDocuments @Structured @1.6.2-Specification
 Scenario: Fhir Get Metadata and Check Version of Documents CapabilityStatement
 	Given I configure the default "DocumentsMetaDataRead" request
-	When I make the "MetadataRead" request
+	When I make the "DocumentsMetaDataRead" request
 	Then the response status code should indicate success
 		And the Response Resource should be a CapabilityStatement
 		And the Documents CapabilityStatement version should match the GP Connect specification release
