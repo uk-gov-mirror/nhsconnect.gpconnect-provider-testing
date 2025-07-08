@@ -170,6 +170,7 @@ Scenario: Retrieve the Referrals data structured record startDate after endDate 
 		Then the response status code should be "422"
 		And the response should be a OperationOutcome resource with error code "INVALID_PARAMETER" 
 
+#1.6.2 - PA 08/07/2025 - Adeed for Amendment to referralRequest element descriptions
 @1.6.1-Specification
 Scenario: Verify Referrals structured record for a Patient where the referral requester maybe identified responsibile for the referral decision
 	Given I configure the default "GpcGetStructuredRecord" request
