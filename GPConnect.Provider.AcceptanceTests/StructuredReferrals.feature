@@ -28,8 +28,7 @@ Scenario: Verify Referrals structured record for a Patient with Referrals not li
 		And I Check the ReferralRequests are Valid
 		And I Check the ReferralRequests Do Not Include Not in Use Fields
 		And I Check There is No Problems Secondary Problems List
-		And I Check No Problem Resources are Included
-
+		And I Check No Problem Resources are Included		
 
 Scenario: Verify Referrals structured record for a Patient with Referrals associated to Problems
 	Given I configure the default "GpcGetStructuredRecord" request
@@ -170,4 +169,31 @@ Scenario: Retrieve the Referrals data structured record startDate after endDate 
 	Then the response status code should indicate failure
 		Then the response status code should be "422"
 		And the response should be a OperationOutcome resource with error code "INVALID_PARAMETER" 
-		
+
+#1.6.2 - PA 08/07/2025 - Adeed for Amendment to referralRequest element descriptions
+@1.6.1-Specification
+Scenario: Verify Referrals structured record for a Patient where the referral requester maybe identified responsibile for the referral decision
+	Given I configure the default "GpcGetStructuredRecord" request
+		And I add an NHS Number parameter for "patient3"
+		And I add the Referrals parameter
+	When I make the "GpcGetStructuredRecord" request
+	Then the response status code should indicate success
+		And the response should be a Bundle resource of type "collection"
+		And the response meta profile should be for "structured"
+		And the patient resource in the bundle should contain meta data profile and version id
+		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+		And if the response bundle contains an organization resource it should contain meta data profile and version id
+		And the Bundle should be valid for patient "patient3"
+	    And check that the bundle does not contain any duplicate resources
+		And check the response does not contain an operation outcome
+		And the Patient Id should be valid
+		And the Practitioner Id should be valid
+		And the Organization Id should be valid 
+		And the Bundle should contain "1" lists
+		And I Check the Referrals List is Valid
+		And The Structured List Does Not Include Not In Use Fields	
+		And I Check the ReferralRequests are Valid
+		And I Check the ReferralRequests Do Not Include Not in Use Fields
+		And I Check There is No Problems Secondary Problems List
+		And I Check No Problem Resources are Included		
+	    And I check the ReferralRequests Requester is valid

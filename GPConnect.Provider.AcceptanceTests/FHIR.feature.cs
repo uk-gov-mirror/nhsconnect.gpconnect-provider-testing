@@ -77,11 +77,13 @@ namespace GPConnect.Provider.AcceptanceTests
         [NUnit.Framework.DescriptionAttribute("Fhir Get Metadata and Check Version of Foundations And Appointments CapabilitySta" +
             "tement")]
         [NUnit.Framework.CategoryAttribute("1.6.2-Specification")]
+        [NUnit.Framework.CategoryAttribute("1.6.1-Specification")]
         public virtual void FhirGetMetadataAndCheckVersionOfFoundationsAndAppointmentsCapabilityStatement()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Fhir Get Metadata and Check Version of Foundations And Appointments CapabilitySta" +
                     "tement", null, new string[] {
-                        "1.6.2-Specification"});
+                        "1.6.2-Specification",
+                        "1.6.1-Specification"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -572,11 +574,13 @@ testRunner.Given("I configure the default \"MetadataRead\" request", ((string)(n
         [NUnit.Framework.DescriptionAttribute("Fhir Get Metadata and Check Version of Structured CapabilityStatement")]
         [NUnit.Framework.CategoryAttribute("Structured")]
         [NUnit.Framework.CategoryAttribute("1.6.2-Specification")]
+        [NUnit.Framework.CategoryAttribute("1.6.1-Specification")]
         public virtual void FhirGetMetadataAndCheckVersionOfStructuredCapabilityStatement()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Fhir Get Metadata and Check Version of Structured CapabilityStatement", null, new string[] {
                         "Structured",
-                        "1.6.2-Specification"});
+                        "1.6.2-Specification",
+                        "1.6.1-Specification"});
 #line 182
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1065,12 +1069,14 @@ testRunner.Given("I configure the default \"StructuredMetaDataRead\" request", (
         [NUnit.Framework.CategoryAttribute("StructuredDocuments")]
         [NUnit.Framework.CategoryAttribute("Structured")]
         [NUnit.Framework.CategoryAttribute("1.6.2-Specification")]
+        [NUnit.Framework.CategoryAttribute("1.6.1-Specification")]
         public virtual void FhirGetMetadataAndCheckVersionOfDocumentsCapabilityStatement()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Fhir Get Metadata and Check Version of Documents CapabilityStatement", null, new string[] {
                         "StructuredDocuments",
                         "Structured",
-                        "1.6.2-Specification"});
+                        "1.6.2-Specification",
+                        "1.6.1-Specification"});
 #line 353
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
