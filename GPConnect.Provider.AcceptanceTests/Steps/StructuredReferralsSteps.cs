@@ -119,6 +119,8 @@
                 {
                     identifier.System.ShouldNotBeNullOrEmpty("Identifier System Is Null or Empty - Should be populated");
                     identifier.Value.ShouldNotBeNullOrEmpty("Fail : No Identifier found when resource should have a unique Identifier");
+
+                    //1.6.1 - PA 08/07/2025 - Added for change to the identifier system for the UBRN including references within examples
                     if (identifier.System.ToLower().Contains("ubrn")) { identifier.System.ShouldBe("https://fhir.nhs.uk/Id/UBRN"); }
                 });
 
@@ -267,6 +269,7 @@
 
         }
 
+        //1.6.1 - PA - 08/07/2025 - Added for Amendment to referralRequest element descriptions
         [Then(@"I check the ReferralRequests Requester is valid")]
         public void ThenIChecktheReferralRequestRequesterIsValid()
         {
