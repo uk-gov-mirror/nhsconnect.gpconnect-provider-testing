@@ -119,6 +119,7 @@
                 {
                     identifier.System.ShouldNotBeNullOrEmpty("Identifier System Is Null or Empty - Should be populated");
                     identifier.Value.ShouldNotBeNullOrEmpty("Fail : No Identifier found when resource should have a unique Identifier");
+                    if (identifier.System.ToLower().Contains("ubrn")) { identifier.System.ShouldBe("https://fhir.nhs.uk/Id/UBRN"); }
                 });
 
                 //Check Status
@@ -266,7 +267,54 @@
 
         }
 
+        [Then(@"I check the ReferralRequests Requester is valid")]
+        public void ThenIChecktheReferralRequestRequesterIsValid()
+        {
+            //check atleast one
+            ReferralRequests.ToList().Count().ShouldBeGreaterThan(0, "Error Should be at least One ReferralRequest in response as per Data requirements");
 
+            ReferralRequests.ForEach(referalRequest =>
+            {
+                //Check Requester
+                if (referalRequest.Requester != null)
+                {
+                    //Check if Requester agent is a practitioner
+                    if (referalRequest.Requester.Agent.ReferenceElement.ToString().ToLower().Contains("practitioner"))
+                    {
+                        //Identify Practitioner Role
+                        List<Resource> roleResources = Bundle.GetResources().ToList()
+                       .Where(resource => resource.ResourceType.Equals(ResourceType.PractitionerRole))
+                       .ToList();
+
+                        PractitionerRole practitionerRole = (PractitionerRole)roleResources.FirstOrDefault();
+
+                        //Identify Patient
+                        List<Resource> PatientResource = Bundle.GetResources().ToList()
+                        .Where(resource => resource.ResourceType.Equals(ResourceType.Patient))
+                        .ToList();
+
+                        Patient patient = (Patient)PatientResource.FirstOrDefault();
+
+                        //referalRequest.Requester.OnBehalfOf ***MUST*** be returned the <code>Organization</code> associated with the referenced <code>Practitioner</code> is not the GP practice responsible for the referral
+                        if (practitionerRole.Organization.ReferenceElement.ToString().ToLower() != patient.ManagingOrganization.ReferenceElement.ToString().ToLower())
+                        {
+                            referalRequest.Requester.OnBehalfOf.ShouldNotBeNull();
+                            referalRequest.Requester.OnBehalfOf.ReferenceElement.ToString().ToLower().ShouldBe(practitionerRole.Organization.ReferenceElement.ToString().ToLower(), "referalRequest.Requester.OnBehalfOf: " + referalRequest.Requester.OnBehalfOf.ReferenceElement.ToString() + " does not match practitionerRole.Organization: " + practitionerRole.Organization.ReferenceElement.ToString() + " as expected");
+                        }
+                        //referalRequest.Requester.OnBehalfOf ***May*** be returned GP practice responsible for the referral is the same organisation as associated with <code>requester.agent</code> practitioner via the practitioner role
+                        if (practitionerRole.Organization.ReferenceElement.ToString().ToLower() == patient.ManagingOrganization.ReferenceElement.ToString().ToLower())
+                        {
+                            if (referalRequest.Requester.OnBehalfOf != null)
+                            {
+                                referalRequest.Requester.OnBehalfOf.ReferenceElement.ToString().ToLower().ShouldBe(practitionerRole.Organization.ReferenceElement.ToString().ToLower(), "referalRequest.Requester.OnBehalfOf: " + referalRequest.Requester.OnBehalfOf.ReferenceElement.ToString() + " does not match practitionerRole.Organization: " + practitionerRole.Organization.ReferenceElement.ToString() + " as expected");
+                            }
+                        }
+                    }
+                    //referalRequest.Requester.OnBehalfOf **SHOULD** be absent if the <code>requester.agent</code> is not a practitioner. 
+                    else referalRequest.Requester.OnBehalfOf.ShouldBeNull("The referalRequest.Requester.OnBehalfOf is not null as expected");
+                }
+            });
+        }
 
     }
 }
