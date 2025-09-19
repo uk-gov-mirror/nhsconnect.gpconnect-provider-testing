@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
 using GPConnect.Provider.AcceptanceTests.Logger;
 
 // ReSharper disable ClassNeverInstantiated.Global
@@ -7,6 +9,9 @@ namespace GPConnect.Provider.AcceptanceTests.Helpers
 {
     public class HttpHeaderHelper
     {
+        private static bool IsDirectMode() =>
+        "true".Equals(ConfigurationManager.AppSettings["directMode"], StringComparison.OrdinalIgnoreCase);
+
         private readonly Dictionary<string, string> _requestHeaders;
 
         public HttpHeaderHelper()
@@ -17,12 +22,27 @@ namespace GPConnect.Provider.AcceptanceTests.Helpers
 
         public void AddHeader(string key, string value)
         {
+            // Block Authorization for direct-to-ALB runs
+            if (IsDirectMode() && key.Equals("Authorization", StringComparison.OrdinalIgnoreCase))
+            {
+                RemoveHeader(key); // ensure it isn't present
+                Log.WriteLine("DirectMode: Skipping Authorization header.");
+                return;
+            }
+
             _requestHeaders.Add(key, value);
             Log.WriteLine("Added Key='{0}' Value='{1}'", key, value);
         }
 
         public void ReplaceHeader(string key, string value)
         {
+             if (IsDirectMode() && key.Equals("Authorization", StringComparison.OrdinalIgnoreCase))
+            {
+                RemoveHeader(key);
+                Log.WriteLine("DirectMode: Skipping Authorization header.");
+                return;
+            }
+            
             RemoveHeader(key);
             AddHeader(key, value);
             Log.WriteLine("Replaced Key='{0}' With Value='{1}'", key, value);
