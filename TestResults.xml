@@ -1,0 +1,2487 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="0" runstate="Runnable" testcasecount="76" result="Failed" total="17" passed="10" failed="7" warnings="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.17.0.0" clr-version="4.0.30319.42000" start-time="2025-09-25 11:00:53Z" end-time="2025-09-25 11:01:02Z" duration="8.740747">
+  <command-line><![CDATA["C:\tools\nunit\runner\nunit3-console.exe" C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing/GPConnect.Provider.AcceptanceTests/bin/Debug/GPConnect.Provider.AcceptanceTests.dll --work=C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing/GPConnect.Provider.AcceptanceTests/bin/Debug --labels=Before --trace=Debug --agents=1 --process=Separate --framework=net-4.6.1 --shadowcopy=off --testparam:DataDirectory=C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing/Data --result=C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing/TestResults.xml;format=nunit3 --where cat='Wiremock' ]]></command-line>
+  <filter>
+    <cat>Wiremock</cat>
+  </filter>
+  <test-suite type="Assembly" id="1-1090" name="GPConnect.Provider.AcceptanceTests.dll" fullname="GPConnect.Provider.AcceptanceTests.dll" runstate="Runnable" testcasecount="76" result="Failed" site="Child" start-time="2025-09-25 11:00:55Z" end-time="2025-09-25 11:01:02Z" duration="7.017263" total="17" passed="10" failed="7" warnings="0" inconclusive="0" skipped="0" asserts="0">
+    <environment framework-version="3.11.0.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 10.0.26100.0" platform="Win32NT" cwd="C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\bin\Debug" machine-name="UK-J81ZH34" user="david.wolfson" user-domain="GROUPINFRA" culture="en-GB" uiculture="en-GB" os-architecture="x64" />
+    <settings>
+      <setting name="ProcessModel" value="Separate" />
+      <setting name="RequestedRuntimeFramework" value="net-4.6.1" />
+      <setting name="DisposeRunners" value="True" />
+      <setting name="ShadowCopyFiles" value="True" />
+      <setting name="InternalTraceLevel" value="Debug" />
+      <setting name="WorkDirectory" value="C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing/GPConnect.Provider.AcceptanceTests/bin/Debug" />
+      <setting name="MaxAgents" value="1" />
+      <setting name="TestParametersDictionary" value="[DataDirectory, C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing/Data]">
+        <item key="DataDirectory" value="C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing/Data" />
+      </setting>
+      <setting name="TestParameters" value="DataDirectory=C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing/Data" />
+      <setting name="ImageRuntimeVersion" value="4.0.30319" />
+      <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.6.1" />
+      <setting name="ImageRequiresX86" value="False" />
+      <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
+      <setting name="TargetRuntimeFramework" value="net-4.6.1" />
+      <setting name="NumberOfTestWorkers" value="14" />
+    </settings>
+    <properties>
+      <property name="_PID" value="1188" />
+      <property name="_APPDOMAIN" value="domain-" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="TestSuite" id="1-1091" name="GPConnect" fullname="GPConnect" runstate="Runnable" testcasecount="76" result="Failed" site="Child" start-time="2025-09-25 11:00:55Z" end-time="2025-09-25 11:01:02Z" duration="6.960508" total="17" passed="10" failed="7" warnings="0" inconclusive="0" skipped="0" asserts="0">
+      <properties />
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1-1092" name="Provider" fullname="GPConnect.Provider" runstate="Runnable" testcasecount="76" result="Failed" site="Child" start-time="2025-09-25 11:00:55Z" end-time="2025-09-25 11:01:02Z" duration="6.959056" total="17" passed="10" failed="7" warnings="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1-1093" name="AcceptanceTests" fullname="GPConnect.Provider.AcceptanceTests" runstate="Runnable" testcasecount="76" result="Failed" site="Child" start-time="2025-09-25 11:00:55Z" end-time="2025-09-25 11:01:02Z" duration="6.958959" total="17" passed="10" failed="7" warnings="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1-1000" name="StructuredAllergiesFeature" fullname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature" classname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature" runstate="Runnable" testcasecount="36" result="Failed" site="Child" start-time="2025-09-25 11:00:55Z" end-time="2025-09-25 11:00:59Z" duration="3.636113" total="7" passed="0" failed="7" warnings="0" inconclusive="0" skipped="0" asserts="0">
+            <properties>
+              <property name="Description" value="StructuredAllergies" />
+              <property name="Category" value="Structured" />
+              <property name="Category" value="StructuredAllergies" />
+              <property name="Category" value="1.5.0-Full-Pack" />
+            </properties>
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <output><![CDATA[-> Loading plugin C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\bin\Debug\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
+-> Using default config
+]]></output>
+            <test-suite type="ParameterizedMethod" id="1-1008" name="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated" fullname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated" classname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature" runstate="Runnable" testcasecount="7" result="Failed" site="Child" start-time="2025-09-25 11:00:56Z" end-time="2025-09-25 11:00:59Z" duration="3.049546" total="7" passed="0" failed="7" warnings="0" inconclusive="0" skipped="0" asserts="0">
+              <properties>
+                <property name="Description" value="Retrieve the allergy structured record section for a patient including resolved allergies no problems associated" />
+                <property name="Category" value="Wiremock" />
+              </properties>
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1-1001" name="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(&quot;patient3&quot;,null)" fullname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(&quot;patient3&quot;,null)" methodname="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated" classname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature" runstate="Runnable" seed="1206575993" result="Failed" label="Error" start-time="2025-09-25 11:00:56Z" end-time="2025-09-25 11:00:58Z" duration="2.202023" asserts="0">
+                <properties />
+                <failure>
+                  <message><![CDATA[Shouldly.ShouldAssertException : _httpContext.HttpResponse.StatusCode
+    should be
+HttpStatusCode.OK
+    but was
+HttpStatusCode.NotFound]]></message>
+                  <stack-trace><![CDATA[   at Shouldly.ShouldlyCoreExtensions.AssertAwesomely[T](T actual, Func`2 specifiedConstraint, Object originalActual, Object originalExpected, Func`1 customMessage, String shouldlyMethod)
+   at Shouldly.ShouldBeTestExtensions.ShouldBe[T](T actual, T expected, Func`1 customMessage)
+   at Shouldly.ShouldBeTestExtensions.ShouldBe[T](T actual, T expected)
+   at GPConnect.Provider.AcceptanceTests.Steps.HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() in C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\Steps\HttpResponseSteps.cs:line 40
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration) in D:\a\1\s\TechTalk.SpecFlow\Bindings\BindingInvoker.cs:line 69
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 411
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 316
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep() in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 132
+   at GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.ScenarioCleanup()
+   at GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(String patient, String[] exampleTags) in C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\StructuredAllergies.feature:line 32]]></stack-trace>
+                </failure>
+                <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient3"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient3") (0.0s)
+And I add the allergies parameter with resolvedAllergies set to "true"
+-> done: StructuredAllergySteps.GivenIAddTheAllergiesParameterWithResolvedAllergiesSetTo("true") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (1.0s)
+Then the response status code should indicate success
+-> error: _httpContext.HttpResponse.StatusCode
+    should be
+HttpStatusCode.OK
+    but was
+HttpStatusCode.NotFound
+And the response should be a Bundle resource of type "collection"
+-> skipped because of previous errors
+And the response meta profile should be for "structured"
+-> skipped because of previous errors
+And the patient resource in the bundle should contain meta data profile and version id
+-> skipped because of previous errors
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> skipped because of previous errors
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> skipped because of previous errors
+And the AllergyIntolerance should be valid
+-> skipped because of previous errors
+And the Patient Id should be valid
+-> skipped because of previous errors
+And the Practitioner Id should be valid
+-> skipped because of previous errors
+And the Organization Id should be valid
+-> skipped because of previous errors
+And the Bundle should be valid for patient "patient3"
+-> skipped because of previous errors
+And check that the bundle does not contain any duplicate resources
+-> skipped because of previous errors
+And the Bundle should contain "2" lists
+-> skipped because of previous errors
+And the Bundle should contain a list with the title "Allergies and adverse reactions"
+-> skipped because of previous errors
+And the Bundle should contain a list with the title "Ended allergies"
+-> skipped because of previous errors
+And the Bundle should contain the correct number of allergies
+-> skipped because of previous errors
+And the Lists are valid for a patient with allergies
+-> skipped because of previous errors
+And check the response does not contain an operation outcome
+-> skipped because of previous errors
+And I Check There is No Problems Secondary Problems List
+-> skipped because of previous errors
+And I Check No Problem Resources are Included
+-> skipped because of previous errors
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='2ccb0a48-e126-4e22-90c3-de703853bcb0'
+Replaced Key='Ssp-TraceID' With Value='2ccb0a48-e126-4e22-90c3-de703853bcb0'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredAllergies
+
+Scenario: Retrieve the allergy structured record section for a patient including resolved allergies no problems associated
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='68012327-1b89-4b58-bd4b-061b8e78d5dc'
+Replaced Key='Ssp-TraceID' With Value='68012327-1b89-4b58-bd4b-061b8e78d5dc'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> 68012327-1b89-4b58-bd4b-061b8e78d5dc
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Date : Thu, 25 Sep 2025 11:00:59 GMT
+Header - Content-Type : text/plain; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+C:/Temp/2025-09-25T120055\Retrieve the allergy structured record section for a patient including resolved allergies no problems associated-1
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+Exception writing FhirContext to Output File
+Warning : Exception writing JSONResponse to Output File - May not be A JSON Response
+GetRequestHeaders Count='5'
+]]></output>
+              </test-case>
+              <test-case id="1-1002" name="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(&quot;patient4&quot;,null)" fullname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(&quot;patient4&quot;,null)" methodname="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated" classname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature" runstate="Runnable" seed="765018126" result="Failed" label="Error" start-time="2025-09-25 11:00:58Z" end-time="2025-09-25 11:00:58Z" duration="0.149171" asserts="0">
+                <properties />
+                <failure>
+                  <message><![CDATA[Shouldly.ShouldAssertException : _httpContext.HttpResponse.StatusCode
+    should be
+HttpStatusCode.OK
+    but was
+HttpStatusCode.NotFound]]></message>
+                  <stack-trace><![CDATA[   at Shouldly.ShouldlyCoreExtensions.AssertAwesomely[T](T actual, Func`2 specifiedConstraint, Object originalActual, Object originalExpected, Func`1 customMessage, String shouldlyMethod)
+   at Shouldly.ShouldBeTestExtensions.ShouldBe[T](T actual, T expected, Func`1 customMessage)
+   at Shouldly.ShouldBeTestExtensions.ShouldBe[T](T actual, T expected)
+   at GPConnect.Provider.AcceptanceTests.Steps.HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() in C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\Steps\HttpResponseSteps.cs:line 40
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration) in D:\a\1\s\TechTalk.SpecFlow\Bindings\BindingInvoker.cs:line 69
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 411
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 316
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep() in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 132
+   at GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.ScenarioCleanup()
+   at GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(String patient, String[] exampleTags) in C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\StructuredAllergies.feature:line 32]]></stack-trace>
+                </failure>
+                <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient4"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient4") (0.0s)
+And I add the allergies parameter with resolvedAllergies set to "true"
+-> done: StructuredAllergySteps.GivenIAddTheAllergiesParameterWithResolvedAllergiesSetTo("true") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.1s)
+Then the response status code should indicate success
+-> error: _httpContext.HttpResponse.StatusCode
+    should be
+HttpStatusCode.OK
+    but was
+HttpStatusCode.NotFound
+And the response should be a Bundle resource of type "collection"
+-> skipped because of previous errors
+And the response meta profile should be for "structured"
+-> skipped because of previous errors
+And the patient resource in the bundle should contain meta data profile and version id
+-> skipped because of previous errors
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> skipped because of previous errors
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> skipped because of previous errors
+And the AllergyIntolerance should be valid
+-> skipped because of previous errors
+And the Patient Id should be valid
+-> skipped because of previous errors
+And the Practitioner Id should be valid
+-> skipped because of previous errors
+And the Organization Id should be valid
+-> skipped because of previous errors
+And the Bundle should be valid for patient "patient4"
+-> skipped because of previous errors
+And check that the bundle does not contain any duplicate resources
+-> skipped because of previous errors
+And the Bundle should contain "2" lists
+-> skipped because of previous errors
+And the Bundle should contain a list with the title "Allergies and adverse reactions"
+-> skipped because of previous errors
+And the Bundle should contain a list with the title "Ended allergies"
+-> skipped because of previous errors
+And the Bundle should contain the correct number of allergies
+-> skipped because of previous errors
+And the Lists are valid for a patient with allergies
+-> skipped because of previous errors
+And check the response does not contain an operation outcome
+-> skipped because of previous errors
+And I Check There is No Problems Secondary Problems List
+-> skipped because of previous errors
+And I Check No Problem Resources are Included
+-> skipped because of previous errors
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='fbce13fe-4fc3-45ec-b89d-91da6ac7bec8'
+Replaced Key='Ssp-TraceID' With Value='fbce13fe-4fc3-45ec-b89d-91da6ac7bec8'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredAllergies
+
+Scenario: Retrieve the allergy structured record section for a patient including resolved allergies no problems associated
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='ac6ea783-68d7-4068-a728-0a72cee3e3eb'
+Replaced Key='Ssp-TraceID' With Value='ac6ea783-68d7-4068-a728-0a72cee3e3eb'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> ac6ea783-68d7-4068-a728-0a72cee3e3eb
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Date : Thu, 25 Sep 2025 11:01:00 GMT
+Header - Content-Type : text/plain; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+C:/Temp/2025-09-25T120055\Retrieve the allergy structured record section for a patient including resolved allergies no problems associated-2
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+Exception writing FhirContext to Output File
+Warning : Exception writing JSONResponse to Output File - May not be A JSON Response
+GetRequestHeaders Count='5'
+]]></output>
+              </test-case>
+              <test-case id="1-1003" name="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(&quot;patient6&quot;,null)" fullname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(&quot;patient6&quot;,null)" methodname="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated" classname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature" runstate="Runnable" seed="726060883" result="Failed" label="Error" start-time="2025-09-25 11:00:58Z" end-time="2025-09-25 11:00:58Z" duration="0.106667" asserts="0">
+                <properties />
+                <failure>
+                  <message><![CDATA[Shouldly.ShouldAssertException : _httpContext.HttpResponse.StatusCode
+    should be
+HttpStatusCode.OK
+    but was
+HttpStatusCode.NotFound]]></message>
+                  <stack-trace><![CDATA[   at Shouldly.ShouldlyCoreExtensions.AssertAwesomely[T](T actual, Func`2 specifiedConstraint, Object originalActual, Object originalExpected, Func`1 customMessage, String shouldlyMethod)
+   at Shouldly.ShouldBeTestExtensions.ShouldBe[T](T actual, T expected, Func`1 customMessage)
+   at Shouldly.ShouldBeTestExtensions.ShouldBe[T](T actual, T expected)
+   at GPConnect.Provider.AcceptanceTests.Steps.HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() in C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\Steps\HttpResponseSteps.cs:line 40
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration) in D:\a\1\s\TechTalk.SpecFlow\Bindings\BindingInvoker.cs:line 69
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 411
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 316
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep() in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 132
+   at GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.ScenarioCleanup()
+   at GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(String patient, String[] exampleTags) in C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\StructuredAllergies.feature:line 32]]></stack-trace>
+                </failure>
+                <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient6"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient6") (0.0s)
+And I add the allergies parameter with resolvedAllergies set to "true"
+-> done: StructuredAllergySteps.GivenIAddTheAllergiesParameterWithResolvedAllergiesSetTo("true") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.1s)
+Then the response status code should indicate success
+-> error: _httpContext.HttpResponse.StatusCode
+    should be
+HttpStatusCode.OK
+    but was
+HttpStatusCode.NotFound
+And the response should be a Bundle resource of type "collection"
+-> skipped because of previous errors
+And the response meta profile should be for "structured"
+-> skipped because of previous errors
+And the patient resource in the bundle should contain meta data profile and version id
+-> skipped because of previous errors
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> skipped because of previous errors
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> skipped because of previous errors
+And the AllergyIntolerance should be valid
+-> skipped because of previous errors
+And the Patient Id should be valid
+-> skipped because of previous errors
+And the Practitioner Id should be valid
+-> skipped because of previous errors
+And the Organization Id should be valid
+-> skipped because of previous errors
+And the Bundle should be valid for patient "patient6"
+-> skipped because of previous errors
+And check that the bundle does not contain any duplicate resources
+-> skipped because of previous errors
+And the Bundle should contain "2" lists
+-> skipped because of previous errors
+And the Bundle should contain a list with the title "Allergies and adverse reactions"
+-> skipped because of previous errors
+And the Bundle should contain a list with the title "Ended allergies"
+-> skipped because of previous errors
+And the Bundle should contain the correct number of allergies
+-> skipped because of previous errors
+And the Lists are valid for a patient with allergies
+-> skipped because of previous errors
+And check the response does not contain an operation outcome
+-> skipped because of previous errors
+And I Check There is No Problems Secondary Problems List
+-> skipped because of previous errors
+And I Check No Problem Resources are Included
+-> skipped because of previous errors
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='5076a012-bc37-4a48-bc7d-451304472272'
+Replaced Key='Ssp-TraceID' With Value='5076a012-bc37-4a48-bc7d-451304472272'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredAllergies
+
+Scenario: Retrieve the allergy structured record section for a patient including resolved allergies no problems associated
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='3c76f042-160a-4db4-8317-eaf721a6a70e'
+Replaced Key='Ssp-TraceID' With Value='3c76f042-160a-4db4-8317-eaf721a6a70e'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> 3c76f042-160a-4db4-8317-eaf721a6a70e
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Date : Thu, 25 Sep 2025 11:01:00 GMT
+Header - Content-Type : text/plain; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+C:/Temp/2025-09-25T120055\Retrieve the allergy structured record section for a patient including resolved allergies no problems associated-3
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+Exception writing FhirContext to Output File
+Warning : Exception writing JSONResponse to Output File - May not be A JSON Response
+GetRequestHeaders Count='5'
+]]></output>
+              </test-case>
+              <test-case id="1-1004" name="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(&quot;patient7&quot;,null)" fullname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(&quot;patient7&quot;,null)" methodname="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated" classname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature" runstate="Runnable" seed="391457454" result="Failed" label="Error" start-time="2025-09-25 11:00:58Z" end-time="2025-09-25 11:00:58Z" duration="0.203739" asserts="0">
+                <properties />
+                <failure>
+                  <message><![CDATA[Shouldly.ShouldAssertException : _httpContext.HttpResponse.StatusCode
+    should be
+HttpStatusCode.OK
+    but was
+HttpStatusCode.NotFound]]></message>
+                  <stack-trace><![CDATA[   at Shouldly.ShouldlyCoreExtensions.AssertAwesomely[T](T actual, Func`2 specifiedConstraint, Object originalActual, Object originalExpected, Func`1 customMessage, String shouldlyMethod)
+   at Shouldly.ShouldBeTestExtensions.ShouldBe[T](T actual, T expected, Func`1 customMessage)
+   at Shouldly.ShouldBeTestExtensions.ShouldBe[T](T actual, T expected)
+   at GPConnect.Provider.AcceptanceTests.Steps.HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() in C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\Steps\HttpResponseSteps.cs:line 40
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration) in D:\a\1\s\TechTalk.SpecFlow\Bindings\BindingInvoker.cs:line 69
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 411
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 316
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep() in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 132
+   at GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.ScenarioCleanup()
+   at GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(String patient, String[] exampleTags) in C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\StructuredAllergies.feature:line 32]]></stack-trace>
+                </failure>
+                <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient7"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient7") (0.0s)
+And I add the allergies parameter with resolvedAllergies set to "true"
+-> done: StructuredAllergySteps.GivenIAddTheAllergiesParameterWithResolvedAllergiesSetTo("true") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.2s)
+Then the response status code should indicate success
+-> error: _httpContext.HttpResponse.StatusCode
+    should be
+HttpStatusCode.OK
+    but was
+HttpStatusCode.NotFound
+And the response should be a Bundle resource of type "collection"
+-> skipped because of previous errors
+And the response meta profile should be for "structured"
+-> skipped because of previous errors
+And the patient resource in the bundle should contain meta data profile and version id
+-> skipped because of previous errors
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> skipped because of previous errors
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> skipped because of previous errors
+And the AllergyIntolerance should be valid
+-> skipped because of previous errors
+And the Patient Id should be valid
+-> skipped because of previous errors
+And the Practitioner Id should be valid
+-> skipped because of previous errors
+And the Organization Id should be valid
+-> skipped because of previous errors
+And the Bundle should be valid for patient "patient7"
+-> skipped because of previous errors
+And check that the bundle does not contain any duplicate resources
+-> skipped because of previous errors
+And the Bundle should contain "2" lists
+-> skipped because of previous errors
+And the Bundle should contain a list with the title "Allergies and adverse reactions"
+-> skipped because of previous errors
+And the Bundle should contain a list with the title "Ended allergies"
+-> skipped because of previous errors
+And the Bundle should contain the correct number of allergies
+-> skipped because of previous errors
+And the Lists are valid for a patient with allergies
+-> skipped because of previous errors
+And check the response does not contain an operation outcome
+-> skipped because of previous errors
+And I Check There is No Problems Secondary Problems List
+-> skipped because of previous errors
+And I Check No Problem Resources are Included
+-> skipped because of previous errors
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='89e3a78c-9592-4222-8401-07f22730601b'
+Replaced Key='Ssp-TraceID' With Value='89e3a78c-9592-4222-8401-07f22730601b'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredAllergies
+
+Scenario: Retrieve the allergy structured record section for a patient including resolved allergies no problems associated
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='90f89013-4008-4424-9b54-f7b70b3af7d8'
+Replaced Key='Ssp-TraceID' With Value='90f89013-4008-4424-9b54-f7b70b3af7d8'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> 90f89013-4008-4424-9b54-f7b70b3af7d8
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Date : Thu, 25 Sep 2025 11:01:00 GMT
+Header - Content-Type : text/plain; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+C:/Temp/2025-09-25T120055\Retrieve the allergy structured record section for a patient including resolved allergies no problems associated-4
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+Exception writing FhirContext to Output File
+Warning : Exception writing JSONResponse to Output File - May not be A JSON Response
+GetRequestHeaders Count='5'
+]]></output>
+              </test-case>
+              <test-case id="1-1005" name="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(&quot;patient8&quot;,null)" fullname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(&quot;patient8&quot;,null)" methodname="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated" classname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature" runstate="Runnable" seed="1332941397" result="Failed" label="Error" start-time="2025-09-25 11:00:58Z" end-time="2025-09-25 11:00:58Z" duration="0.135313" asserts="0">
+                <properties />
+                <failure>
+                  <message><![CDATA[Shouldly.ShouldAssertException : _httpContext.HttpResponse.StatusCode
+    should be
+HttpStatusCode.OK
+    but was
+HttpStatusCode.NotFound]]></message>
+                  <stack-trace><![CDATA[   at Shouldly.ShouldlyCoreExtensions.AssertAwesomely[T](T actual, Func`2 specifiedConstraint, Object originalActual, Object originalExpected, Func`1 customMessage, String shouldlyMethod)
+   at Shouldly.ShouldBeTestExtensions.ShouldBe[T](T actual, T expected, Func`1 customMessage)
+   at Shouldly.ShouldBeTestExtensions.ShouldBe[T](T actual, T expected)
+   at GPConnect.Provider.AcceptanceTests.Steps.HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() in C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\Steps\HttpResponseSteps.cs:line 40
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration) in D:\a\1\s\TechTalk.SpecFlow\Bindings\BindingInvoker.cs:line 69
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 411
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 316
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep() in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 132
+   at GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.ScenarioCleanup()
+   at GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(String patient, String[] exampleTags) in C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\StructuredAllergies.feature:line 32]]></stack-trace>
+                </failure>
+                <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient8"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient8") (0.0s)
+And I add the allergies parameter with resolvedAllergies set to "true"
+-> done: StructuredAllergySteps.GivenIAddTheAllergiesParameterWithResolvedAllergiesSetTo("true") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.1s)
+Then the response status code should indicate success
+-> error: _httpContext.HttpResponse.StatusCode
+    should be
+HttpStatusCode.OK
+    but was
+HttpStatusCode.NotFound
+And the response should be a Bundle resource of type "collection"
+-> skipped because of previous errors
+And the response meta profile should be for "structured"
+-> skipped because of previous errors
+And the patient resource in the bundle should contain meta data profile and version id
+-> skipped because of previous errors
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> skipped because of previous errors
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> skipped because of previous errors
+And the AllergyIntolerance should be valid
+-> skipped because of previous errors
+And the Patient Id should be valid
+-> skipped because of previous errors
+And the Practitioner Id should be valid
+-> skipped because of previous errors
+And the Organization Id should be valid
+-> skipped because of previous errors
+And the Bundle should be valid for patient "patient8"
+-> skipped because of previous errors
+And check that the bundle does not contain any duplicate resources
+-> skipped because of previous errors
+And the Bundle should contain "2" lists
+-> skipped because of previous errors
+And the Bundle should contain a list with the title "Allergies and adverse reactions"
+-> skipped because of previous errors
+And the Bundle should contain a list with the title "Ended allergies"
+-> skipped because of previous errors
+And the Bundle should contain the correct number of allergies
+-> skipped because of previous errors
+And the Lists are valid for a patient with allergies
+-> skipped because of previous errors
+And check the response does not contain an operation outcome
+-> skipped because of previous errors
+And I Check There is No Problems Secondary Problems List
+-> skipped because of previous errors
+And I Check No Problem Resources are Included
+-> skipped because of previous errors
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='9ca05fcc-23ce-44cf-893b-61c3bd5cc46c'
+Replaced Key='Ssp-TraceID' With Value='9ca05fcc-23ce-44cf-893b-61c3bd5cc46c'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredAllergies
+
+Scenario: Retrieve the allergy structured record section for a patient including resolved allergies no problems associated
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='186f39bf-7c53-4d4c-9d47-b8c9cd692ac5'
+Replaced Key='Ssp-TraceID' With Value='186f39bf-7c53-4d4c-9d47-b8c9cd692ac5'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> 186f39bf-7c53-4d4c-9d47-b8c9cd692ac5
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Date : Thu, 25 Sep 2025 11:01:00 GMT
+Header - Content-Type : text/plain; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+C:/Temp/2025-09-25T120055\Retrieve the allergy structured record section for a patient including resolved allergies no problems associated-5
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+Exception writing FhirContext to Output File
+Warning : Exception writing JSONResponse to Output File - May not be A JSON Response
+GetRequestHeaders Count='5'
+]]></output>
+              </test-case>
+              <test-case id="1-1006" name="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(&quot;patient12&quot;,null)" fullname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(&quot;patient12&quot;,null)" methodname="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated" classname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature" runstate="Runnable" seed="1735256810" result="Failed" label="Error" start-time="2025-09-25 11:00:58Z" end-time="2025-09-25 11:00:58Z" duration="0.107966" asserts="0">
+                <properties />
+                <failure>
+                  <message><![CDATA[Shouldly.ShouldAssertException : _httpContext.HttpResponse.StatusCode
+    should be
+HttpStatusCode.OK
+    but was
+HttpStatusCode.NotFound]]></message>
+                  <stack-trace><![CDATA[   at Shouldly.ShouldlyCoreExtensions.AssertAwesomely[T](T actual, Func`2 specifiedConstraint, Object originalActual, Object originalExpected, Func`1 customMessage, String shouldlyMethod)
+   at Shouldly.ShouldBeTestExtensions.ShouldBe[T](T actual, T expected, Func`1 customMessage)
+   at Shouldly.ShouldBeTestExtensions.ShouldBe[T](T actual, T expected)
+   at GPConnect.Provider.AcceptanceTests.Steps.HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() in C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\Steps\HttpResponseSteps.cs:line 40
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration) in D:\a\1\s\TechTalk.SpecFlow\Bindings\BindingInvoker.cs:line 69
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 411
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 316
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep() in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 132
+   at GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.ScenarioCleanup()
+   at GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(String patient, String[] exampleTags) in C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\StructuredAllergies.feature:line 32]]></stack-trace>
+                </failure>
+                <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient12"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient12") (0.0s)
+And I add the allergies parameter with resolvedAllergies set to "true"
+-> done: StructuredAllergySteps.GivenIAddTheAllergiesParameterWithResolvedAllergiesSetTo("true") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.1s)
+Then the response status code should indicate success
+-> error: _httpContext.HttpResponse.StatusCode
+    should be
+HttpStatusCode.OK
+    but was
+HttpStatusCode.NotFound
+And the response should be a Bundle resource of type "collection"
+-> skipped because of previous errors
+And the response meta profile should be for "structured"
+-> skipped because of previous errors
+And the patient resource in the bundle should contain meta data profile and version id
+-> skipped because of previous errors
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> skipped because of previous errors
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> skipped because of previous errors
+And the AllergyIntolerance should be valid
+-> skipped because of previous errors
+And the Patient Id should be valid
+-> skipped because of previous errors
+And the Practitioner Id should be valid
+-> skipped because of previous errors
+And the Organization Id should be valid
+-> skipped because of previous errors
+And the Bundle should be valid for patient "patient12"
+-> skipped because of previous errors
+And check that the bundle does not contain any duplicate resources
+-> skipped because of previous errors
+And the Bundle should contain "2" lists
+-> skipped because of previous errors
+And the Bundle should contain a list with the title "Allergies and adverse reactions"
+-> skipped because of previous errors
+And the Bundle should contain a list with the title "Ended allergies"
+-> skipped because of previous errors
+And the Bundle should contain the correct number of allergies
+-> skipped because of previous errors
+And the Lists are valid for a patient with allergies
+-> skipped because of previous errors
+And check the response does not contain an operation outcome
+-> skipped because of previous errors
+And I Check There is No Problems Secondary Problems List
+-> skipped because of previous errors
+And I Check No Problem Resources are Included
+-> skipped because of previous errors
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='8ce168d9-93cf-40c5-b8e4-81e4cb6d7fcc'
+Replaced Key='Ssp-TraceID' With Value='8ce168d9-93cf-40c5-b8e4-81e4cb6d7fcc'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredAllergies
+
+Scenario: Retrieve the allergy structured record section for a patient including resolved allergies no problems associated
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='36057722-0f7e-43a1-9ce1-b83628e899eb'
+Replaced Key='Ssp-TraceID' With Value='36057722-0f7e-43a1-9ce1-b83628e899eb'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> 36057722-0f7e-43a1-9ce1-b83628e899eb
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Date : Thu, 25 Sep 2025 11:01:00 GMT
+Header - Content-Type : text/plain; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+C:/Temp/2025-09-25T120055\Retrieve the allergy structured record section for a patient including resolved allergies no problems associated-6
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+Exception writing FhirContext to Output File
+Warning : Exception writing JSONResponse to Output File - May not be A JSON Response
+GetRequestHeaders Count='5'
+]]></output>
+              </test-case>
+              <test-case id="1-1007" name="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(&quot;patient13&quot;,null)" fullname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(&quot;patient13&quot;,null)" methodname="RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated" classname="GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature" runstate="Runnable" seed="1690988520" result="Failed" label="Error" start-time="2025-09-25 11:00:58Z" end-time="2025-09-25 11:00:59Z" duration="0.138810" asserts="0">
+                <properties />
+                <failure>
+                  <message><![CDATA[Shouldly.ShouldAssertException : _httpContext.HttpResponse.StatusCode
+    should be
+HttpStatusCode.OK
+    but was
+HttpStatusCode.NotFound]]></message>
+                  <stack-trace><![CDATA[   at Shouldly.ShouldlyCoreExtensions.AssertAwesomely[T](T actual, Func`2 specifiedConstraint, Object originalActual, Object originalExpected, Func`1 customMessage, String shouldlyMethod)
+   at Shouldly.ShouldBeTestExtensions.ShouldBe[T](T actual, T expected, Func`1 customMessage)
+   at Shouldly.ShouldBeTestExtensions.ShouldBe[T](T actual, T expected)
+   at GPConnect.Provider.AcceptanceTests.Steps.HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() in C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\Steps\HttpResponseSteps.cs:line 40
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration) in D:\a\1\s\TechTalk.SpecFlow\Bindings\BindingInvoker.cs:line 69
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 411
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance) in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 316
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep() in D:\a\1\s\TechTalk.SpecFlow\Infrastructure\TestExecutionEngine.cs:line 132
+   at GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.ScenarioCleanup()
+   at GPConnect.Provider.AcceptanceTests.StructuredAllergiesFeature.RetrieveTheAllergyStructuredRecordSectionForAPatientIncludingResolvedAllergiesNoProblemsAssociated(String patient, String[] exampleTags) in C:\Users\david.wolfson\Projects\CDAPI\gpconnect-provider-testing\GPConnect.Provider.AcceptanceTests\StructuredAllergies.feature:line 32]]></stack-trace>
+                </failure>
+                <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient13"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient13") (0.0s)
+And I add the allergies parameter with resolvedAllergies set to "true"
+-> done: StructuredAllergySteps.GivenIAddTheAllergiesParameterWithResolvedAllergiesSetTo("true") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.1s)
+Then the response status code should indicate success
+-> error: _httpContext.HttpResponse.StatusCode
+    should be
+HttpStatusCode.OK
+    but was
+HttpStatusCode.NotFound
+And the response should be a Bundle resource of type "collection"
+-> skipped because of previous errors
+And the response meta profile should be for "structured"
+-> skipped because of previous errors
+And the patient resource in the bundle should contain meta data profile and version id
+-> skipped because of previous errors
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> skipped because of previous errors
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> skipped because of previous errors
+And the AllergyIntolerance should be valid
+-> skipped because of previous errors
+And the Patient Id should be valid
+-> skipped because of previous errors
+And the Practitioner Id should be valid
+-> skipped because of previous errors
+And the Organization Id should be valid
+-> skipped because of previous errors
+And the Bundle should be valid for patient "patient13"
+-> skipped because of previous errors
+And check that the bundle does not contain any duplicate resources
+-> skipped because of previous errors
+And the Bundle should contain "2" lists
+-> skipped because of previous errors
+And the Bundle should contain a list with the title "Allergies and adverse reactions"
+-> skipped because of previous errors
+And the Bundle should contain a list with the title "Ended allergies"
+-> skipped because of previous errors
+And the Bundle should contain the correct number of allergies
+-> skipped because of previous errors
+And the Lists are valid for a patient with allergies
+-> skipped because of previous errors
+And check the response does not contain an operation outcome
+-> skipped because of previous errors
+And I Check There is No Problems Secondary Problems List
+-> skipped because of previous errors
+And I Check No Problem Resources are Included
+-> skipped because of previous errors
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='b3c0acb1-f1c1-4143-b830-b618e913d1dd'
+Replaced Key='Ssp-TraceID' With Value='b3c0acb1-f1c1-4143-b830-b618e913d1dd'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredAllergies
+
+Scenario: Retrieve the allergy structured record section for a patient including resolved allergies no problems associated
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='847f8e44-c9cc-4ca5-8038-2b2603f4373b'
+Replaced Key='Ssp-TraceID' With Value='847f8e44-c9cc-4ca5-8038-2b2603f4373b'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> 847f8e44-c9cc-4ca5-8038-2b2603f4373b
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Date : Thu, 25 Sep 2025 11:01:01 GMT
+Header - Content-Type : text/plain; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+C:/Temp/2025-09-25T120055\Retrieve the allergy structured record section for a patient including resolved allergies no problems associated-7
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+Exception writing FhirContext to Output File
+Warning : Exception writing JSONResponse to Output File - May not be A JSON Response
+GetRequestHeaders Count='5'
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+          <test-suite type="TestFixture" id="1-1042" name="StructuredMedicationsFeature" fullname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature" classname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature" runstate="Runnable" testcasecount="40" result="Passed" start-time="2025-09-25 11:00:59Z" end-time="2025-09-25 11:01:02Z" duration="3.315550" total="10" passed="10" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+            <properties>
+              <property name="Description" value="StructuredMedications" />
+              <property name="Category" value="Structured" />
+              <property name="Category" value="StructuredMedications" />
+              <property name="Category" value="1.5.0-Full-Pack" />
+            </properties>
+            <test-suite type="ParameterizedMethod" id="1-1053" name="RetrieveTheMedicationStructuredRecordForAPatientWithNoProblemsAndExcludingPrescriptionIssues" fullname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature.RetrieveTheMedicationStructuredRecordForAPatientWithNoProblemsAndExcludingPrescriptionIssues" classname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature" runstate="Runnable" testcasecount="3" result="Passed" start-time="2025-09-25 11:00:59Z" end-time="2025-09-25 11:00:59Z" duration="0.604882" total="3" passed="3" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+              <properties>
+                <property name="Description" value="Retrieve the medication structured record for a patient with no problems and excluding prescription issues" />
+                <property name="Category" value="Wiremock" />
+              </properties>
+              <test-case id="1-1050" name="RetrieveTheMedicationStructuredRecordForAPatientWithNoProblemsAndExcludingPrescriptionIssues(&quot;patient3&quot;,null)" fullname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature.RetrieveTheMedicationStructuredRecordForAPatientWithNoProblemsAndExcludingPrescriptionIssues(&quot;patient3&quot;,null)" methodname="RetrieveTheMedicationStructuredRecordForAPatientWithNoProblemsAndExcludingPrescriptionIssues" classname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature" runstate="Runnable" seed="414197644" result="Passed" start-time="2025-09-25 11:00:59Z" end-time="2025-09-25 11:00:59Z" duration="0.307703" asserts="0">
+                <properties />
+                <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient3"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient3") (0.0s)
+And I add the medication parameter with includePrescriptionIssues set to "false"
+-> done: StructuredMedicationSteps.GivenIAddTheMedicationsParameterWithIncludePrescriptionIssuesSetTo("false") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.2s)
+Then the response status code should indicate success
+-> done: HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() (0.0s)
+And the response should be a Bundle resource of type "collection"
+-> done: BundleSteps.ThenTheResponseShouldBeABundleResourceOfType("collection") (0.0s)
+And the response meta profile should be for "structured"
+-> done: BundleSteps.ThenTheResponseMetaProfileShouldBe("structured") (0.0s)
+And the patient resource in the bundle should contain meta data profile and version id
+-> done: BundleSteps.ThenThePatientResourceInTheBundleShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAPractitionerResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAnOrganizationResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And check that the bundle does not contain any duplicate resources
+-> done: BundleSteps.ThenCheckThatTheBundleDoesNotContainAnyDuplicateResources() (0.0s)
+And the Bundle should contain "1" lists
+-> done: StructuredAllergySteps.TheBundleShouldContainLists(1) (0.0s)
+And the Medications should be valid
+-> done: StructuredMedicationSteps.TheMedicationsShouldBeValid() (0.0s)
+And the Medication Statements should be valid
+-> done: StructuredMedicationSteps.TheMedicationStatementsShouldBeValid() (0.0s)
+And the Medication Requests should be valid
+-> done: StructuredMedicationSteps.TheMedicationRequestsShouldBeValid() (0.0s)
+And the List of MedicationStatements should be valid
+-> done: StructuredMedicationSteps.TheListOfMedicationStatementsShouldBeValid() (0.0s)
+And the Medication Requests should not contain any issues
+-> done: StructuredMedicationSteps.TheMedicationRequestsShouldNotContainAnyIssues() (0.0s)
+And the Patient Id should be valid
+-> done: PatientSteps.ThePatienIdShouldBeValid() (0.0s)
+And the Practitioner Id should be valid
+-> done: PractitionerSteps.ThePractitionerIdShouldBeValid() (0.0s)
+And the Organization Id should be valid
+-> done: OrganizationSteps.TheOrganizationIdShouldBeValid() (0.0s)
+And check the response does not contain an operation outcome
+-> done: StructuredMultipleSteps.checkTheResponseDoesNotContainAnOperationalOutcome() (0.0s)
+And I Check There is No Problems Secondary Problems List
+-> done: StructuredProblemsSteps.ThenICheckThereisNoSecondaryProblemsList() (0.0s)
+And I Check No Problem Resources are Included
+-> done: StructuredProblemsSteps.ThenICheckNoProblemResourcesareIncluded() (0.0s)
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='9f6addba-1de3-48ff-baa0-e66fb839743c'
+Replaced Key='Ssp-TraceID' With Value='9f6addba-1de3-48ff-baa0-e66fb839743c'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredMedications
+
+Scenario: Retrieve the medication structured record for a patient with no problems and excluding prescription issues
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='fef5e2a4-c361-4099-b5da-e9974cd630ad'
+Replaced Key='Ssp-TraceID' With Value='fef5e2a4-c361-4099-b5da-e9974cd630ad'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> fef5e2a4-c361-4099-b5da-e9974cd630ad
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Strict-Transport-Security : max-age=31536000
+Header - Matched-Stub-Id : 0a207020-0d26-4fe3-80df-e7a1ac6e59d2
+Header - Matched-Stub-Name : Retrieve the medication structured record for a patient with no problems and excluding prescription issues-1
+Header - Cache-Control : no-store
+Header - Date : Thu, 25 Sep 2025 11:01:01 GMT
+Header - Location : https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir/Bundle/187d5a16-6292-483f-8f7b-74e86ee246d6
+Header - Server : nginx
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+No operation Outcome in the response
+INFO : NO Secondary Problem List has been included in the bundle
+INFO : NO Problems have been included in the bundle
+C:/Temp/2025-09-25T120055\Retrieve the medication structured record for a patient with no problems and excluding prescription issues-1
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+GetRequestHeaders Count='5'
+]]></output>
+              </test-case>
+              <test-case id="1-1051" name="RetrieveTheMedicationStructuredRecordForAPatientWithNoProblemsAndExcludingPrescriptionIssues(&quot;patient5&quot;,null)" fullname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature.RetrieveTheMedicationStructuredRecordForAPatientWithNoProblemsAndExcludingPrescriptionIssues(&quot;patient5&quot;,null)" methodname="RetrieveTheMedicationStructuredRecordForAPatientWithNoProblemsAndExcludingPrescriptionIssues" classname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature" runstate="Runnable" seed="1762117370" result="Passed" start-time="2025-09-25 11:00:59Z" end-time="2025-09-25 11:00:59Z" duration="0.140446" asserts="0">
+                <properties />
+                <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient5"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient5") (0.0s)
+And I add the medication parameter with includePrescriptionIssues set to "false"
+-> done: StructuredMedicationSteps.GivenIAddTheMedicationsParameterWithIncludePrescriptionIssuesSetTo("false") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.1s)
+Then the response status code should indicate success
+-> done: HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() (0.0s)
+And the response should be a Bundle resource of type "collection"
+-> done: BundleSteps.ThenTheResponseShouldBeABundleResourceOfType("collection") (0.0s)
+And the response meta profile should be for "structured"
+-> done: BundleSteps.ThenTheResponseMetaProfileShouldBe("structured") (0.0s)
+And the patient resource in the bundle should contain meta data profile and version id
+-> done: BundleSteps.ThenThePatientResourceInTheBundleShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAPractitionerResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAnOrganizationResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And check that the bundle does not contain any duplicate resources
+-> done: BundleSteps.ThenCheckThatTheBundleDoesNotContainAnyDuplicateResources() (0.0s)
+And the Bundle should contain "1" lists
+-> done: StructuredAllergySteps.TheBundleShouldContainLists(1) (0.0s)
+And the Medications should be valid
+-> done: StructuredMedicationSteps.TheMedicationsShouldBeValid() (0.0s)
+And the Medication Statements should be valid
+-> done: StructuredMedicationSteps.TheMedicationStatementsShouldBeValid() (0.0s)
+And the Medication Requests should be valid
+-> done: StructuredMedicationSteps.TheMedicationRequestsShouldBeValid() (0.0s)
+And the List of MedicationStatements should be valid
+-> done: StructuredMedicationSteps.TheListOfMedicationStatementsShouldBeValid() (0.0s)
+And the Medication Requests should not contain any issues
+-> done: StructuredMedicationSteps.TheMedicationRequestsShouldNotContainAnyIssues() (0.0s)
+And the Patient Id should be valid
+-> done: PatientSteps.ThePatienIdShouldBeValid() (0.0s)
+And the Practitioner Id should be valid
+-> done: PractitionerSteps.ThePractitionerIdShouldBeValid() (0.0s)
+And the Organization Id should be valid
+-> done: OrganizationSteps.TheOrganizationIdShouldBeValid() (0.0s)
+And check the response does not contain an operation outcome
+-> done: StructuredMultipleSteps.checkTheResponseDoesNotContainAnOperationalOutcome() (0.0s)
+And I Check There is No Problems Secondary Problems List
+-> done: StructuredProblemsSteps.ThenICheckThereisNoSecondaryProblemsList() (0.0s)
+And I Check No Problem Resources are Included
+-> done: StructuredProblemsSteps.ThenICheckNoProblemResourcesareIncluded() (0.0s)
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='72a2c891-70e1-4211-b725-79b2f914c24c'
+Replaced Key='Ssp-TraceID' With Value='72a2c891-70e1-4211-b725-79b2f914c24c'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredMedications
+
+Scenario: Retrieve the medication structured record for a patient with no problems and excluding prescription issues
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='723d9e75-0f7a-4758-8d40-0b40b97219df'
+Replaced Key='Ssp-TraceID' With Value='723d9e75-0f7a-4758-8d40-0b40b97219df'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> 723d9e75-0f7a-4758-8d40-0b40b97219df
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Strict-Transport-Security : max-age=31536000
+Header - Matched-Stub-Id : 1559eb20-7027-4c36-a53e-ca93c5890007
+Header - Matched-Stub-Name : Retrieve the medication structured record for a patient with no problems and excluding prescription issues-2
+Header - Cache-Control : no-store
+Header - Date : Thu, 25 Sep 2025 11:01:01 GMT
+Header - Location : https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir/Bundle/34715726-c867-45d3-860a-4b60d15375b9
+Header - Server : nginx
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+No operation Outcome in the response
+INFO : NO Secondary Problem List has been included in the bundle
+INFO : NO Problems have been included in the bundle
+C:/Temp/2025-09-25T120055\Retrieve the medication structured record for a patient with no problems and excluding prescription issues-2
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+GetRequestHeaders Count='5'
+]]></output>
+              </test-case>
+              <test-case id="1-1052" name="RetrieveTheMedicationStructuredRecordForAPatientWithNoProblemsAndExcludingPrescriptionIssues(&quot;patient12&quot;,null)" fullname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature.RetrieveTheMedicationStructuredRecordForAPatientWithNoProblemsAndExcludingPrescriptionIssues(&quot;patient12&quot;,null)" methodname="RetrieveTheMedicationStructuredRecordForAPatientWithNoProblemsAndExcludingPrescriptionIssues" classname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature" runstate="Runnable" seed="2106612297" result="Passed" start-time="2025-09-25 11:00:59Z" end-time="2025-09-25 11:00:59Z" duration="0.155935" asserts="0">
+                <properties />
+                <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient12"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient12") (0.0s)
+And I add the medication parameter with includePrescriptionIssues set to "false"
+-> done: StructuredMedicationSteps.GivenIAddTheMedicationsParameterWithIncludePrescriptionIssuesSetTo("false") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.1s)
+Then the response status code should indicate success
+-> done: HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() (0.0s)
+And the response should be a Bundle resource of type "collection"
+-> done: BundleSteps.ThenTheResponseShouldBeABundleResourceOfType("collection") (0.0s)
+And the response meta profile should be for "structured"
+-> done: BundleSteps.ThenTheResponseMetaProfileShouldBe("structured") (0.0s)
+And the patient resource in the bundle should contain meta data profile and version id
+-> done: BundleSteps.ThenThePatientResourceInTheBundleShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAPractitionerResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAnOrganizationResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And check that the bundle does not contain any duplicate resources
+-> done: BundleSteps.ThenCheckThatTheBundleDoesNotContainAnyDuplicateResources() (0.0s)
+And the Bundle should contain "1" lists
+-> done: StructuredAllergySteps.TheBundleShouldContainLists(1) (0.0s)
+And the Medications should be valid
+-> done: StructuredMedicationSteps.TheMedicationsShouldBeValid() (0.0s)
+And the Medication Statements should be valid
+-> done: StructuredMedicationSteps.TheMedicationStatementsShouldBeValid() (0.0s)
+And the Medication Requests should be valid
+-> done: StructuredMedicationSteps.TheMedicationRequestsShouldBeValid() (0.0s)
+And the List of MedicationStatements should be valid
+-> done: StructuredMedicationSteps.TheListOfMedicationStatementsShouldBeValid() (0.0s)
+And the Medication Requests should not contain any issues
+-> done: StructuredMedicationSteps.TheMedicationRequestsShouldNotContainAnyIssues() (0.0s)
+And the Patient Id should be valid
+-> done: PatientSteps.ThePatienIdShouldBeValid() (0.0s)
+And the Practitioner Id should be valid
+-> done: PractitionerSteps.ThePractitionerIdShouldBeValid() (0.0s)
+And the Organization Id should be valid
+-> done: OrganizationSteps.TheOrganizationIdShouldBeValid() (0.0s)
+And check the response does not contain an operation outcome
+-> done: StructuredMultipleSteps.checkTheResponseDoesNotContainAnOperationalOutcome() (0.0s)
+And I Check There is No Problems Secondary Problems List
+-> done: StructuredProblemsSteps.ThenICheckThereisNoSecondaryProblemsList() (0.0s)
+And I Check No Problem Resources are Included
+-> done: StructuredProblemsSteps.ThenICheckNoProblemResourcesareIncluded() (0.0s)
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='8241a721-106c-435b-803b-38ae912ea9ce'
+Replaced Key='Ssp-TraceID' With Value='8241a721-106c-435b-803b-38ae912ea9ce'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredMedications
+
+Scenario: Retrieve the medication structured record for a patient with no problems and excluding prescription issues
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='bdd3ce5b-7ab0-4b45-b8af-c4b7aba2eae6'
+Replaced Key='Ssp-TraceID' With Value='bdd3ce5b-7ab0-4b45-b8af-c4b7aba2eae6'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> bdd3ce5b-7ab0-4b45-b8af-c4b7aba2eae6
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Strict-Transport-Security : max-age=31536000
+Header - Matched-Stub-Id : 2a45da0d-d0a8-4156-bb6b-00902d97f8c3
+Header - Matched-Stub-Name : Retrieve the medication structured record for a patient with no problems and excluding prescription issues-3
+Header - Cache-Control : no-store
+Header - Date : Thu, 25 Sep 2025 11:01:01 GMT
+Header - Location : https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir/Bundle/b577552b-0f86-4194-8036-f292305c7186
+Header - Server : nginx
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+No operation Outcome in the response
+INFO : NO Secondary Problem List has been included in the bundle
+INFO : NO Problems have been included in the bundle
+C:/Temp/2025-09-25T120055\Retrieve the medication structured record for a patient with no problems and excluding prescription issues-3
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+GetRequestHeaders Count='5'
+]]></output>
+              </test-case>
+            </test-suite>
+            <test-case id="1-1070" name="RetrieveTheMedicationStructuredRecordSectionForAPatientWithATimePeriod" fullname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature.RetrieveTheMedicationStructuredRecordSectionForAPatientWithATimePeriod" methodname="RetrieveTheMedicationStructuredRecordSectionForAPatientWithATimePeriod" classname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature" runstate="Runnable" seed="785470235" result="Passed" start-time="2025-09-25 11:00:59Z" end-time="2025-09-25 11:01:01Z" duration="1.874317" asserts="0">
+              <properties>
+                <property name="Description" value="Retrieve the medication structured record section for a patient with a timePeriod" />
+                <property name="Category" value="Wiremock" />
+              </properties>
+              <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient2"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient2") (0.0s)
+And I add the medications parameter to search from "3" years back
+-> done: StructuredMedicationSteps.GivenIAddTheMedicationsParameterToSearchFrom(3) (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.3s)
+Then the response status code should indicate success
+-> done: HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() (0.0s)
+And the response should be a Bundle resource of type "collection"
+-> done: BundleSteps.ThenTheResponseShouldBeABundleResourceOfType("collection") (0.0s)
+And the response meta profile should be for "structured"
+-> done: BundleSteps.ThenTheResponseMetaProfileShouldBe("structured") (0.0s)
+And the patient resource in the bundle should contain meta data profile and version id
+-> done: BundleSteps.ThenThePatientResourceInTheBundleShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAPractitionerResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAnOrganizationResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And the Medications should be valid
+-> done: StructuredMedicationSteps.TheMedicationsShouldBeValid() (0.0s)
+And the Medication Statements should be valid
+-> done: StructuredMedicationSteps.TheMedicationStatementsShouldBeValid() (0.0s)
+And the Medication Requests should be valid
+-> done: StructuredMedicationSteps.TheMedicationRequestsShouldBeValid() (0.0s)
+And the List of MedicationStatements should be valid
+-> done: StructuredMedicationSteps.TheListOfMedicationStatementsShouldBeValid() (1.6s)
+And the MedicationStatement EffectiveDate is Greater Than Search Date of "3" years ago
+-> done: StructuredMedicationSteps.TheMedicationStatementEffectiveDateIsGreaterThanSearchDate(3) (0.0s)
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='b3e92034-9ca1-46a7-ba01-566232297389'
+Replaced Key='Ssp-TraceID' With Value='b3e92034-9ca1-46a7-ba01-566232297389'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredMedications
+
+Scenario: Retrieve the medication structured record section for a patient with a timePeriod
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='353dd97e-eed7-46d2-9f07-8565aa8444c3'
+Replaced Key='Ssp-TraceID' With Value='353dd97e-eed7-46d2-9f07-8565aa8444c3'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> 353dd97e-eed7-46d2-9f07-8565aa8444c3
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Strict-Transport-Security : max-age=31536000
+Header - Matched-Stub-Id : 93f024cc-8d2d-4297-b2f3-b8074f715f96
+Header - Matched-Stub-Name : Retrieve the medication structured record section for a patient with a timePeriod-1
+Header - Cache-Control : no-store
+Header - Date : Thu, 25 Sep 2025 11:01:01 GMT
+Header - Location : https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir/Bundle/74d4bc8d-1731-488d-b648-bfa9aafaa416
+Header - Server : nginx
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+C:/Temp/2025-09-25T120055\Retrieve the medication structured record section for a patient with a timePeriod-1
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+GetRequestHeaders Count='5'
+]]></output>
+            </test-case>
+            <test-case id="1-1080" name="RetrieveTheMedicationStructuredRecordSectionForAPatientWithMedicationPrescribedElsewhere" fullname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature.RetrieveTheMedicationStructuredRecordSectionForAPatientWithMedicationPrescribedElsewhere" methodname="RetrieveTheMedicationStructuredRecordSectionForAPatientWithMedicationPrescribedElsewhere" classname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature" runstate="Runnable" seed="1902154749" result="Passed" start-time="2025-09-25 11:01:01Z" end-time="2025-09-25 11:01:01Z" duration="0.136266" asserts="0">
+              <properties>
+                <property name="Description" value="Retrieve the medication structured record section for a patient with medication prescribed elsewhere" />
+                <property name="Category" value="Wiremock" />
+              </properties>
+              <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient12"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient12") (0.0s)
+And I add the medication parameter with includePrescriptionIssues set to "true"
+-> done: StructuredMedicationSteps.GivenIAddTheMedicationsParameterWithIncludePrescriptionIssuesSetTo("true") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.1s)
+Then the response status code should indicate success
+-> done: HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() (0.0s)
+And the response should be a Bundle resource of type "collection"
+-> done: BundleSteps.ThenTheResponseShouldBeABundleResourceOfType("collection") (0.0s)
+And the response meta profile should be for "structured"
+-> done: BundleSteps.ThenTheResponseMetaProfileShouldBe("structured") (0.0s)
+And the patient resource in the bundle should contain meta data profile and version id
+-> done: BundleSteps.ThenThePatientResourceInTheBundleShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAPractitionerResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAnOrganizationResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And the Bundle should contain "1" lists
+-> done: StructuredAllergySteps.TheBundleShouldContainLists(1) (0.0s)
+And the Medications should be valid
+-> done: StructuredMedicationSteps.TheMedicationsShouldBeValid() (0.0s)
+And the Medication Statements should be valid
+-> done: StructuredMedicationSteps.TheMedicationStatementsShouldBeValid() (0.0s)
+And the Medication Requests should be valid
+-> done: StructuredMedicationSteps.TheMedicationRequestsShouldBeValid() (0.0s)
+And the List of MedicationStatements should be valid
+-> done: StructuredMedicationSteps.TheListOfMedicationStatementsShouldBeValid() (0.0s)
+And the MedicationStatement for prescriptions prescribed elsewhere should be valid
+-> done: StructuredMedicationSteps.TheMedicationStatementForPrescriptionsPrescribedElsewhereShouldBeValid() (0.0s)
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='b8789ace-b7e3-43aa-85e7-63e9ec3670d3'
+Replaced Key='Ssp-TraceID' With Value='b8789ace-b7e3-43aa-85e7-63e9ec3670d3'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredMedications
+
+Scenario: Retrieve the medication structured record section for a patient with medication prescribed elsewhere
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='711c93d4-5ae5-42c1-8db5-026467d84a51'
+Replaced Key='Ssp-TraceID' With Value='711c93d4-5ae5-42c1-8db5-026467d84a51'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> 711c93d4-5ae5-42c1-8db5-026467d84a51
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Strict-Transport-Security : max-age=31536000
+Header - Matched-Stub-Id : 63cf7159-b175-418d-827f-9dae9cbf178f
+Header - Matched-Stub-Name : Retrieve the medication structured record section for a patient with medication prescribed elsewhere-1
+Header - Cache-Control : no-store
+Header - Date : Thu, 25 Sep 2025 11:01:03 GMT
+Header - Location : https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir/Bundle/d10d6d79-e893-4679-9180-8bd2d5b17d58
+Header - Server : nginx
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+C:/Temp/2025-09-25T120055\Retrieve the medication structured record section for a patient with medication prescribed elsewhere-1
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+GetRequestHeaders Count='5'
+]]></output>
+            </test-case>
+            <test-case id="1-1057" name="RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoMedications" fullname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature.RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoMedications" methodname="RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoMedications" classname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature" runstate="Runnable" seed="1623363073" result="Passed" start-time="2025-09-25 11:01:01Z" end-time="2025-09-25 11:01:01Z" duration="0.114832" asserts="0">
+              <properties>
+                <property name="Description" value="Retrieve the medication structured record section for a patient with no medications" />
+                <property name="Category" value="Wiremock" />
+              </properties>
+              <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient4"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient4") (0.0s)
+And I add the medication parameter with includePrescriptionIssues set to "false"
+-> done: StructuredMedicationSteps.GivenIAddTheMedicationsParameterWithIncludePrescriptionIssuesSetTo("false") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.1s)
+Then the response status code should indicate success
+-> done: HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() (0.0s)
+And the response should be a Bundle resource of type "collection"
+-> done: BundleSteps.ThenTheResponseShouldBeABundleResourceOfType("collection") (0.0s)
+And the response meta profile should be for "structured"
+-> done: BundleSteps.ThenTheResponseMetaProfileShouldBe("structured") (0.0s)
+And the patient resource in the bundle should contain meta data profile and version id
+-> done: BundleSteps.ThenThePatientResourceInTheBundleShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAPractitionerResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAnOrganizationResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And the Bundle should contain "1" lists
+-> done: StructuredAllergySteps.TheBundleShouldContainLists(1) (0.0s)
+And the List of MedicationStatements should be valid
+-> done: StructuredMedicationSteps.TheListOfMedicationStatementsShouldBeValid() (0.0s)
+And the Medications should be valid
+-> done: StructuredMedicationSteps.TheMedicationsShouldBeValid() (0.0s)
+And the Medication Statements should be valid
+-> done: StructuredMedicationSteps.TheMedicationStatementsShouldBeValid() (0.0s)
+And the Medication Requests should be valid
+-> done: StructuredMedicationSteps.TheMedicationRequestsShouldBeValid() (0.0s)
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='20072979-605f-4c40-b2c9-c4c0a7e658c8'
+Replaced Key='Ssp-TraceID' With Value='20072979-605f-4c40-b2c9-c4c0a7e658c8'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredMedications
+
+Scenario: Retrieve the medication structured record section for a patient with no medications
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='edc42a63-db5c-49cb-b183-fe63205e7d9a'
+Replaced Key='Ssp-TraceID' With Value='edc42a63-db5c-49cb-b183-fe63205e7d9a'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> edc42a63-db5c-49cb-b183-fe63205e7d9a
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Strict-Transport-Security : max-age=31536000
+Header - Matched-Stub-Id : 11d7c99c-5147-45d4-aeb6-8a1551f3551a
+Header - Matched-Stub-Name : Retrieve the medication structured record section for a patient with no medications-1
+Header - Cache-Control : no-store
+Header - Date : Thu, 25 Sep 2025 11:01:03 GMT
+Header - Location : https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir/Bundle/03998885-5625-4ebb-882c-6b5a54b2efda
+Header - Server : nginx
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Warning Found : Information not available
+C:/Temp/2025-09-25T120055\Retrieve the medication structured record section for a patient with no medications-1
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+GetRequestHeaders Count='5'
+]]></output>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1-1047" name="RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues" fullname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature.RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues" classname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature" runstate="Runnable" testcasecount="4" result="Passed" start-time="2025-09-25 11:01:01Z" end-time="2025-09-25 11:01:02Z" duration="0.583735" total="4" passed="4" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+              <properties>
+                <property name="Description" value="Retrieve the medication structured record section for a patient with no problems and including prescription issues" />
+                <property name="Category" value="Wiremock" />
+              </properties>
+              <test-case id="1-1043" name="RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues(&quot;patient3&quot;,null)" fullname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature.RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues(&quot;patient3&quot;,null)" methodname="RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues" classname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature" runstate="Runnable" seed="247836729" result="Passed" start-time="2025-09-25 11:01:01Z" end-time="2025-09-25 11:01:01Z" duration="0.133552" asserts="0">
+                <properties />
+                <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient3"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient3") (0.0s)
+And I add the medication parameter with includePrescriptionIssues set to "true"
+-> done: StructuredMedicationSteps.GivenIAddTheMedicationsParameterWithIncludePrescriptionIssuesSetTo("true") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.1s)
+Then the response status code should indicate success
+-> done: HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() (0.0s)
+And the response should be a Bundle resource of type "collection"
+-> done: BundleSteps.ThenTheResponseShouldBeABundleResourceOfType("collection") (0.0s)
+And the response meta profile should be for "structured"
+-> done: BundleSteps.ThenTheResponseMetaProfileShouldBe("structured") (0.0s)
+And the patient resource in the bundle should contain meta data profile and version id
+-> done: BundleSteps.ThenThePatientResourceInTheBundleShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAPractitionerResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAnOrganizationResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And check that the bundle does not contain any duplicate resources
+-> done: BundleSteps.ThenCheckThatTheBundleDoesNotContainAnyDuplicateResources() (0.0s)
+And the Bundle should contain "1" lists
+-> done: StructuredAllergySteps.TheBundleShouldContainLists(1) (0.0s)
+And the Medications should be valid
+-> done: StructuredMedicationSteps.TheMedicationsShouldBeValid() (0.0s)
+And the Medication Statements should be valid
+-> done: StructuredMedicationSteps.TheMedicationStatementsShouldBeValid() (0.0s)
+And the Medication Requests should be valid
+-> done: StructuredMedicationSteps.TheMedicationRequestsShouldBeValid() (0.0s)
+And the List of MedicationStatements should be valid
+-> done: StructuredMedicationSteps.TheListOfMedicationStatementsShouldBeValid() (0.0s)
+And there should only be one order request for acute prescriptions
+-> done: StructuredMedicationSteps.ThereShouldOnlyBeOneOrderRequestForAcutePrescriptions() (0.0s)
+And the Patient Id should be valid
+-> done: PatientSteps.ThePatienIdShouldBeValid() (0.0s)
+And the Practitioner Id should be valid
+-> done: PractitionerSteps.ThePractitionerIdShouldBeValid() (0.0s)
+And the Organization Id should be valid
+-> done: OrganizationSteps.TheOrganizationIdShouldBeValid() (0.0s)
+And check the response does not contain an operation outcome
+-> done: StructuredMultipleSteps.checkTheResponseDoesNotContainAnOperationalOutcome() (0.0s)
+And I Check There is No Problems Secondary Problems List
+-> done: StructuredProblemsSteps.ThenICheckThereisNoSecondaryProblemsList() (0.0s)
+And I Check No Problem Resources are Included
+-> done: StructuredProblemsSteps.ThenICheckNoProblemResourcesareIncluded() (0.0s)
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='01f43e5d-2a18-419b-af76-0197a8543cdb'
+Replaced Key='Ssp-TraceID' With Value='01f43e5d-2a18-419b-af76-0197a8543cdb'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredMedications
+
+Scenario: Retrieve the medication structured record section for a patient with no problems and including prescription issues
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='9dd0c959-7b6d-405e-8c6c-49b9762b5d24'
+Replaced Key='Ssp-TraceID' With Value='9dd0c959-7b6d-405e-8c6c-49b9762b5d24'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> 9dd0c959-7b6d-405e-8c6c-49b9762b5d24
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Strict-Transport-Security : max-age=31536000
+Header - Matched-Stub-Id : 5b28b453-54c1-4f76-a874-3a527cd46571
+Header - Matched-Stub-Name : Retrieve the medication structured record section for a patient with no problems and including prescription issues-1
+Header - Cache-Control : no-store
+Header - Date : Thu, 25 Sep 2025 11:01:03 GMT
+Header - Location : https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir/Bundle/06cdbe66-74c2-4474-a178-af61dcb04de5
+Header - Server : nginx
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+No operation Outcome in the response
+INFO : NO Secondary Problem List has been included in the bundle
+INFO : NO Problems have been included in the bundle
+C:/Temp/2025-09-25T120055\Retrieve the medication structured record section for a patient with no problems and including prescription issues-1
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+GetRequestHeaders Count='5'
+]]></output>
+              </test-case>
+              <test-case id="1-1044" name="RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues(&quot;patient5&quot;,null)" fullname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature.RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues(&quot;patient5&quot;,null)" methodname="RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues" classname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature" runstate="Runnable" seed="1820541342" result="Passed" start-time="2025-09-25 11:01:01Z" end-time="2025-09-25 11:01:02Z" duration="0.179297" asserts="0">
+                <properties />
+                <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient5"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient5") (0.0s)
+And I add the medication parameter with includePrescriptionIssues set to "true"
+-> done: StructuredMedicationSteps.GivenIAddTheMedicationsParameterWithIncludePrescriptionIssuesSetTo("true") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.2s)
+Then the response status code should indicate success
+-> done: HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() (0.0s)
+And the response should be a Bundle resource of type "collection"
+-> done: BundleSteps.ThenTheResponseShouldBeABundleResourceOfType("collection") (0.0s)
+And the response meta profile should be for "structured"
+-> done: BundleSteps.ThenTheResponseMetaProfileShouldBe("structured") (0.0s)
+And the patient resource in the bundle should contain meta data profile and version id
+-> done: BundleSteps.ThenThePatientResourceInTheBundleShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAPractitionerResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAnOrganizationResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And check that the bundle does not contain any duplicate resources
+-> done: BundleSteps.ThenCheckThatTheBundleDoesNotContainAnyDuplicateResources() (0.0s)
+And the Bundle should contain "1" lists
+-> done: StructuredAllergySteps.TheBundleShouldContainLists(1) (0.0s)
+And the Medications should be valid
+-> done: StructuredMedicationSteps.TheMedicationsShouldBeValid() (0.0s)
+And the Medication Statements should be valid
+-> done: StructuredMedicationSteps.TheMedicationStatementsShouldBeValid() (0.0s)
+And the Medication Requests should be valid
+-> done: StructuredMedicationSteps.TheMedicationRequestsShouldBeValid() (0.0s)
+And the List of MedicationStatements should be valid
+-> done: StructuredMedicationSteps.TheListOfMedicationStatementsShouldBeValid() (0.0s)
+And there should only be one order request for acute prescriptions
+-> done: StructuredMedicationSteps.ThereShouldOnlyBeOneOrderRequestForAcutePrescriptions() (0.0s)
+And the Patient Id should be valid
+-> done: PatientSteps.ThePatienIdShouldBeValid() (0.0s)
+And the Practitioner Id should be valid
+-> done: PractitionerSteps.ThePractitionerIdShouldBeValid() (0.0s)
+And the Organization Id should be valid
+-> done: OrganizationSteps.TheOrganizationIdShouldBeValid() (0.0s)
+And check the response does not contain an operation outcome
+-> done: StructuredMultipleSteps.checkTheResponseDoesNotContainAnOperationalOutcome() (0.0s)
+And I Check There is No Problems Secondary Problems List
+-> done: StructuredProblemsSteps.ThenICheckThereisNoSecondaryProblemsList() (0.0s)
+And I Check No Problem Resources are Included
+-> done: StructuredProblemsSteps.ThenICheckNoProblemResourcesareIncluded() (0.0s)
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='9750ca04-d478-4057-9be9-e611e29e0076'
+Replaced Key='Ssp-TraceID' With Value='9750ca04-d478-4057-9be9-e611e29e0076'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredMedications
+
+Scenario: Retrieve the medication structured record section for a patient with no problems and including prescription issues
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='94ce0a54-5a60-4115-9ac8-0309e9701030'
+Replaced Key='Ssp-TraceID' With Value='94ce0a54-5a60-4115-9ac8-0309e9701030'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> 94ce0a54-5a60-4115-9ac8-0309e9701030
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Strict-Transport-Security : max-age=31536000
+Header - Matched-Stub-Id : e814bb06-7581-4bf3-9765-e56f4fb37964
+Header - Matched-Stub-Name : Retrieve the medication structured record section for a patient with no problems and including prescription issues-2
+Header - Cache-Control : no-store
+Header - Date : Thu, 25 Sep 2025 11:01:03 GMT
+Header - Location : https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir/Bundle/d0189514-0308-4b5c-b3d4-a60dc1a04f57
+Header - Server : nginx
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+No operation Outcome in the response
+INFO : NO Secondary Problem List has been included in the bundle
+INFO : NO Problems have been included in the bundle
+C:/Temp/2025-09-25T120055\Retrieve the medication structured record section for a patient with no problems and including prescription issues-2
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+GetRequestHeaders Count='5'
+]]></output>
+              </test-case>
+              <test-case id="1-1045" name="RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues(&quot;patient12&quot;,null)" fullname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature.RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues(&quot;patient12&quot;,null)" methodname="RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues" classname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature" runstate="Runnable" seed="883129946" result="Passed" start-time="2025-09-25 11:01:02Z" end-time="2025-09-25 11:01:02Z" duration="0.144943" asserts="0">
+                <properties />
+                <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient12"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient12") (0.0s)
+And I add the medication parameter with includePrescriptionIssues set to "true"
+-> done: StructuredMedicationSteps.GivenIAddTheMedicationsParameterWithIncludePrescriptionIssuesSetTo("true") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.1s)
+Then the response status code should indicate success
+-> done: HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() (0.0s)
+And the response should be a Bundle resource of type "collection"
+-> done: BundleSteps.ThenTheResponseShouldBeABundleResourceOfType("collection") (0.0s)
+And the response meta profile should be for "structured"
+-> done: BundleSteps.ThenTheResponseMetaProfileShouldBe("structured") (0.0s)
+And the patient resource in the bundle should contain meta data profile and version id
+-> done: BundleSteps.ThenThePatientResourceInTheBundleShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAPractitionerResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAnOrganizationResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And check that the bundle does not contain any duplicate resources
+-> done: BundleSteps.ThenCheckThatTheBundleDoesNotContainAnyDuplicateResources() (0.0s)
+And the Bundle should contain "1" lists
+-> done: StructuredAllergySteps.TheBundleShouldContainLists(1) (0.0s)
+And the Medications should be valid
+-> done: StructuredMedicationSteps.TheMedicationsShouldBeValid() (0.0s)
+And the Medication Statements should be valid
+-> done: StructuredMedicationSteps.TheMedicationStatementsShouldBeValid() (0.0s)
+And the Medication Requests should be valid
+-> done: StructuredMedicationSteps.TheMedicationRequestsShouldBeValid() (0.0s)
+And the List of MedicationStatements should be valid
+-> done: StructuredMedicationSteps.TheListOfMedicationStatementsShouldBeValid() (0.0s)
+And there should only be one order request for acute prescriptions
+-> done: StructuredMedicationSteps.ThereShouldOnlyBeOneOrderRequestForAcutePrescriptions() (0.0s)
+And the Patient Id should be valid
+-> done: PatientSteps.ThePatienIdShouldBeValid() (0.0s)
+And the Practitioner Id should be valid
+-> done: PractitionerSteps.ThePractitionerIdShouldBeValid() (0.0s)
+And the Organization Id should be valid
+-> done: OrganizationSteps.TheOrganizationIdShouldBeValid() (0.0s)
+And check the response does not contain an operation outcome
+-> done: StructuredMultipleSteps.checkTheResponseDoesNotContainAnOperationalOutcome() (0.0s)
+And I Check There is No Problems Secondary Problems List
+-> done: StructuredProblemsSteps.ThenICheckThereisNoSecondaryProblemsList() (0.0s)
+And I Check No Problem Resources are Included
+-> done: StructuredProblemsSteps.ThenICheckNoProblemResourcesareIncluded() (0.0s)
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='5dffff58-1d19-426a-a0cc-0e92985d22ae'
+Replaced Key='Ssp-TraceID' With Value='5dffff58-1d19-426a-a0cc-0e92985d22ae'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredMedications
+
+Scenario: Retrieve the medication structured record section for a patient with no problems and including prescription issues
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='76ac771b-b3c5-4086-ad22-79150becf251'
+Replaced Key='Ssp-TraceID' With Value='76ac771b-b3c5-4086-ad22-79150becf251'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> 76ac771b-b3c5-4086-ad22-79150becf251
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Strict-Transport-Security : max-age=31536000
+Header - Matched-Stub-Id : 63cf7159-b175-418d-827f-9dae9cbf178f
+Header - Matched-Stub-Name : Retrieve the medication structured record section for a patient with medication prescribed elsewhere-1
+Header - Cache-Control : no-store
+Header - Date : Thu, 25 Sep 2025 11:01:04 GMT
+Header - Location : https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir/Bundle/d10d6d79-e893-4679-9180-8bd2d5b17d58
+Header - Server : nginx
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+No operation Outcome in the response
+INFO : NO Secondary Problem List has been included in the bundle
+INFO : NO Problems have been included in the bundle
+C:/Temp/2025-09-25T120055\Retrieve the medication structured record section for a patient with no problems and including prescription issues-3
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+GetRequestHeaders Count='5'
+]]></output>
+              </test-case>
+              <test-case id="1-1046" name="RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues(&quot;patient16&quot;,null)" fullname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature.RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues(&quot;patient16&quot;,null)" methodname="RetrieveTheMedicationStructuredRecordSectionForAPatientWithNoProblemsAndIncludingPrescriptionIssues" classname="GPConnect.Provider.AcceptanceTests.StructuredMedicationsFeature" runstate="Runnable" seed="1655179674" result="Passed" start-time="2025-09-25 11:01:02Z" end-time="2025-09-25 11:01:02Z" duration="0.125295" asserts="0">
+                <properties />
+                <output><![CDATA[Given I configure the default "GpcGetStructuredRecord" request
+-> done: HttpSteps.ConfigureRequest(GpcGetStructuredR...) (0.0s)
+And I add an NHS Number parameter for "patient16"
+-> done: AccessRecordSteps.AddAnNhsNumberParameterFor("patient16") (0.0s)
+And I add the medication parameter with includePrescriptionIssues set to "true"
+-> done: StructuredMedicationSteps.GivenIAddTheMedicationsParameterWithIncludePrescriptionIssuesSetTo("true") (0.0s)
+When I make the "GpcGetStructuredRecord" request
+-> done: HttpSteps.MakeRequest(GpcGetStructuredR...) (0.1s)
+Then the response status code should indicate success
+-> done: HttpResponseSteps.ThenTheResponseStatusCodeShouldIndicateSuccess() (0.0s)
+And the response should be a Bundle resource of type "collection"
+-> done: BundleSteps.ThenTheResponseShouldBeABundleResourceOfType("collection") (0.0s)
+And the response meta profile should be for "structured"
+-> done: BundleSteps.ThenTheResponseMetaProfileShouldBe("structured") (0.0s)
+And the patient resource in the bundle should contain meta data profile and version id
+-> done: BundleSteps.ThenThePatientResourceInTheBundleShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains a practitioner resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAPractitionerResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And if the response bundle contains an organization resource it should contain meta data profile and version id
+-> done: BundleSteps.ThenIfTheResponseBundleContainsAnOrganizationResourceItShouldContainMetaDataProfileAndVersionId() (0.0s)
+And check that the bundle does not contain any duplicate resources
+-> done: BundleSteps.ThenCheckThatTheBundleDoesNotContainAnyDuplicateResources() (0.0s)
+And the Bundle should contain "1" lists
+-> done: StructuredAllergySteps.TheBundleShouldContainLists(1) (0.0s)
+And the Medications should be valid
+-> done: StructuredMedicationSteps.TheMedicationsShouldBeValid() (0.0s)
+And the Medication Statements should be valid
+-> done: StructuredMedicationSteps.TheMedicationStatementsShouldBeValid() (0.0s)
+And the Medication Requests should be valid
+-> done: StructuredMedicationSteps.TheMedicationRequestsShouldBeValid() (0.0s)
+And the List of MedicationStatements should be valid
+-> done: StructuredMedicationSteps.TheListOfMedicationStatementsShouldBeValid() (0.0s)
+And there should only be one order request for acute prescriptions
+-> done: StructuredMedicationSteps.ThereShouldOnlyBeOneOrderRequestForAcutePrescriptions() (0.0s)
+And the Patient Id should be valid
+-> done: PatientSteps.ThePatienIdShouldBeValid() (0.0s)
+And the Practitioner Id should be valid
+-> done: PractitionerSteps.ThePractitionerIdShouldBeValid() (0.0s)
+And the Organization Id should be valid
+-> done: OrganizationSteps.TheOrganizationIdShouldBeValid() (0.0s)
+And check the response does not contain an operation outcome
+-> done: StructuredMultipleSteps.checkTheResponseDoesNotContainAnOperationalOutcome() (0.0s)
+And I Check There is No Problems Secondary Problems List
+-> done: StructuredProblemsSteps.ThenICheckThereisNoSecondaryProblemsList() (0.0s)
+And I Check No Problem Resources are Included
+-> done: StructuredProblemsSteps.ThenICheckNoProblemResourcesareIncluded() (0.0s)
+HttpHeaderHelper() Constructor
+HttpHelper() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='7f9675eb-a687-4943-86a3-e79eefa7d2ac'
+Replaced Key='Ssp-TraceID' With Value='7f9675eb-a687-4943-86a3-e79eefa7d2ac'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+GenericSteps() Constructor
+InitializeContainer For Dependency Injection
+10 Organisations Loaded From ODS CSV File.
+Feature: StructuredMedications
+
+Scenario: Retrieve the medication structured record section for a patient with no problems and including prescription issues
+SecurityContext->LoadAppConfig()
+useTLS=True
+useTLSFoundationsAndAppmts=False
+useTLSStructured=False
+useTLSDocuments=False
+clientCertThumbPrint=53 a0 9e 6a 3e 20 c0 10 48 9a 7d 50 89 d0 1e 18 be 18 77 21
+sendClientCert=False
+validateServerCert=False
+Force The Server Certificate Callback To Always Be True.
+JwtHelper() Constructor
+HttpSteps() Constructor
+HttpHeaderHelper() Constructor
+JwtSteps() Constructor
+All Header(s) Cleared
+All Parameters Cleared
+HttpContext->LoadAppConfig()
+Removed Key='Ssp-TraceID'
+Added Key='Ssp-TraceID' Value='983b39bb-f3ba-476d-93ab-9ba03e51b47a'
+Replaced Key='Ssp-TraceID' With Value='983b39bb-f3ba-476d-93ab-9ba03e51b47a'
+Removed Key='Ssp-From'
+Added Key='Ssp-From' Value='200000000359'
+Replaced Key='Ssp-From' With Value='200000000359'
+Removed Key='Ssp-To'
+Added Key='Ssp-To' Value='918999198738'
+Replaced Key='Ssp-To' With Value='918999198738'
+Removed Key='Accept'
+Added Key='Accept' Value='application/fhir+json'
+Replaced Key='Accept' With Value='application/fhir+json'
+Removed Key='Ssp-InteractionId'
+Added Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Replaced Key='Ssp-InteractionId' With Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Force The Server Certificate Callback To Always Be True.
+Removed Key='Authorization'
+DirectMode: Skipping Authorization header.
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+GetRequestParameters Count='0'
+GetRequestHeaders Count='5'
+Header - Ssp-TraceID -> 983b39bb-f3ba-476d-93ab-9ba03e51b47a
+Header - Ssp-From -> 200000000359
+Header - Ssp-To -> 918999198738
+Header - Accept -> application/fhir+json
+Header - Ssp-InteractionId -> urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Header - Transfer-Encoding : chunked
+Header - Connection : keep-alive
+Header - Strict-Transport-Security : max-age=31536000
+Header - Matched-Stub-Id : b4ab52c1-1ded-414b-b853-51eda103188f
+Header - Matched-Stub-Name : Retrieve the medication structured record section for a patient with no problems and including prescription issues-4
+Header - Cache-Control : no-store
+Header - Date : Thu, 25 Sep 2025 11:01:04 GMT
+Header - Location : https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir/Bundle/60b199bb-c8e2-4fb1-b8ed-95fb08d44c8b
+Header - Server : nginx
+Header - X-Powered-By : HAPI FHIR 3.0.0 REST Server (FHIR Server; FHIR 3.0.1/DSTU3)
+Header - Content-Type : application/fhir+json; charset=UTF-8
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Warning Found : Information not available
+No operation Outcome in the response
+INFO : NO Secondary Problem List has been included in the bundle
+INFO : NO Problems have been included in the bundle
+C:/Temp/2025-09-25T120055\Retrieve the medication structured record section for a patient with no problems and including prescription issues-4
+GetRequestHeaders Count='5'
+GetRequestParameters Count='0'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+Header Key='Ssp-InteractionId' Value='urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+endpointAddress=http://gpcsandbox-dev-alb-297727129.eu-west-2.elb.amazonaws.com:80/B82617/STU3/1/gpconnect/structured/fhir
+GetRequestHeaders Count='5'
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -261,3 +261,6 @@ paket-files/
 *.config
 
 /GPConnect.Provider.AcceptanceTests/App.config
+tests.xml
+.vscode/launch.json
+.vscode/tasks.json

@@ -4,7 +4,7 @@ Feature: StructuredAllergies
 # These Tests are only Testing this Structured Area in isolation and Not with other Areas or Combinations of Include Parameters
 # Tests around Multiple Structured Areas in one Request are tested in the MultipleRequests Feature
 
- 
+@Wiremock 
 Scenario Outline: Retrieve the allergy structured record section for a patient including resolved allergies no problems associated
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "<Patient>"

@@ -3,7 +3,8 @@
 namespace GPConnect.Provider.AcceptanceTests.Steps
 {
 	using Context;
-	using GPConnect.Provider.AcceptanceTests.Logger;
+    using GPConnect.Provider.AcceptanceTests.Helpers;
+    using GPConnect.Provider.AcceptanceTests.Logger;
 	using Hl7.Fhir.Model;
     using Hl7.Fhir.Serialization;
     using Newtonsoft.Json.Linq;
@@ -106,6 +107,9 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
 			resource.ResourceType.ShouldBe(ResourceType.OperationOutcome);
 
 			var operationOutcome = (OperationOutcome)resource;
+			// Dump full OO details to the test log
+			TestContext.Out.WriteLine(operationOutcome.ToMultilineString("Server returned an OperationOutcome"));
+
 
 			operationOutcome.Meta.ShouldNotBeNull();
 			//operationOutcome.Meta.Profile.ShouldAllBe(profile => profile.Equals("http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"));

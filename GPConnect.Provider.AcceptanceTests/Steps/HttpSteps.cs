@@ -12,6 +12,7 @@
     using Repository;
     using System;
     using Extensions;
+    using NUnit.Framework;
 
     [Binding]
     public class HttpSteps : Steps
@@ -102,7 +103,7 @@
             {
                 TeardownSteps.AppointmentCreated();
             }
-            
+
             _httpContext.HttpRequestConfiguration = GetRequestBody(interaction, _httpContext.HttpRequestConfiguration);
 
             _httpContext.HttpRequestConfiguration.RequestHeaders.ReplaceHeader(HttpConst.Headers.kAuthorization, jwtHelper.GetBearerToken());
@@ -110,6 +111,12 @@
             var httpRequest = new HttpContextRequest(_httpContext, _securityContext);
 
             httpRequest.MakeRequest();
+            // If the response resource is an OperationOutcome, dump details immediately
+            var oo = _httpContext.FhirResponse?.Resource as OperationOutcome;
+            if (oo != null)
+            {
+                TestContext.Out.WriteLine(oo.ToMultilineString("OperationOutcome captured immediately after request"));
+            }
         }
 
 
@@ -125,6 +132,12 @@
             var httpRequest = new HttpContextRequest(_httpContext, _securityContext);
 
             httpRequest.MakeRequest();
+            // If the response resource is an OperationOutcome, dump details immediately
+            var oo = _httpContext.FhirResponse?.Resource as OperationOutcome;
+            if (oo != null)
+            {
+                TestContext.Out.WriteLine(oo.ToMultilineString("OperationOutcome captured immediately after request"));
+            }
         }
 
         [When(@"I make the ""(.*)"" request with an unencoded JWT Bearer Token")]
@@ -139,6 +152,12 @@
             var httpRequest = new HttpContextRequest(_httpContext, _securityContext);
 
             httpRequest.MakeRequest();
+            // If the response resource is an OperationOutcome, dump details immediately
+            var oo = _httpContext.FhirResponse?.Resource as OperationOutcome;
+            if (oo != null)
+            {
+                TestContext.Out.WriteLine(oo.ToMultilineString("OperationOutcome captured immediately after request"));
+            }
         }
 
         [When(@"I make the ""(.*)"" request with invalid Resource type")]
@@ -154,6 +173,12 @@
             var httpRequest = new HttpContextRequest(_httpContext, _securityContext);
 
             httpRequest.MakeRequest();
+            // If the response resource is an OperationOutcome, dump details immediately
+            var oo = _httpContext.FhirResponse?.Resource as OperationOutcome;
+            if (oo != null)
+            {
+                TestContext.Out.WriteLine(oo.ToMultilineString("OperationOutcome captured immediately after request"));
+            }
         }
 
         [When(@"I make the ""(.*)"" request with Invalid Additional Field in the Resource")]
@@ -169,6 +194,12 @@
             var httpRequest = new HttpContextRequest(_httpContext, _securityContext);
 
             httpRequest.MakeRequest();
+            // If the response resource is an OperationOutcome, dump details immediately
+            var oo = _httpContext.FhirResponse?.Resource as OperationOutcome;
+            if (oo != null)
+            {
+                TestContext.Out.WriteLine(oo.ToMultilineString("OperationOutcome captured immediately after request"));
+            }
         }
 
         [When(@"I make the ""(.*)"" request with invalid parameter Resource type")]
@@ -182,6 +213,12 @@
             var httpRequest = new HttpContextRequest(_httpContext, _securityContext);
 
             httpRequest.MakeRequest();
+            // If the response resource is an OperationOutcome, dump details immediately
+            var oo = _httpContext.FhirResponse?.Resource as OperationOutcome;
+            if (oo != null)
+            {
+                TestContext.Out.WriteLine(oo.ToMultilineString("OperationOutcome captured immediately after request"));
+            }
         }
 
         [When(@"I make the ""(.*)"" request with additional field in parameter Resource")]
@@ -195,6 +232,12 @@
             var httpRequest = new HttpContextRequest(_httpContext, _securityContext);
 
             httpRequest.MakeRequest();
+            // If the response resource is an OperationOutcome, dump details immediately
+            var oo = _httpContext.FhirResponse?.Resource as OperationOutcome;
+            if (oo != null)
+            {
+                TestContext.Out.WriteLine(oo.ToMultilineString("OperationOutcome captured immediately after request"));
+            }
         }
 
         [When(@"I make the ""(.*)"" request with depricated URLs")]
@@ -208,6 +251,12 @@
             var httpRequest = new HttpContextRequest(_httpContext, _securityContext);
 
             httpRequest.MakeRequest();
+            // If the response resource is an OperationOutcome, dump details immediately
+            var oo = _httpContext.FhirResponse?.Resource as OperationOutcome;
+            if (oo != null)
+            {
+                TestContext.Out.WriteLine(oo.ToMultilineString("OperationOutcome captured immediately after request"));
+            }
         }
 
         public Resource GetResourceForRelativeUrl(GpConnectInteraction gpConnectInteraction, string relativeUrl)

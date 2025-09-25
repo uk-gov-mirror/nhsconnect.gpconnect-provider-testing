@@ -167,11 +167,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppointmentAmend.feature.cs" />
-    <Compile Include="AppointmentBook.feature.cs" />
-    <Compile Include="AppointmentCancel.feature.cs" />
-    <Compile Include="AppointmentRead.feature.cs" />
-    <Compile Include="AppointmentRetrieve.feature.cs" />
     <Compile Include="Builders\Appointment\DefaultAppointmentBuilder.cs" />
     <Compile Include="Builders\Patient\DefaultRegisterPatientBuilder.cs" />
     <Compile Include="Cache\ValueSet\Resolvers\ValueSetResolvers.cs" />
@@ -197,8 +192,6 @@
     <Compile Include="Data\PDS.cs" />
     <Compile Include="Steps\StructuredCommonSteps.cs" />
     <Compile Include="Steps\StructuredDiarySteps.cs" />
-    <Compile Include="StructuredDiary.feature.cs" />
-    <Compile Include="StructuredDocuments.feature.cs" />
     <Compile Include="Enum\GpConnectInteraction.cs" />
     <Compile Include="Extensions\BaseExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
@@ -207,7 +200,6 @@
     <Compile Include="Factories\HttpRequestConfigurationFactory.cs" />
     <Compile Include="Factories\JwtFactory.cs" />
     <Compile Include="Factories\RequestFactory.cs" />
-    <Compile Include="FHIR.feature.cs" />
     <Compile Include="Helpers\AppSettingsHelper.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Helpers\FhirHelper.cs" />
@@ -219,7 +211,6 @@
     <Compile Include="Helpers\ResourceReferenceHelper.cs" />
     <Compile Include="Helpers\SecurityHelper.cs" />
     <Compile Include="Helpers\TimePeriodHelper.cs" />
-    <Compile Include="Http.feature.cs" />
     <Compile Include="Http\HttpContextRequest.cs" />
     <Compile Include="Http\HttpRequestBase.cs" />
     <Compile Include="Http\FhirResponse.cs" />
@@ -237,25 +228,13 @@
     <Compile Include="Importers\ODSCodeMapConverter.cs" />
     <Compile Include="Importers\NHSNoMapConverter.cs" />
     <Compile Include="Importers\PDSMap.cs" />
-    <Compile Include="JWT.feature.cs" />
-    <Compile Include="LocationRead.feature.cs" />
     <Compile Include="Models\GpcCode.cs" />
     <Compile Include="Logger\Log.cs" />
     <Compile Include="Logger\TestListener.cs" />
-    <Compile Include="OrganizationRead.feature.cs" />
-    <Compile Include="OrganizationSearch.feature.cs" />
-    <Compile Include="PatientRead.feature.cs" />
-    <Compile Include="PatientRegister.feature.cs" />
-    <Compile Include="PatientSearch.feature.cs" />
-    <Compile Include="PractitionerRead.feature.cs" />
-    <Compile Include="PractitionerSearch.feature.cs" />
     <Compile Include="Reporting\Report.cs" />
     <Compile Include="Reporting\ReportingConfiguration.cs" />
     <Compile Include="Repository\FhirResourceRepository.cs" />
     <Compile Include="Repository\IFhirResourceRepository.cs" />
-    <Compile Include="SearchForFreeSlots.feature.cs" />
-    <Compile Include="Security.feature.cs" />
-    <Compile Include="SSP.feature.cs" />
     <Compile Include="Steps\StructuredDocumentsSteps.cs" />
     <Compile Include="Steps\StructuredConsultationsSteps.cs" />
     <Compile Include="Steps\StructuredImmunizationsSteps.cs" />
@@ -302,21 +281,10 @@
     <Compile Include="Steps\StructuredUncategorisedSteps.cs" />
     <Compile Include="Steps\TeardownSteps.cs" />
     <Compile Include="StructuredAllergies.feature.cs" />
-    <Compile Include="StructuredConsultations.feature.cs" />
-    <Compile Include="StructuredImmunizations.feature.cs" />
-    <Compile Include="StructuredInvestigations.feature.cs" />
     <Compile Include="StructuredMedications.feature.cs" />
-    <Compile Include="StructuredMultipleRequests.feature.cs" />
-    <Compile Include="StructuredProblems.feature.cs" />
-    <Compile Include="StructuredReferrals.feature.cs" />
-    <Compile Include="StructuredUncategorised.feature.cs" />
+    <Compile Include="Helpers\OperationOutcomeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="StructuredDiary.feature" />
-    <None Include="StructuredDocuments.feature" />
-    <None Include="StructuredConsultations.feature" />
-    <None Include="StructuredImmunizations.feature" />
-    <None Include="StructuredInvestigations.feature" />
     <None Include="StructuredMedications.feature" />
     <None Include="App.config">
       <SubType>Designer</SubType>
@@ -331,32 +299,9 @@
       <DependentUpon>App.config</DependentUpon>
     </None>
     <None Include="StructuredAllergies.feature" />
-    <None Include="AppointmentBook.feature" />
-    <None Include="AppointmentCancel.feature" />
-    <None Include="FHIR.feature" />
-    <None Include="Http.feature" />
-    <None Include="JWT.feature" />
-    <None Include="LocationRead.feature" />
-    <None Include="OrganizationRead.feature" />
-    <None Include="PractitionerSearch.feature" />
-    <None Include="OrganizationSearch.feature" />
-    <None Include="PatientSearch.feature" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="PractitionerRead.feature" />
-    <None Include="PatientRead.feature" />
-    <None Include="AppointmentRead.feature" />
-    <None Include="PatientRegister.feature" />
-    <None Include="SearchForFreeSlots.feature" />
-    <None Include="Security.feature" />
-    <None Include="AppointmentRetrieve.feature" />
-    <None Include="AppointmentAmend.feature" />
-    <None Include="StructuredMultipleRequests.feature" />
-    <None Include="SSP.feature" />
-    <None Include="StructuredProblems.feature" />
-    <None Include="StructuredReferrals.feature" />
-    <None Include="StructuredUncategorised.feature" />
     <None Include="validation.xml.zip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
