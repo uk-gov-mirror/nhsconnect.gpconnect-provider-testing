@@ -16,7 +16,7 @@ Scenario Outline: Retrieve the medication structured record section for a patien
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		# And the Bundle should be valid for patient "<Patient>"
+		And the Bundle should be valid for patient "<Patient>"
 		And check that the bundle does not contain any duplicate resources
 		And the Bundle should contain "1" lists
 		And the Medications should be valid
@@ -49,7 +49,7 @@ Scenario Outline: Retrieve the medication structured record for a patient with n
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		# And the Bundle should be valid for patient "<Patient>"
+		And the Bundle should be valid for patient "<Patient>"
 		And check that the bundle does not contain any duplicate resources
 		And the Bundle should contain "1" lists
 		And the Medications should be valid
@@ -80,7 +80,7 @@ Scenario: Retrieve the medication structured record section for a patient with n
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		# And the Bundle should be valid for patient "patient4"
+		And the Bundle should be valid for patient "patient4"
 		And the Bundle should contain "1" lists
 		And the List of MedicationStatements should be valid
 		And the Medications should be valid
@@ -90,7 +90,8 @@ Scenario: Retrieve the medication structured record section for a patient with n
 Scenario: Retrieve the medication structured record section for a patient with a timePeriod
 	Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "patient2"
-		And I add the medications parameter to search from "3" years back
+		# fixed date used to match Wiremock mapping 
+		And I set a medications period parameter start date to "2022-09-25" 
 	When I make the "GpcGetStructuredRecord" request
 	Then the response status code should indicate success
 		And the response should be a Bundle resource of type "collection"
@@ -98,12 +99,13 @@ Scenario: Retrieve the medication structured record section for a patient with a
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		# And the Bundle should be valid for patient "patient2"		
+		And the Bundle should be valid for patient "patient2"		
 		And the Medications should be valid
 		And the Medication Statements should be valid
 		And the Medication Requests should be valid
 		And the List of MedicationStatements should be valid
-		And the MedicationStatement EffectiveDate is Greater Than Search Date of "3" years ago	
+		# fixed date used to match Wiremock mapping 
+		And the MedicationStatement EffectiveDate is Greater Than Search Date of "2022-09-25"
 
 Scenario: Retrieve the medication structured record section for a patient with medication prescribed elsewhere
 	Given I configure the default "GpcGetStructuredRecord" request
@@ -116,7 +118,7 @@ Scenario: Retrieve the medication structured record section for a patient with m
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		# And the Bundle should be valid for patient "patient12"
+		And the Bundle should be valid for patient "patient12"
 		And the Bundle should contain "1" lists
 		And the Medications should be valid
 		And the Medication Statements should be valid
