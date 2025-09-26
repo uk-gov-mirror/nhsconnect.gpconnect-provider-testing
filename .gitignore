@@ -257,7 +257,7 @@ paket-files/
 #Ignore .feature.cs
 /GPConnect.Provider.AcceptanceTests/*.feature.cs
 
-/GPConnect.Provider.AcceptanceTests/App.config
 tests.xml
+TestResults.xml
 .vscode/launch.json
 .vscode/tasks.json
