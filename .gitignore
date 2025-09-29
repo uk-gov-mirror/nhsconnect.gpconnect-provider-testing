@@ -261,3 +261,5 @@ paket-files/
 *.config
 
 /GPConnect.Provider.AcceptanceTests/App.config
+
+settings.json

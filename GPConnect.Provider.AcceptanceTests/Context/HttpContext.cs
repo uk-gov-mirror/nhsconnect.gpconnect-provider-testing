@@ -17,7 +17,7 @@
             HttpRequestConfiguration = new HttpRequestConfiguration();
             FhirResponse = new FhirResponse();
         }
-        
+
         public FhirResponse FhirResponse { get; set; }
 
         public HttpResponse HttpResponse { get; set; }
@@ -78,27 +78,27 @@
             doc.Save(filename);
         }
 
-public void SaveToFhirContextToDisk(string filename)
-{
-    var jsonSerializer = new FhirJsonSerializer();
-    
-    var doc = new XDocument(
-        new XElement("fhirContext",
-            new XElement("request",
-                new XElement("fhirRequestParameters", jsonSerializer.SerializeToString(HttpRequestConfiguration.BodyParameters))
-            ),
-            new XElement("response",
-                new XElement("fhirResponseResource", jsonSerializer.SerializeToString(FhirResponse.Resource))
-            )
-        )
-    );
-    doc.Save(filename);
-}
+        public void SaveToFhirContextToDisk(string filename)
+        {
+            var jsonSerializer = new FhirJsonSerializer();
+
+            var doc = new XDocument(
+                new XElement("fhirContext",
+                    new XElement("request",
+                        new XElement("fhirRequestParameters", jsonSerializer.SerializeToString(HttpRequestConfiguration.BodyParameters))
+                    ),
+                    new XElement("response",
+                        new XElement("fhirResponseResource", jsonSerializer.SerializeToString(FhirResponse.Resource))
+                    )
+                )
+            );
+            doc.Save(filename);
+        }
 
         public void SaveJSONResponseToDisk(string filename)
         {
-            var JSONResponse = JToken.Parse(FhirSerializer.SerializeResourceToJson(FhirResponse.Resource));
-                     
+            var JSONResponse = JToken.Parse(new FhirJsonSerializer().SerializeToString(FhirResponse.Resource));
+
             string jsonPrettyPrinted = JsonConvert.SerializeObject(JSONResponse, Formatting.Indented);
             File.WriteAllText(@filename, jsonPrettyPrinted);
 
@@ -110,20 +110,20 @@ public void SaveToFhirContextToDisk(string filename)
             string JWTToken;
 
             foreach (var entry in HttpRequestConfiguration.RequestHeaders.GetRequestHeaders())
-            {             
+            {
                 //find JWT
                 if (entry.Key == "Authorization")
-                { 
+                {
                     JWTToken = entry.Value.Replace("Bearer ", "");
-             
+
                     //Convert Token to JSON
                     var jwtHandler = new JwtSecurityTokenHandler();
                     var token = jwtHandler.ReadJwtToken(JWTToken);
-                    
+
                     string jwtHeaderPrettyPrinted = JsonConvert.SerializeObject(token.Header, Formatting.Indented);
                     string jwtPayloadPrettyPrinted = JsonConvert.SerializeObject(token.Payload, Formatting.Indented);
                     File.WriteAllText(@filename, "Header:\n" + jwtHeaderPrettyPrinted + "\nPayload:\n" + jwtPayloadPrettyPrinted);
-                    }
+                }
 
             }
 
