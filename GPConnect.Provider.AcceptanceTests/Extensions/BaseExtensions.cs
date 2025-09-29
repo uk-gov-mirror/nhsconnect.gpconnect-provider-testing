@@ -8,7 +8,7 @@
     {
         public static string ToFhirJson(this Base resource)
         {
-            return FhirSerializer.SerializeToJson(resource);
+            return new FhirJsonSerializer().SerializeToString(resource);
         }
 
         public static string ToJson(this object obj)

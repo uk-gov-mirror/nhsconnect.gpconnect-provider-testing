@@ -38,7 +38,7 @@
         [Then(@"the Response Resource should be a Patient")]
         public void TheResponseResourceShouldBeAPatient()
         {
-            _httpContext.FhirResponse.Resource.ResourceType.ShouldBe(ResourceType.Patient);
+            _httpContext.FhirResponse.Resource.TypeName.ShouldBe("Patient");
         }
 
         [Then(@"the Patient Id should be valid")]
@@ -412,7 +412,7 @@
                     if (contact.Organization?.Reference != null)
                     {
                         _httpContext.FhirResponse.Entries.ShouldContain(
-                            entry => entry.Resource.ResourceType.Equals(ResourceType.Organization) &&
+                            entry => entry.Resource.TypeName.Equals(ResourceType.Organization) &&
                             entry.FullUrl.Equals(contact.Organization.Reference)
                         );
                     }

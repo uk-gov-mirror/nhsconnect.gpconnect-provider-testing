@@ -25,13 +25,13 @@
             var storedBundle = _fhirResourceRepository.Bundle;
 
             var firstSlot = storedBundle.Entry
-                .Where(entry => entry.Resource.ResourceType.Equals(ResourceType.Slot))
+                .Where(entry => entry.Resource.TypeName.Equals(ResourceType.Slot))
                 .Select(entry => (Slot)entry.Resource)
                 .First();
 
             var schedule = storedBundle.Entry
                 .Where(entry =>
-                        entry.Resource.ResourceType.Equals(ResourceType.Schedule) &&
+                        entry.Resource.TypeName.Equals(ResourceType.Schedule) &&
                         ComposeReferenceFromEntry(entry) == firstSlot.Schedule.Reference)
                 .Select(entry => (Schedule)entry.Resource)
                 .First();

@@ -52,9 +52,14 @@
 
         private static void ConfigureSerializer(HttpRequestConfiguration httpRequestConfiguration)
         {
-            _serializer = httpRequestConfiguration.RequestContentType.Contains("xml")
-                ? new Serializer(FhirSerializer.SerializeToXml)
-                : FhirSerializer.SerializeToJson;
+            if (httpRequestConfiguration.RequestContentType.Contains("xml"))
+                {
+                     _serializer = (data, summaryType, root) => new FhirXmlSerializer().SerializeToString(data);
+                }
+            else
+                {
+                    _serializer = (data, summaryType, root) => new FhirJsonSerializer().SerializeToString(data);
+                }
         }
 
         private void ConfigureAppointmentCreateBody(HttpRequestConfiguration httpRequestConfiguration)

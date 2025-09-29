@@ -23,7 +23,7 @@
         [Then("the Response Resource should be a CapabilityStatement")]
         public void TheResponseResourceShouldBeACapabilityStatement()
         {
-            _httpContext.FhirResponse.Resource.ResourceType.ShouldBe(ResourceType.CapabilityStatement);
+            _httpContext.FhirResponse.Resource.TypeName.ShouldBe("CapabilityStatement");
         }
 
         [Then(@"the FoundationsAndAppmts CapabilityStatement version should match the GP Connect specification release")]

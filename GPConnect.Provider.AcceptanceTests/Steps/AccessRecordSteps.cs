@@ -109,7 +109,7 @@
         private void CheckBundleResources(string patient)
         {
             List<Resource> patientResources = Bundle.GetResources().ToList()
-                        .Where(resource => resource.ResourceType.Equals(ResourceType.Patient))
+                        .Where(resource => resource.TypeName.Equals(ResourceType.Patient))
                         .ToList();
 
             patientResources.Count.ShouldBeGreaterThan(0, "Bundle must contain a Patient resource");
@@ -137,11 +137,11 @@
         private void checkPractitionerOrganisationResourcesAgainstPatientGp(Patient patient)
         {
             List<Resource> practitionerResources = Bundle.GetResources().ToList()
-                        .Where(resource => resource.ResourceType.Equals(ResourceType.Practitioner))
+                        .Where(resource => resource.TypeName.Equals(ResourceType.Practitioner))
                         .ToList();
 
             List<Resource> organisationResources = Bundle.GetResources().ToList()
-                        .Where(resource => resource.ResourceType.Equals(ResourceType.Organization))
+                        .Where(resource => resource.TypeName.Equals(ResourceType.Organization))
                         .ToList();
 
             patient.GeneralPractitioner.ForEach(gp =>
@@ -191,7 +191,7 @@
                         .ToList();
 
             List<Resource> roleResources = Bundle.GetResources().ToList()
-                        .Where(resource => resource.ResourceType.Equals(ResourceType.PractitionerRole))
+                        .Where(resource => resource.TypeName.Equals(ResourceType.PractitionerRole))
                         .ToList();
 
             pracRoleIdentifiers.ForEach(roleIdentifier =>

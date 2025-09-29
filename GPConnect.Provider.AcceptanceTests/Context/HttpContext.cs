@@ -78,20 +78,22 @@
             doc.Save(filename);
         }
 
-        public void SaveToFhirContextToDisk(string filename)
-        {
-            var doc = new XDocument(
-                new XElement("fhirContext",
-                    new XElement("request",
-                        new XElement("fhirRequestParameters", FhirSerializer.SerializeResourceToJson(HttpRequestConfiguration.BodyParameters))
-                    ),
-                    new XElement("response",
-                        new XElement("fhirResponseResource", FhirSerializer.SerializeResourceToJson(FhirResponse.Resource))
-                    )
-                )
-            );
-            doc.Save(filename);
-        }
+public void SaveToFhirContextToDisk(string filename)
+{
+    var jsonSerializer = new FhirJsonSerializer();
+    
+    var doc = new XDocument(
+        new XElement("fhirContext",
+            new XElement("request",
+                new XElement("fhirRequestParameters", jsonSerializer.SerializeToString(HttpRequestConfiguration.BodyParameters))
+            ),
+            new XElement("response",
+                new XElement("fhirResponseResource", jsonSerializer.SerializeToString(FhirResponse.Resource))
+            )
+        )
+    );
+    doc.Save(filename);
+}
 
         public void SaveJSONResponseToDisk(string filename)
         {

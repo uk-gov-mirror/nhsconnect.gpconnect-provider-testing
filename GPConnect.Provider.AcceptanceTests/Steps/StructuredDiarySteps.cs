@@ -100,7 +100,7 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
                 {
                     string refToFind = Regex.Replace(entry.Item.Reference, pattern, "$2");
                     Bundle.GetResources()
-                                .Where(resource => resource.ResourceType.Equals(ResourceType.ProcedureRequest))
+                                .Where(resource => resource.TypeName.Equals(ResourceType.ProcedureRequest))
                                 .Where(resource => resource.Id == refToFind)
                                 .ToList().Count().ShouldBe(1, "ProcedureRequest resource Not Found with id : " + refToFind);
                     Logger.Log.WriteLine("Diary List - Verified the Linked ProcedureRequest's has been included In the Bundle: " + refToFind);
@@ -258,7 +258,7 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
         public void CheckResourceExists<T>(T resourceType, string resourceID)
         {
             Bundle.GetResources()
-                           .Where(resource => resource.ResourceType.Equals(resourceType))
+                           .Where(resource => resource.TypeName.Equals(resourceType))
                            .Where(resource => resource.Id == resourceID)
                            .ToList().Count().ShouldBe(1, "Fail : Linked Resource Not Contained in Response - type : " + resourceType + " - ID : " + resourceID);
 

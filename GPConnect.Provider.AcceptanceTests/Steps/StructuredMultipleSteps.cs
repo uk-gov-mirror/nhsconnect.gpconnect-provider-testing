@@ -33,7 +33,7 @@
 			entries.ForEach(entry =>
 			{
 
-				if (entry.Resource.ResourceType.ToString() == "OperationOutcome")
+				if (entry.Resource.TypeName.ToString() == "OperationOutcome")
 				{
 
 					foreach (var issue in ((Hl7.Fhir.Model.OperationOutcome)entry.Resource).Issue)
@@ -64,7 +64,7 @@
 			entries.ForEach(entry =>
 			{
 
-				if (entry.Resource.ResourceType.ToString() == "OperationOutcome")
+				if (entry.ToString() == "OperationOutcome")
 				{
 					//check number of issues in operation outcome matches expected number
 					if (((Hl7.Fhir.Model.OperationOutcome)entry.Resource).Issue.Count() == parameterList.Count())
@@ -127,7 +127,7 @@
 			entries.ForEach(entry =>
 			{
 
-				if (entry.Resource.ResourceType.ToString() == "OperationOutcome")
+				if (entry.Resource.TypeName.ToString() == "OperationOutcome")
 				{
 
 					foreach (var issue in ((Hl7.Fhir.Model.OperationOutcome)entry.Resource).Issue)
@@ -159,7 +159,7 @@
 			entries.ForEach(entry =>
 			{
 
-				if (entry.Resource.ResourceType.ToString() == "OperationOutcome")
+				if (entry.Resource.TypeName.ToString() == "OperationOutcome")
 				{
 
 					foreach (var issue in ((Hl7.Fhir.Model.OperationOutcome)entry.Resource).Issue)
@@ -190,7 +190,7 @@
 			entries.ForEach(entry =>
 			{
 
-				if (entry.Resource.ResourceType.ToString() == "OperationOutcome")
+				if (entry.Resource.TypeName.ToString() == "OperationOutcome")
 				{
 
 					foreach (var issue in ((Hl7.Fhir.Model.OperationOutcome)entry.Resource).Issue)
@@ -296,7 +296,7 @@
 			var foundFlag = false;
 			entries.ForEach(entry =>
 			{
-				if (entry.Resource.ResourceType.ToString() == "OperationOutcome")
+				if (entry.Resource.TypeName.ToString() == "OperationOutcome")
 				{
 					((OperationOutcome)entry.Resource).Issue.Count().ShouldBe(issueCount);
 					foundFlag = true;
@@ -320,7 +320,7 @@
 			var foundFlag = false;
 			entries.ForEach(entry =>
 			{
-				if (entry.Resource.ResourceType.ToString() == "OperationOutcome")
+				if (entry.Resource.TypeName.ToString() == "OperationOutcome")
 				{
 					foundFlag = true;
 				}

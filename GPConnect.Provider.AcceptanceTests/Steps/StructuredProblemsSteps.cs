@@ -91,7 +91,6 @@
                 {
                     string guidToFind = entry.Item.Reference.Replace("Condition/", "");
                     Problems
-                        .Where(resource => resource.ResourceType.Equals(ResourceType.Condition))
                         .Where(c => c.Id == guidToFind)
                         .Count().ShouldBe(1, "Not Found Reference to Condition");
                 });
@@ -143,7 +142,6 @@
                 {
                     string guidToFind = entry.Item.Reference.Replace("Condition/", "");
                     Problems
-                        .Where(resource => resource.ResourceType.Equals(ResourceType.Condition))
                         .Where(c => c.Id == guidToFind)
                         .Count().ShouldBe(1, "Not Found Reference to Condition");
                 });
@@ -537,8 +535,8 @@
         public void CheckResourceExists<T>(T resourceType, string resourceID)
         {
             var count = Bundle.GetResources()
-                           .Where(resource => resource.ResourceType.Equals(resourceType))
-                           .Where(resource => resource.Id == resourceID)
+                           .Where(resource => ((Hl7.Fhir.Model.Resource)resource).TypeName.Equals(resourceType))
+                           .Where(resource => ((Hl7.Fhir.Model.Resource)resource).Id == resourceID)
                            .ToList().Count();
 
             if (count == 1) //only one found

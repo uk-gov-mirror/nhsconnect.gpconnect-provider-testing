@@ -37,7 +37,7 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
 		[Then(@"the response should be a Bundle resource of type ""([^""]*)""")]
 		public void ThenTheResponseShouldBeABundleResourceOfType(string resourceType)
 		{
-			_httpContext.FhirResponse.Resource.ResourceType.ShouldBe(ResourceType.Bundle);
+			_httpContext.FhirResponse.Resource.TypeName.ShouldBe("Bundle");
 
 			if ("document".Equals(resourceType))
 			{
@@ -103,7 +103,7 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
 		{
 			var resource = _httpContext.FhirResponse.Resource;
 
-			resource.ResourceType.ShouldBe(ResourceType.OperationOutcome);
+			resource.TypeName.ShouldBe("OperationOutcome");
 
 			var operationOutcome = (OperationOutcome)resource;
 
@@ -172,9 +172,9 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
 			_httpContext.FhirResponse.Compositions.Count.ShouldBe(1);
 
 			_httpContext.FhirResponse.Entries
-				.Select(entry => entry.Resource.ResourceType)
+				.Select(entry => entry.Resource.TypeName)
 				.First()
-				.ShouldBe(ResourceType.Composition);
+				.ShouldBe("Composition");
 		}
 
 		[Then(@"the response bundle should contain the composition resource as the first entry")]
@@ -182,9 +182,9 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
 		{
 			_httpContext.FhirResponse.Bundle
 				.Entry
-				.Select(entry => entry.Resource.ResourceType)
+				.Select(entry => entry.Resource.TypeName)
 				.First()
-				.ShouldBe(ResourceType.Composition);
+				.ShouldBe("Composition");
 		}
 
 		[Then(@"the response meta profile should be for ""([^""]*)""")]
@@ -255,7 +255,7 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
 
 			var lowerReference = reference.ToLowerInvariant();
 
-			_httpContext.FhirResponse.Bundle.Entry.ShouldContain(entry => lowerReference.Equals(ComposeReferenceFromEntry(entry)) && entry.Resource.ResourceType.Equals(resourceType), customMessage);
+			_httpContext.FhirResponse.Bundle.Entry.ShouldContain(entry => lowerReference.Equals(ComposeReferenceFromEntry(entry)) && entry.Resource.TypeName.Equals(resourceType), customMessage);
 		}
 
 		private static string ComposeReferenceFromEntry(EntryComponent entry)
@@ -267,7 +267,7 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
 		{
 			const string customMessage = "The reference from the resource was found in the bundle by fullUrl resource element but has not been requested.";
 
-			_httpContext.FhirResponse.Bundle.Entry.Count(ent => ent.Resource.ResourceType.Equals(resourceType)).ShouldBe(0, customMessage);
+			_httpContext.FhirResponse.Bundle.Entry.Count(ent => ent.Resource.TypeName.Equals(resourceType)).ShouldBe(0, customMessage);
 		}
 
 

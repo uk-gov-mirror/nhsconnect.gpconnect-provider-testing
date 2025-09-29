@@ -37,7 +37,7 @@
         [Then(@"the Response Resource should be an Organization")]
         public void TheResponseResourceShouldBeAnOrganization()
         {
-            _httpContext.FhirResponse.Resource.ResourceType.ShouldBe(ResourceType.Organization);
+            _httpContext.FhirResponse.Resource.TypeName.ShouldBe("Organization");
         }
 
         [Then("the Organization Id should equal the Request Id")]
@@ -124,7 +124,7 @@
             var organizationEntries = _httpContext
                 .FhirResponse
                 .Entries
-                .Where(entry => entry.Resource.ResourceType == ResourceType.Organization)
+                .Where(entry => entry.Resource.TypeName == "Organization")
                 .ToList();
 
             organizationEntries.ForEach(organizationEntry =>
@@ -428,7 +428,7 @@
         {
             foreach (var entry in _httpContext.FhirResponse.Entries)
             {
-                if (entry.Resource.ResourceType.Equals(ResourceType.Organization))
+                if (entry.Resource.TypeName.Equals(ResourceType.Organization))
                 {
 
                     Organization organization = (Organization)entry.Resource;

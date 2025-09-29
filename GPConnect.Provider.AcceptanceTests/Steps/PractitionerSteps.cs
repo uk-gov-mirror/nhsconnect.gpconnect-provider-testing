@@ -89,7 +89,7 @@
         [Then(@"the Response Resource should be a Practitioner")]
         public void ResponseResourceShouldBeAPractitioner()
         {
-            _httpContext.FhirResponse.Resource.ResourceType.ShouldBe(ResourceType.Practitioner);
+            _httpContext.FhirResponse.resource.TypeName.ShouldBe(ResourceType.Practitioner);
         }
 
         [Then("the Practitioner Id should be valid")]

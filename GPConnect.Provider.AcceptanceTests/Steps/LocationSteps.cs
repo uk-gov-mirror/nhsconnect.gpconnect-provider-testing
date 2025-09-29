@@ -26,7 +26,7 @@
         [Then(@"the Response Resource should be a Location")]
         public void TheResponseResourceShouldBeALocation()
         {
-            _httpContext.FhirResponse.Resource.ResourceType.ShouldBe(ResourceType.Location);
+            _httpContext.FhirResponse.resource.TypeName.ShouldBe(ResourceType.Location);
 
             var location = (Location)_httpContext.FhirResponse.Resource;
 

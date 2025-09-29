@@ -162,7 +162,7 @@ namespace GPConnect.Provider.AcceptanceTests.Helpers
             Log.WriteLine("Incomming Json Object = " + jsonResource);
             dynamic dynamicDeviceObj = JsonConvert.DeserializeObject<ExpandoObject>(jsonResource);
             foreach (var parameter in dynamicDeviceObj.parameter) {
-                parameter.resource.resourceType = newResourceType;
+                parameter.resource.TypeName = newResourceType;
             }
             Log.WriteLine("Converted Type Json Object = " + JsonConvert.SerializeObject(dynamicDeviceObj));
             return JsonConvert.SerializeObject(dynamicDeviceObj);

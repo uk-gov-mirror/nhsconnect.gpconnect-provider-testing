@@ -49,7 +49,7 @@
         [Then(@"the Response Resource should be an Appointment")]
         public void TheResponseResourceShouldBeAnAppointment()
         {
-            _httpContext.FhirResponse.Resource.ResourceType.ShouldBe(ResourceType.Appointment, "the Response Resource should be an Appointment.");
+            _httpContext.FhirResponse.resource.TypeName.ShouldBe(ResourceType.Appointment, "the Response Resource should be an Appointment.");
         }
 
         [Then(@"the Bundle should contain no Appointments")]
@@ -563,7 +563,7 @@
             {
                 readAppointment.Contained.ForEach(resource =>
                 {
-                    if (resource.ResourceType.Equals(ResourceType.Organization))
+                    if (resource.TypeName.Equals(ResourceType.Organization))
                     {
                         Organization organisation = (Organization)resource;
                         organisation.Identifier.First().Value.ShouldBe(GlobalContext.OdsCodeMap[org]);
