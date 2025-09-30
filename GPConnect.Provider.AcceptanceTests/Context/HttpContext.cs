@@ -80,15 +80,13 @@
 
         public void SaveToFhirContextToDisk(string filename)
         {
-            var jsonSerializer = new FhirJsonSerializer();
-
             var doc = new XDocument(
                 new XElement("fhirContext",
                     new XElement("request",
-                        new XElement("fhirRequestParameters", jsonSerializer.SerializeToString(HttpRequestConfiguration.BodyParameters))
+                        new XElement("fhirRequestParameters", FhirSerializer.SerializeResourceToJson(HttpRequestConfiguration.BodyParameters))
                     ),
                     new XElement("response",
-                        new XElement("fhirResponseResource", jsonSerializer.SerializeToString(FhirResponse.Resource))
+                        new XElement("fhirResponseResource", FhirSerializer.SerializeResourceToJson(FhirResponse.Resource))
                     )
                 )
             );
@@ -97,7 +95,7 @@
 
         public void SaveJSONResponseToDisk(string filename)
         {
-            var JSONResponse = JToken.Parse(new FhirJsonSerializer().SerializeToString(FhirResponse.Resource));
+            var JSONResponse = JToken.Parse(FhirSerializer.SerializeResourceToJson(FhirResponse.Resource));
 
             string jsonPrettyPrinted = JsonConvert.SerializeObject(JSONResponse, Formatting.Indented);
             File.WriteAllText(@filename, jsonPrettyPrinted);

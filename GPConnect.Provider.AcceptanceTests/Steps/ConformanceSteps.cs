@@ -23,7 +23,7 @@
         [Then("the Response Resource should be a CapabilityStatement")]
         public void TheResponseResourceShouldBeACapabilityStatement()
         {
-            _httpContext.FhirResponse.Resource.TypeName.ShouldBe("CapabilityStatement");
+            _httpContext.FhirResponse.Resource.ResourceType.ShouldBe(ResourceType.CapabilityStatement);
         }
 
         [Then(@"the FoundationsAndAppmts CapabilityStatement version should match the GP Connect specification release")]
@@ -51,7 +51,7 @@
             {
                 capabilityStatement.Version.ShouldBe(AppSettingsHelper.GPConnectSpecVersionDocuments, $"The Documents CapabilityStatement should match the specification version {AppSettingsHelper.GPConnectSpecVersionDocuments} but was {capabilityStatement.Version}");
             });
-        }    
+        }
 
         [Then("the CapabilityStatement Format should contain XML and JSON")]
         public void TheCapabilityStatementFormatShouldContainXmlAndJson()
@@ -95,7 +95,7 @@
                 });
             });
         }
-        
+
         //#292 - PG 30/8/2019 - Check The structured record URL 
         [Then(@"the CapabilityStatement Operation ""([^""]*)"" has url ""([^""]*)""")]
         public void TheCapabilityStatementOperationsHasURL(string operation, string url)

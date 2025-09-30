@@ -37,7 +37,7 @@
         [Then(@"the Response Resource should be an Organization")]
         public void TheResponseResourceShouldBeAnOrganization()
         {
-            _httpContext.FhirResponse.Resource.TypeName.ShouldBe("Organization");
+            _httpContext.FhirResponse.Resource.ResourceType.ShouldBe(ResourceType.Organization);
         }
 
         [Then("the Organization Id should equal the Request Id")]

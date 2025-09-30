@@ -46,7 +46,7 @@
             if (Resource.TypeName == "Bundle")
             {
                 return Entries
-                    .Where(entry => entry.Resource.TypeName.Equals(ResourceTypeMap[type]))
+                    .Where(entry => entry.Resource.ResourceType.Equals(ResourceTypeMap[type]))
                     .Select(entry => (T)entry.Resource)
                     .ToList();
             }
