@@ -30,7 +30,7 @@ Background:
 		And I am requesting the "<Code>" care record section
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be ""FHIR JSON""
+		And the response body should be "FHIR JSON"
 		And the JSON response should be a Bundle resource
 	Examples:
 		| Code |
