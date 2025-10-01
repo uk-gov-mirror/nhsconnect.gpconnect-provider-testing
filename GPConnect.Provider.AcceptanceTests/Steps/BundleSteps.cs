@@ -172,9 +172,9 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
 			_httpContext.FhirResponse.Compositions.Count.ShouldBe(1);
 
 			_httpContext.FhirResponse.Entries
-				.Select(entry => entry.Resource.TypeName)
+				.Select(entry => entry.Resource.ResourceType)
 				.First()
-				.ShouldBe("Composition");
+				.ShouldBe(ResourceType.Composition);
 		}
 
 		[Then(@"the response bundle should contain the composition resource as the first entry")]
@@ -182,9 +182,9 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
 		{
 			_httpContext.FhirResponse.Bundle
 				.Entry
-				.Select(entry => entry.Resource.TypeName)
+				.Select(entry => entry.Resource.ResourceType)
 				.First()
-				.ShouldBe("Composition");
+				.ShouldBe(ResourceType.Composition);
 		}
 
 		[Then(@"the response meta profile should be for ""([^""]*)""")]

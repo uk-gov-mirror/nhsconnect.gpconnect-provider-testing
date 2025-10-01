@@ -124,7 +124,7 @@
             var organizationEntries = _httpContext
                 .FhirResponse
                 .Entries
-                .Where(entry => entry.Resource.TypeName == "Organization")
+                .Where(entry => entry.Resource.ResourceType == ResourceType.Organization)
                 .ToList();
 
             organizationEntries.ForEach(organizationEntry =>

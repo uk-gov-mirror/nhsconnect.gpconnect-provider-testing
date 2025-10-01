@@ -92,6 +92,7 @@
                     string guidToFind = entry.Item.Reference.Replace("Condition/", "");
                     Problems
                         .Where(c => c.Id == guidToFind)
+                        .Where(resource => resource.ResourceType.Equals(ResourceType.Condition))
                         .Count().ShouldBe(1, "Not Found Reference to Condition");
                 });
             }
@@ -143,6 +144,7 @@
                     string guidToFind = entry.Item.Reference.Replace("Condition/", "");
                     Problems
                         .Where(c => c.Id == guidToFind)
+                        .Where(resource => resource.ResourceType.Equals(ResourceType.Condition))
                         .Count().ShouldBe(1, "Not Found Reference to Condition");
                 });
             }
@@ -539,7 +541,7 @@
         {
             var count = Bundle.GetResources()
                            .Where(resource => resource.ResourceType.Equals(resourceType))
-                           .Where(resource => ((Hl7.Fhir.Model.Resource)resource).Id == resourceID)
+                           .Where(resource => resource.Id == resourceID)
                            .ToList().Count();
 
             if (count == 1) //only one found

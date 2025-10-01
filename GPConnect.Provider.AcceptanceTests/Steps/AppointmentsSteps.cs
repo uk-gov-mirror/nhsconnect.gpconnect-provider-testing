@@ -49,7 +49,7 @@
         [Then(@"the Response Resource should be an Appointment")]
         public void TheResponseResourceShouldBeAnAppointment()
         {
-            _httpContext.FhirResponse.Resource.TypeName.ShouldBe("Appointment");
+            _httpContext.FhirResponse.Resource.ResourceType.ShouldBe(ResourceType.Appointment, "the Response Resource should be an Appointment.");
         }
 
         [Then(@"the Bundle should contain no Appointments")]

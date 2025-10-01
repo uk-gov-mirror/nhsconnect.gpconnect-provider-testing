@@ -43,7 +43,7 @@
             //Need to consider cases where T isn't in ResourceTypeMap (and implementation!!)
             var type = typeof(T);
 
-            if (Resource.TypeName == "Bundle")
+            if (Resource.ResourceType == ResourceType.Bundle)
             {
                 return Entries
                     .Where(entry => entry.Resource.ResourceType.Equals(ResourceTypeMap[type]))
