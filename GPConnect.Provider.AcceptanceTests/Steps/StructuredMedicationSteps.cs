@@ -600,10 +600,10 @@
             });
         }
 
-        [Then(@"the MedicationStatement EffectiveDate is Greater Than Search Date of ""(.*)"" years ago")]
-        private void TheMedicationStatementEffectiveDateIsGreaterThanSearchDate(int yearsToSearchBack)
+        [Then(@"the MedicationStatement EffectiveDate is Greater Than Search Date of ""(.*)""")]
+        private void TheMedicationStatementEffectiveDateIsGreaterThanSearchDate(string DateStr)
         {
-            DateTime searchDate = DateTime.UtcNow.AddYears(-yearsToSearchBack);
+            DateTime searchDate = DateTime.Parse(DateStr);
 
             MedicationStatements.ForEach(medStatement =>
             {
