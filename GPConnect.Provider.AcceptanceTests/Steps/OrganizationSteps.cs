@@ -428,7 +428,7 @@
         {
             foreach (var entry in _httpContext.FhirResponse.Entries)
             {
-                if (entry.Resource.TypeName.Equals(ResourceType.Organization))
+                if (entry.Resource.ResourceType.Equals(ResourceType.Organization))
                 {
 
                     Organization organization = (Organization)entry.Resource;

@@ -83,7 +83,7 @@
                 {
                     string refToFind = Regex.Replace(entry.Item.Reference, pattern, "$2");
                     Bundle.GetResources()
-                                .Where(resource => resource.TypeName.Equals(ResourceType.ReferralRequest))
+                                .Where(resource => resource.ResourceType.Equals(ResourceType.ReferralRequest))
                                 .Where(resource => resource.Id == refToFind)
                                 .ToList().Count().ShouldBe(1, "ReferralRequest resource Not Found with id : " + refToFind);
                     Logger.Log.WriteLine("Referrals List - Verified the Linked ReferralRequest has been included In the Bundle: " + refToFind);
@@ -105,7 +105,7 @@
             //check atleast one
             ReferralRequests.ToList().Count().ShouldBeGreaterThan(0, "Error Should be Atleast One ReferralRequest in response as per Data requirements");
 
-            ReferralRequests.ForEach(referalRequest=>
+            ReferralRequests.ForEach(referalRequest =>
             {
                 //Check Id
                 referalRequest.Id.ShouldNotBeNullOrEmpty();
@@ -230,7 +230,8 @@
                 }
                 if (found)
                     break;
-            };
+            }
+            ;
 
             found.ShouldBeTrue("Fail : No Problems found to be linked to a  ReferralRequest");
 
@@ -258,7 +259,7 @@
         public void CheckResourceExists<T>(T resourceType, string resourceID)
         {
             Bundle.GetResources()
-                           .Where(resource => resource.TypeName.Equals(resourceType))
+                           .Where(resource => resource.ResourceType.Equals(resourceType))
                            .Where(resource => resource.Id == resourceID)
                            .ToList().Count().ShouldBe(1, "Fail : Linked Resource Not Contained in Response - type : " + resourceType + " - ID : " + resourceID);
 

@@ -83,7 +83,7 @@
             {
                 string refToFind = Regex.Replace(entry.Item.Reference, pattern, "$2");
                 Bundle.GetResources()
-                            .Where(resource => resource.TypeName.Equals(ResourceType.Encounter))
+                            .Where(resource => resource.ResourceType.Equals(ResourceType.Encounter))
                             .Where(resource => resource.Id == refToFind)
                             .ToList().Count().ShouldBe(1, "Encounter resource type Not Found");
             });
@@ -206,7 +206,7 @@
                 {
                     string refToFind = Regex.Replace(entry.Item.Reference, pattern, "$2");
                     Bundle.GetResources()
-                                .Where(resource => resource.TypeName.Equals(ResourceType.List))
+                                .Where(resource => resource.ResourceType.Equals(ResourceType.List))
                                 .Where(resource => resource.Id == refToFind)
                                 .ToList().Count().ShouldBe(1, "Topic List resource Not Found");
                     Logger.Log.WriteLine("Consultation List - Verified the Linked Topic has been included In the Bundle: " + refToFind);
@@ -273,7 +273,7 @@
                         if (topicEntry.Item.Reference.StartsWith("List/"))
                         {
                             Bundle.GetResources()
-                                .Where(resource => resource.TypeName.Equals(ResourceType.List))
+                                .Where(resource => resource.ResourceType.Equals(ResourceType.List))
                                 .Where(resource => resource.Id == refToFind)
                                 .ToList().Count().ShouldBe(1, "Heading List resource Not Found");
                             Logger.Log.WriteLine("Found Heading List : " + topicEntry.Item.Reference);
@@ -312,7 +312,7 @@
                             string refToFind = Regex.Replace(((Hl7.Fhir.Model.ResourceReference)phe.Value).ReferenceElement.Value, pattern, "$2");
 
                             int count = Bundle.GetResources()
-                                        .Where(resource => resource.TypeName.Equals(ResourceType.Condition))
+                                        .Where(resource => resource.ResourceType.Equals(ResourceType.Condition))
                                         .Where(resource => resource.Id == refToFind)
                                         .ToList().Count();
                             if (count >= 1)
@@ -391,7 +391,7 @@
         public void CheckResourceExists<T>(T resourceType, string resourceID)
         {
             Bundle.GetResources()
-                           .Where(resource => resource.TypeName.Equals(resourceType))
+                           .Where(resource => resource.ResourceType.Equals(resourceType))
                            .Where(resource => resource.Id == resourceID)
                            .ToList().Count().ShouldBe(1, "Fail : Linked Resource Not Contained in Response - type : " + resourceType + " - ID : " + resourceID);
 

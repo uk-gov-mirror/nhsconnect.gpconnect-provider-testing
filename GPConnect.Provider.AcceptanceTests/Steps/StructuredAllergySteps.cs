@@ -373,7 +373,7 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
 			List<List> resolved = Lists.Where(list => list.Title.Equals(FhirConst.ListTitles.kResolvedAllergies)).ToList();
 			if (resolved.Count > 0)
 			{
-				List<Resource> resolvedAllergies = resolved.First().Contained.Where(resource => resource.TypeName.Equals(ResourceType.AllergyIntolerance)).ToList();
+				List<Resource> resolvedAllergies = resolved.First().Contained.Where(resource => resource.ResourceType.Equals(ResourceType.AllergyIntolerance)).ToList();
 				resolvedAllergies.ForEach(resource =>
 				{
 					AllergyIntolerance allergy = (AllergyIntolerance)resource;

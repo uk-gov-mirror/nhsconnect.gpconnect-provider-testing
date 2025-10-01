@@ -564,7 +564,7 @@
             {
                 readAppointment.Contained.ForEach(resource =>
                 {
-                    if (resource.TypeName.Equals(ResourceType.Organization))
+                    if (resource.ResourceType.Equals(ResourceType.Organization))
                     {
                         Organization organisation = (Organization)resource;
                         organisation.Identifier.First().Value.ShouldBe(GlobalContext.OdsCodeMap[org]);

@@ -56,8 +56,8 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
 
         [Then(@"I add the Diary Search date parameter with a past date ""(.*)"" days ago")]
         public void GivenIaddtheDiarySearchdateparameterwithapastdate(int days)
-        {            
-            var pastSearchDate = DateTime.UtcNow.AddDays(-days);            
+        {
+            var pastSearchDate = DateTime.UtcNow.AddDays(-days);
             var searchBeforeDate = pastSearchDate.ToString("yyyy-MM-dd");
 
             IEnumerable<Tuple<string, Base>> tuples = new Tuple<string, Base>[] {
@@ -65,7 +65,7 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
             };
             _httpContext.HttpRequestConfiguration.BodyParameters.Add(FhirConst.GetStructuredRecordParams.kDiary, tuples);
         }
-        
+
         [Then(@"I add the Diary Search date parameter of ""(.*)"" days in future")]
         public void GivenIaddtheDiarySearchdateparameterofdaysinfuture(int years)
         {
@@ -100,7 +100,7 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
                 {
                     string refToFind = Regex.Replace(entry.Item.Reference, pattern, "$2");
                     Bundle.GetResources()
-                                .Where(resource => resource.TypeName.Equals(ResourceType.ProcedureRequest))
+                                .Where(resource => resource.ResourceType.Equals(ResourceType.ProcedureRequest))
                                 .Where(resource => resource.Id == refToFind)
                                 .ToList().Count().ShouldBe(1, "ProcedureRequest resource Not Found with id : " + refToFind);
                     Logger.Log.WriteLine("Diary List - Verified the Linked ProcedureRequest's has been included In the Bundle: " + refToFind);
@@ -109,7 +109,7 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
 
                 //Check we found atleast One ProcedureRequest Linked in list
                 found.ShouldBeTrue("Fail : Diary List should be linked to atleast one ProcedureRequest");
-                
+
                 Logger.Log.WriteLine("Completed Mandatory checks on Diary List");
             });
         }
@@ -178,7 +178,7 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
 
                 //Check authoredOn
                 proc.AuthoredOn.ShouldNotBeNullOrEmpty("Fail : Diary ProcedureRequest - AuthoredOn should be populated with a dateTime");
-               
+
                 Logger.Log.WriteLine("Diary ProcedureRequest Validated with ID: " + proc.Id);
             });
         }
@@ -230,7 +230,8 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
                 }
                 if (found)
                     break;
-            };
+            }
+            ;
 
             found.ShouldBeTrue("Fail : No Problems found to be linked to a  ProcedureRequest");
 
@@ -258,7 +259,7 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
         public void CheckResourceExists<T>(T resourceType, string resourceID)
         {
             Bundle.GetResources()
-                           .Where(resource => resource.TypeName.Equals(resourceType))
+                           .Where(resource => resource.ResourceType.Equals(resourceType))
                            .Where(resource => resource.Id == resourceID)
                            .ToList().Count().ShouldBe(1, "Fail : Linked Resource Not Contained in Response - type : " + resourceType + " - ID : " + resourceID);
 
@@ -319,7 +320,7 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
         }
 
 
-       
+
 
     }
 }

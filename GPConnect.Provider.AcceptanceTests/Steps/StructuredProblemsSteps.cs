@@ -344,7 +344,8 @@
                 }
                 if (found)
                     break;
-            };
+            }
+            ;
 
             found.ShouldBeTrue("Fail : No Problems found with a linked MedicationRequest");
         }
@@ -470,7 +471,8 @@
                 }
                 if (found)
                     break;
-            };
+            }
+            ;
 
             found.ShouldBeTrue("Fail : No Problems found to be linked to a  " + resourceType + " - resource type");
 
@@ -501,7 +503,8 @@
                         found = true;
                     }
                 }
-            };
+            }
+            ;
 
             found.ShouldBeTrue("Fail : No Problems found with a Context link to an Encounter as per the data requirements for this test");
 
@@ -535,7 +538,7 @@
         public void CheckResourceExists<T>(T resourceType, string resourceID)
         {
             var count = Bundle.GetResources()
-                           .Where(resource => ((Hl7.Fhir.Model.Resource)resource).TypeName.Equals(resourceType))
+                           .Where(resource => resource.ResourceType.Equals(resourceType))
                            .Where(resource => ((Hl7.Fhir.Model.Resource)resource).Id == resourceID)
                            .ToList().Count();
 
