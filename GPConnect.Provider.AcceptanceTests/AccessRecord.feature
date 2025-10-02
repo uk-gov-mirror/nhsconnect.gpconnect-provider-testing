@@ -30,7 +30,7 @@ Background:
 		And I am requesting the "<Code>" care record section
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 	Examples:
 		| Code |
@@ -52,7 +52,7 @@ Scenario: Empty request
 		And I am performing the "urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord" interaction
 	When I make a POST request to "/Patient/$gpc.getcarerecord"
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource
 
 Scenario: No record section requested
@@ -61,7 +61,7 @@ Scenario: No record section requested
 		And I am requesting the record for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource
 
 Scenario: Invalid record section requested
@@ -70,7 +70,7 @@ Scenario: Invalid record section requested
 		And I author a request for the "ZZZ" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "422"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "INVALID_PARAMETER"
 
 Scenario: Multiple record sections requested
@@ -81,7 +81,7 @@ Scenario: Multiple record sections requested
 		And I am requesting the "ALL" care record section
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource
 
 Scenario: Multiple duplication record sections in request
@@ -92,7 +92,7 @@ Scenario: Multiple duplication record sections in request
 		And I am requesting the "SUM" care record section
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource
 
 Scenario: Record section with invalid system for codable concept
@@ -102,7 +102,7 @@ Scenario: Record section with invalid system for codable concept
 		And I am requesting the "SUM" care record section with system "http://GPConnectTest.nhs.net/ValueSet/record-section"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource
 
 Scenario: Request record sections with String type rather than CodableConcept
@@ -112,7 +112,7 @@ Scenario: Request record sections with String type rather than CodableConcept
 		And I am requesting the "SUM" care record section with a string parameter
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource
 
 Scenario: No patient NHS number supplied
@@ -122,7 +122,7 @@ Scenario: No patient NHS number supplied
 		And I set the JWT header for getcarerecord with config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource
 
 Scenario: Invalid NHS number supplied
@@ -132,7 +132,7 @@ Scenario: Invalid NHS number supplied
 		And I am requesting the "SUM" care record section
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "INVALID_NHS_NUMBER"
 
 Scenario: Invalid identifier system for patient NHS number
@@ -142,7 +142,7 @@ Scenario: Invalid identifier system for patient NHS number
 		And I am requesting the "SUM" care record section
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "INVALID_IDENTIFIER_SYSTEM"
 
 Scenario: Multiple different NHS number parameters in request
@@ -153,7 +153,7 @@ Scenario: Multiple different NHS number parameters in request
 		And I am requesting the "SUM" care record section
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource
 
 Scenario: Duplicate NHS number parameters in request
@@ -164,7 +164,7 @@ Scenario: Duplicate NHS number parameters in request
 		And I am requesting the "SUM" care record section
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource
 
 Scenario: No patient found with NHS number
@@ -173,7 +173,7 @@ Scenario: No patient found with NHS number
 		And I author a request for the "SUM" care record section for config patient "patientNotInSystem"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "404"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "PATIENT_NOT_FOUND"
 
 Scenario: Request care record section with patientNHSNumber using String type value
@@ -183,7 +183,7 @@ Scenario: Request care record section with patientNHSNumber using String type va
 		And I am requesting the "SUM" care record section
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource
 
 Scenario Outline: Time period specified for a care record section that can be filtered
@@ -194,7 +194,7 @@ Scenario Outline: Time period specified for a care record section that can be fi
 		And I set a valid time period start and end date
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 	Examples:
 		| Code |
@@ -216,7 +216,7 @@ Scenario Outline: Time period specified for a care record section that must not 
 		And I set a valid time period start and end date
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource
 	Examples:
 		| Code |
@@ -230,7 +230,7 @@ Scenario Outline: Access blocked to care record as no patient consent
 		And I author a request for the "<Code>" care record section for config patient "patient15"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "403"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "NO_PATIENT_CONSENT"
 	Examples:
 		| Code |
@@ -255,7 +255,7 @@ Scenario Outline: Request patient summary with parameters in oposite order to ot
 		And I am requesting the record for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 	Examples:
 		| Code |
@@ -272,7 +272,7 @@ Scenario: Request care record where request resource type is something other tha
 		And I author a request for the "SUM" care record section for config patient "patient2"
 	When I send a gpc.getcarerecord operation request with invalid resource type payload
 	Then the response status code should be "422"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "INVALID_RESOURCE"
 
 Scenario: Invalid start date parameter
@@ -283,7 +283,7 @@ Scenario: Invalid start date parameter
 		And I set a time period parameter start date to "abcd" and end date to "2016"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "422"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "INVALID_PARAMETER"
 
 Scenario: Invalid end date parameter
@@ -294,7 +294,7 @@ Scenario: Invalid end date parameter
 		And I set a time period parameter start date to "2014" and end date to "abcd"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "422"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "INVALID_PARAMETER"
 
 Scenario: Time period where start date parameter is after end date parameter
@@ -305,7 +305,7 @@ Scenario: Time period where start date parameter is after end date parameter
 		And I set a time period parameter start date to "2016" and end date to "2014"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "422"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "INVALID_PARAMETER"
 
 Scenario: Time period with only start date parameter
@@ -316,7 +316,7 @@ Scenario: Time period with only start date parameter
 		And I set a time period parameter with start date "2012"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 
 Scenario: Time period with only end date parameter
@@ -327,7 +327,7 @@ Scenario: Time period with only end date parameter
 		And I set a time period parameter with end date "2016"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 
 Scenario Outline: response should be bundle containing all mandatory elements
@@ -336,7 +336,7 @@ Scenario Outline: response should be bundle containing all mandatory elements
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And the JSON response bundle should contain a single Composition resource
 		And the JSON response bundle should contain a single Patient resource
@@ -361,7 +361,7 @@ Scenario Outline: response bundle should contain composition as the first entry
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And the JSON response bundle should be type searchset
 		And the JSON response bundle should contain the composition resource as the first entry
@@ -386,7 +386,7 @@ Scenario Outline: request contain the structure definition in the meta fields
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And the composition resource in the bundle should contain meta data profile
 		And the patient resource in the bundle should contain meta data profile and version id
@@ -416,7 +416,7 @@ Scenario Outline: composition contains generic mandatory fields
 		And I author a request for the "<Code>" care record section for config patient "<Patient>"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And response bundle entry "Composition" should contain element "resource.date"
 		And response bundle entry "Composition" should contain element "resource.title" with value "Patient Care Record"
@@ -457,7 +457,7 @@ Scenario Outline: if composition contains type mandatory field fixed values shou
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if composition contains the resource type element the fields should match the fixed values of the specification
 	Examples:
@@ -481,7 +481,7 @@ Scenario Outline: if composition contains class coding
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if composition contains the resource class element the fields should match the fixed values of the specification
 	Examples:
@@ -505,7 +505,7 @@ Scenario Outline: composition contains subject referencing a patient resource in
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And response bundle entry "Composition" should contain element "resource.subject.reference"
 		And response bundle entry "Composition" should contain element "resource.subject.reference" and that element should reference a resource in the bundle
@@ -530,7 +530,7 @@ Scenario Outline: if composition contains author, the device reference can be fo
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if response bundle entry "Composition" contains element "resource.author[0].reference"
 		And response bundle entry "Composition" should contain element "resource.author[0].reference" and that element should reference a resource in the bundle
@@ -555,7 +555,7 @@ Scenario Outline: if composition contains custodian referenece
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if response bundle entry "Composition" contains element "resource.custodian.reference"
 		And response bundle entry "Composition" should contain element "resource.custodian.reference" and that element should reference a resource in the bundle
@@ -580,7 +580,7 @@ Scenario Outline: patient contains a valid identifiers
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And response bundle entry "Patient" should contain element "resource.id"
 		And response bundle Patient entry should contain a valid NHS number identifier
@@ -605,7 +605,7 @@ Scenario Outline: if patient contains telecom information
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if response bundle entry "Patient" contains element "resource.telecom"
 		And response bundle Patient resource should contain valid telecom information
@@ -630,7 +630,7 @@ Scenario Outline: if patient contains maritalStatus
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if composition contains the patient resource maritalStatus fields matching the specification
 	Examples:
@@ -654,7 +654,7 @@ Scenario Outline: if patient contains contact
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if composition contains the patient resource contact the mandatory fields should matching the specification
 	Examples:
@@ -678,7 +678,7 @@ Scenario Outline: if patient contins communicaiton
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if composition contains the patient resource communication the mandatory fields should matching the specification
 	Examples:
@@ -702,7 +702,7 @@ Scenario Outline: if patient contains practitioner as care provider
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if Patient careProvider is included in the response the reference should reference a Practitioner within the bundle
 	Examples:
@@ -726,7 +726,7 @@ Scenario Outline: if patient contains managingOrganizaiton
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if Patient managingOrganization is included in the response the reference should reference an Organization within the bundle
 	Examples:
@@ -750,7 +750,7 @@ Scenario Outline: patient does not contain disallowed fields
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And patient resource should not contain the fhir fields photo animal or link
 	Examples:
@@ -774,7 +774,7 @@ Scenario Outline: practitioner resource contains mandatory fields and does not i
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if the response bundle contains a "Practitioner" resource
 		And practitioner resources should contain a single name element
@@ -800,7 +800,7 @@ Scenario Outline: practitioner resource contains mandatory fields within optiona
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if the response bundle contains a "Practitioner" resource
 		And practitioner resources must only contain one user id and one profile id
@@ -827,7 +827,7 @@ Scenario Outline: if practitioner resource contains a managing organization it m
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if the response bundle contains a "Practitioner" resource
 		And if practitioner contains a managingOrganization the reference relates to an Organization within the response bundle
@@ -852,7 +852,7 @@ Scenario Outline: organization resource identifiers
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if the response bundle contains a "Organization" resource
 		And Organization resources identifiers must comply with specification identifier restricitions
@@ -877,7 +877,7 @@ Scenario Outline: organization resource element cardinality
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if the response bundle contains a "Organization" resource
 		And if Organization includes type coding the elements are mandatory
@@ -902,7 +902,7 @@ Scenario Outline: organization resource internal reference
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if the response bundle contains a "Organization" resource
 		And if Organization includes partOf it should referene a resource in the response bundle
@@ -927,7 +927,7 @@ Scenario Outline: device resource element cardinality conformance
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if the response bundle contains a "Device" resource
 		And the Device resource should conform to cardinality set out in specificaiton
@@ -952,7 +952,7 @@ Scenario Outline: device resource type element values match specification
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And if the response bundle contains a "Device" resource
 		And the Device resource type should match the fixed values from the specfication
@@ -978,7 +978,7 @@ Scenario Outline: check all dateTime format variations are allowed
 		And I set a time period parameter start date to "<StartDateTime>" and end date to "<EndDateTime>"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And the HTML in the response matches the Regex check "(.)*"
 	Examples:
@@ -1027,7 +1027,7 @@ Scenario Outline: check invalid dateTime format variations
 		And I set a time period parameter start date to "<StartDateTime>" and end date to "<EndDateTime>"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "422"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource
 	Examples:
 		| Code | StartDateTime       | EndDateTime         |
@@ -1047,7 +1047,7 @@ Scenario Outline: invalid request parameter names and case
 		And I replace the parameter name "<ParamName>" with "<NewParamName>"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "422"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource
 	Examples:
 		| ParamName        | NewParamName      |
@@ -1068,7 +1068,7 @@ Scenario: Request parameter patientNHSNumber values is empty
 		And I set the parameter patientNHSNumber with an empty value
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "INVALID_NHS_NUMBER"
 
 Scenario: Request parameter patientNHSNumber system is empty
@@ -1078,7 +1078,7 @@ Scenario: Request parameter patientNHSNumber system is empty
 		And I set the parameter patientNHSNumber with an empty system
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "400"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "INVALID_IDENTIFIER_SYSTEM"
 
 Scenario: Request parameter recordSection values is empty
@@ -1087,7 +1087,7 @@ Scenario: Request parameter recordSection values is empty
 		And I author a request for the "" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "422"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "INVALID_PARAMETER"
 
 Scenario: Request parameter recordSection system is empty
@@ -1097,7 +1097,7 @@ Scenario: Request parameter recordSection system is empty
 		And I set the parameter recordSection with an empty system
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "422"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "INVALID_PARAMETER"
 
 Scenario Outline: Requested section code incorrect parameter case
@@ -1106,7 +1106,7 @@ Scenario Outline: Requested section code incorrect parameter case
 		And I author a request for the "<Code>" care record section for config patient "patient2"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "422"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "INVALID_PARAMETER"
 	Examples:
 		| Code |
@@ -1147,7 +1147,7 @@ Scenario Outline: A patient is requested which is not on Spine but is on provide
 		And I author a request for the "<Code>" care record section for config patient "patient14"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "404"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "PATIENT_NOT_FOUND"
 	Examples:
 		| Code |
@@ -1174,7 +1174,7 @@ Scenario Outline: Ensure Retrieve the care record sections for senstive patients
 		And I am requesting the "<Code>" care record section
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate notfound
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "PATIENT_NOT_FOUND"
 	Examples:
 		| Code |
@@ -1199,7 +1199,7 @@ Scenario Outline: Ensure Retrieve the care record sections for senstive patients
 		And I author a request for the "<Code>" care record section for config patient "patient18"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should indicate success
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a Bundle resource
 		And the response bundle contains a deceased date not older than allowed access period "28" days
 	Examples:
@@ -1225,7 +1225,7 @@ Scenario Outline: Ensure Retrieve the care record sections for senstive patients
 		And I author a request for the "<Code>" care record section for config patient "patient17"
 	When I request the FHIR "gpc.getcarerecord" Patient Type operation
 	Then the response status code should be "404"
-		And the response body should be "FHIR JSON"
+		And the response body should be 'FHIR JSON'
 		And the JSON response should be a OperationOutcome resource with error code "PATIENT_NOT_FOUND"
 	Examples:
 		| Code |
