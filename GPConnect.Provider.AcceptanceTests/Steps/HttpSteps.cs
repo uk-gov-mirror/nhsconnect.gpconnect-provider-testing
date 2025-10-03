@@ -81,7 +81,6 @@ namespace GPConnect.Provider.AcceptanceTests.Steps
             // Load The Default Settings From The App.config File
             HttpContext.LoadAppConfig();            
 
-            // TODO: re-instate certificates and ssl for SSP
             // Given(@"I configure server certificate and ssl");
             Given($@"I am using ""{FhirConst.ContentTypes.kJsonFhir}"" to communicate with the server");
             And(@"I am generating a random message trace identifier");
