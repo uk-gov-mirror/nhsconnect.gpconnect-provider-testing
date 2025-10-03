@@ -91,8 +91,8 @@
                 {
                     string guidToFind = entry.Item.Reference.Replace("Condition/", "");
                     Problems
-                        .Where(c => c.Id == guidToFind)
                         .Where(resource => resource.ResourceType.Equals(ResourceType.Condition))
+                        .Where(c => c.Id == guidToFind)
                         .Count().ShouldBe(1, "Not Found Reference to Condition");
                 });
             }
@@ -143,8 +143,8 @@
                 {
                     string guidToFind = entry.Item.Reference.Replace("Condition/", "");
                     Problems
-                        .Where(c => c.Id == guidToFind)
                         .Where(resource => resource.ResourceType.Equals(ResourceType.Condition))
+                        .Where(c => c.Id == guidToFind)
                         .Count().ShouldBe(1, "Not Found Reference to Condition");
                 });
             }

@@ -39,6 +39,7 @@ Feature: StructuredAllergies
 			| patient8  |
 			| patient12 |
 			| patient13 |
+			| patient24 |
 
 	Scenario Outline: Retrieve the allergy structured record section for a patient including resolved allergies with linked Problems
 		Given I configure the default "GpcGetStructuredRecord" request
@@ -74,7 +75,7 @@ Feature: StructuredAllergies
 
 	Scenario: Retrieve the allergy structured record section including resolved allergies for a patient without any allergies
 		Given I configure the default "GpcGetStructuredRecord" request
-		And I add an NHS Number parameter for "patient1"
+		And I add an NHS Number parameter for "<Patient>"
 		And I add the allergies parameter with resolvedAllergies set to "true"
 		When I make the "GpcGetStructuredRecord" request
 		Then the response status code should indicate success
@@ -86,9 +87,13 @@ Feature: StructuredAllergies
 		And the Patient Id should be valid
 		And the Practitioner Id should be valid
 		And the Organization Id should be valid
-		And the Bundle should be valid for patient "patient1"
+		And the Bundle should be valid for patient "<Patient>"
 		And the Bundle should contain "2" lists
 		And the Bundle should contain a list with the title "Allergies and adverse reactions"
 		And the Bundle should contain a list with the title "Ended allergies"
 		And the Lists are valid for a patient with no allergies
 		And the List of AllergyIntolerances should be valid
+		Examples:
+			| Patient  |
+			| patient1 |
+			| patient5 |
