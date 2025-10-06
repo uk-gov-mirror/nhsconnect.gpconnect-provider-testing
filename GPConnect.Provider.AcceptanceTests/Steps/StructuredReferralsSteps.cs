@@ -163,6 +163,27 @@
             _httpContext.HttpRequestConfiguration.BodyParameters.Add(FhirConst.GetStructuredRecordParams.kReferrals, tuples);
         }
 
+        [Given(@"I add the Referrals data parameter with valid start date and no end date")]
+        public void GivenIAddTheReferralsParameterWithValidStartDateAndNoEndDate()
+        {
+            var backDate = DateTime.UtcNow.AddYears(-3);
+            var startDate = backDate.ToString("yyyy-MM-dd");
+
+            IEnumerable<Tuple<string, Base>> tuples = new Tuple<string, Base>[] {
+                Tuple.Create(FhirConst.GetStructuredRecordParams.kReferralSearch, (Base)FhirHelper.SafeGetTimePeriod(startDate, null)),
+            };
+            _httpContext.HttpRequestConfiguration.BodyParameters.Add(FhirConst.GetStructuredRecordParams.kReferrals, tuples);
+        }
+
+        [Given(@"I add the Referrals data parameter with no start date and no end date")]
+        public void GivenIAddTheReferralsParameterWithNoStartDateAndNoEndDate()
+        {
+            IEnumerable<Tuple<string, Base>> tuples = new Tuple<string, Base>[] {
+                Tuple.Create(FhirConst.GetStructuredRecordParams.kReferralSearch, (Base)FhirHelper.SafeGetTimePeriod(null, null)),
+            };
+            _httpContext.HttpRequestConfiguration.BodyParameters.Add(FhirConst.GetStructuredRecordParams.kReferrals, tuples);
+        }
+
         [Given(@"I add the Referrals data parameter with date permutations ""([^""]*)"" and ""([^""]*)""")]
         public void GivenIAddTheReferralsParameterWithDatePermutations(string start, string end)
         {

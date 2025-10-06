@@ -191,6 +191,20 @@ namespace GPConnect.Provider.AcceptanceTests.Helpers
             return new Period(new FhirDateTime(startDate), new FhirDateTime(endDate));
         }
 
+#nullable enable
+        public static Period SafeGetTimePeriod(string startDate, string? endDate = null)
+        {
+            var period = new Period();
+            period.StartElement = new FhirDateTime(startDate);
+
+            if (!string.IsNullOrEmpty(endDate))
+            {
+                period.EndElement = new FhirDateTime(endDate);
+            }
+
+            return period;
+        }
+
         // github ref 127
         // RMB 5/11/2018
         public static Date GetStartDate(string startDate)

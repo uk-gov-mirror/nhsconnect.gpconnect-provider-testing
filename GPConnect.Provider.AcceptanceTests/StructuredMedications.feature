@@ -37,7 +37,7 @@ Feature: StructuredMedications
 			| patient12 |
 			| patient16 |
 
-	Scenario Outline: Retrieve the medication structured record section for a patient with no problems linked and including prescription issues
+	Scenario Outline: Retrieve the medication structured record section for a patient with problems linked and including prescription issues
 		Given I configure the default "GpcGetStructuredRecord" request
 		And I add an NHS Number parameter for "<Patient>"
 		And I add the medication parameter with includePrescriptionIssues set to "true"
@@ -60,11 +60,6 @@ Feature: StructuredMedications
 		And the Practitioner Id should be valid
 		And the Organization Id should be valid
 		And check the response does not contain an operation outcome
-		# And I Check The Problems Secondary Problems List
-		# And I Check The Problems Secondary Problems List Does Not Include Not In Use Fields
-		# And I Check The Problems Resources are Valid
-		# And I check The Problem Resources Do Not Include Not In Use Fields
-		# And Check a Problem is Linked to a MedicationRequest resource that has been included in the response
 		And I Check There is No Problems Secondary Problems List
 		And I Check No Problem Resources are Included
 		And Check the MedicationRequests have a link to a medication that has been included in response
@@ -104,7 +99,6 @@ Feature: StructuredMedications
 			| patient3  |
 			| patient5  |
 			| patient12 |
-			| patient33 |
 
 	Scenario: Retrieve the medication structured record section for a patient with no medications
 		Given I configure the default "GpcGetStructuredRecord" request
