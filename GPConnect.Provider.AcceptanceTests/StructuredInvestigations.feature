@@ -5,9 +5,9 @@ Feature: StructuredInvestigations
 	# Tests around Multiple Structured Areas in one Request are tested in the MultipleRequests Feature
 
 	@1.5.0-IncrementalAndRegression
-	Scenario: Verify Investigations structured record for a Patient with Investigations not linked to any problems
+	Scenario Outline: Verify Investigations structured record for a Patient with Investigations not linked to any problems
 		Given I configure the default "GpcGetStructuredRecord" request
-		And I add an NHS Number parameter for "patient3"
+		And I add an NHS Number parameter for "<Patient>"
 		And I add the Investigations parameter
 		When I make the "GpcGetStructuredRecord" request
 		Then the response status code should indicate success
@@ -16,7 +16,7 @@ Feature: StructuredInvestigations
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		And the Bundle should be valid for patient "patient3"
+		And the Bundle should be valid for patient "<Patient>"
 		And check that the bundle does not contain any duplicate resources
 		And check the response does not contain an operation outcome
 		And the Patient Id should be valid
@@ -33,11 +33,15 @@ Feature: StructuredInvestigations
 		And I Check the Test report Filing Do Not Include Not in Use Fields
 		And I Check There is No Problems Secondary Problems List
 		And I Check No Problem Resources are Included
+		Examples:
+			| Patient   |
+			| patient3  |
+			| patient30 |
 
 	@1.5.0-IncrementalAndRegression
-	Scenario: Verify Investigations structured record for a Patient with Investigations associated to Problems
+	Scenario Outline: Verify Investigations structured record for a Patient with Investigations associated to Problems
 		Given I configure the default "GpcGetStructuredRecord" request
-		And I add an NHS Number parameter for "patient2"
+		And I add an NHS Number parameter for "<Patient>"
 		And I add the Investigations parameter
 		When I make the "GpcGetStructuredRecord" request
 		Then the response status code should indicate success
@@ -46,7 +50,7 @@ Feature: StructuredInvestigations
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		And the Bundle should be valid for patient "patient2"
+		And the Bundle should be valid for patient "<Patient>"
 		And check that the bundle does not contain any duplicate resources
 		And check the response does not contain an operation outcome
 		And the Patient Id should be valid
@@ -66,12 +70,16 @@ Feature: StructuredInvestigations
 		And I Check the Test report Filing is Valid
 		And I Check the Test report Filing Do Not Include Not in Use Fields
 		And the Bundle should contain "2" lists
+		Examples:
+			| Patient   |
+			| patient2  |
+			| patient30 |
 
 	#The Aspects covered in this test have been split out from the main tests above as some providers do not support ProcedureRequests at this time.
 	@1.5.0-IncrementalAndRegression
-	Scenario: Verify Investigations structured record for a Patient with DiagnosticReports Linked to ProcedureRequests
+	Scenario Outline: Scenario Outline name: Verify Investigations structured record for a Patient with DiagnosticReports Linked to ProcedureRequests
 		Given I configure the default "GpcGetStructuredRecord" request
-		And I add an NHS Number parameter for "patient3"
+		And I add an NHS Number parameter for "<Patient>"
 		And I add the Investigations parameter
 		When I make the "GpcGetStructuredRecord" request
 		Then the response status code should indicate success
@@ -80,7 +88,7 @@ Feature: StructuredInvestigations
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		And the Bundle should be valid for patient "patient3"
+		And the Bundle should be valid for patient "<Patient>"
 		And check that the bundle does not contain any duplicate resources
 		And check the response does not contain an operation outcome
 		And the Patient Id should be valid
@@ -99,7 +107,10 @@ Feature: StructuredInvestigations
 		And I Check the Test report Filing Do Not Include Not in Use Fields
 		And I Check There is No Problems Secondary Problems List
 		And I Check No Problem Resources are Included
-
+		Examples:
+			| Patient   |
+			| patient3  |
+			| patient30 |
 
 	@1.5.0-IncrementalAndRegression
 	Scenario: Retrieve Investigations structured record for a patient that has no Investigations data

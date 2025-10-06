@@ -5,9 +5,9 @@ Feature: StructuredReferrals
 	# Tests around Multiple Structured Areas in one Request are tested in the MultipleRequests Feature
 
 	@1.5.0-IncrementalAndRegression
-	Scenario: Verify Referrals structured record for a Patient with Referrals not linked to any problems
+	Scenario Outline: Verify Referrals structured record for a Patient with Referrals not linked to any problems
 		Given I configure the default "GpcGetStructuredRecord" request
-		And I add an NHS Number parameter for "patient3"
+		And I add an NHS Number parameter for "<Patient>"
 		And I add the Referrals parameter
 		When I make the "GpcGetStructuredRecord" request
 		Then the response status code should indicate success
@@ -16,7 +16,7 @@ Feature: StructuredReferrals
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		And the Bundle should be valid for patient "patient3"
+		And the Bundle should be valid for patient "<Patient>"
 		And check that the bundle does not contain any duplicate resources
 		And check the response does not contain an operation outcome
 		And the Patient Id should be valid
@@ -29,11 +29,15 @@ Feature: StructuredReferrals
 		And I Check the ReferralRequests Do Not Include Not in Use Fields
 		And I Check There is No Problems Secondary Problems List
 		And I Check No Problem Resources are Included
+		Examples:
+			| Patient   |
+			| patient3  |
+			| patient38 |
 
 	@1.5.0-IncrementalAndRegression
-	Scenario: Verify Referrals structured record for a Patient with Referrals associated to Problems
+	Scenario Outline: Verify Referrals structured record for a Patient with Referrals associated to Problems
 		Given I configure the default "GpcGetStructuredRecord" request
-		And I add an NHS Number parameter for "patient2"
+		And I add an NHS Number parameter for "<Patient>"
 		And I add the Referrals parameter
 		When I make the "GpcGetStructuredRecord" request
 		Then the response status code should indicate success
@@ -42,7 +46,7 @@ Feature: StructuredReferrals
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		And the Bundle should be valid for patient "patient2"
+		And the Bundle should be valid for patient "<Patient>"
 		And check that the bundle does not contain any duplicate resources
 		And check the response does not contain an operation outcome
 		And the Patient Id should be valid
@@ -58,6 +62,10 @@ Feature: StructuredReferrals
 		And I check The Problem Resources Do Not Include Not In Use Fields
 		And the Bundle should contain "2" lists
 		And Check a Problem is linked to ReferralRequest and that it is also included
+		Examples:
+			| Patient   |
+			| patient2  |
+			| patient38 |
 
 	@1.5.0-IncrementalAndRegression
 	Scenario: Retrieve Referrals structured record for a patient that has no Referrals data

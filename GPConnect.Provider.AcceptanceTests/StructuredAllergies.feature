@@ -40,6 +40,7 @@ Feature: StructuredAllergies
 			| patient12 |
 			| patient13 |
 			| patient24 |
+			| patient35 |
 
 	Scenario Outline: Retrieve the allergy structured record section for a patient including resolved allergies with linked Problems
 		Given I configure the default "GpcGetStructuredRecord" request
@@ -70,8 +71,9 @@ Feature: StructuredAllergies
 		And I check The Problem Resources Do Not Include Not In Use Fields
 		And Check a Problem is linked to an "AllergyIntolerance" that is also included in the response with its list
 		Examples:
-			| Patient  |
-			| patient2 |
+			| Patient   |
+			| patient2  |
+			| patient35 |
 
 	Scenario: Retrieve the allergy structured record section including resolved allergies for a patient without any allergies
 		Given I configure the default "GpcGetStructuredRecord" request

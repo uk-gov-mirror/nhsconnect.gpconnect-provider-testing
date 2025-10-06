@@ -8,9 +8,9 @@ Feature: Documents
 	#Search For Documents Tests
 	##########################################
 
-	Scenario: Search for Documents on a Patient with Documents
+	Scenario Outline: Scenario Outline name: Search for Documents on a Patient with Documents
 		Given I configure the default "DocumentsPatientSearch" request
-		And I add a Patient Identifier parameter with default System and Value "patient2"
+		And I add a Patient Identifier parameter with default System and Value "<Patient>"
 		When I make the "DocumentsPatientSearch" request
 		Then the response status code should indicate success
 		Given I store the Patient
@@ -22,6 +22,10 @@ Feature: Documents
 		And The Bundle id should match the SSPTraceID
 		And I Check the returned DocumentReference is Valid
 		And I Check the returned DocumentReference Do Not Include Not In Use Fields
+		Examples:
+			| Patient   |
+			| patient2  |
+			| patient40 |
 
 
 	#This test will fail against the demonstrator. Till the demonstraor is updates
@@ -66,9 +70,9 @@ Feature: Documents
 		Then the response status code should be "422"
 		And the response should be a OperationOutcome resource with error code "INVALID_PARAMETER"
 
-	Scenario: Search for Documents using author parameter
+	Scenario Outline: Search for Documents using author parameter
 		Given I configure the default "DocumentsPatientSearch" request
-		And I add a Patient Identifier parameter with default System and Value "patient2"
+		And I add a Patient Identifier parameter with default System and Value "<Patient>"
 		When I make the "DocumentsPatientSearch" request
 		Then the response status code should indicate success
 		Given I store the Patient
@@ -81,6 +85,10 @@ Feature: Documents
 		And The Bundle id should match the SSPTraceID
 		And I Check the returned DocumentReference is Valid
 		And I Check the returned DocumentReference Do Not Include Not In Use Fields
+		Examples:
+			| Patient   |
+			| patient2  |
+			| patient40 |
 
 	Scenario: Search for Documents using author parameter but with invalid identifier
 		Given I configure the default "DocumentsPatientSearch" request
@@ -111,7 +119,7 @@ Feature: Documents
 
 	Scenario Outline: Search for Patient Documents created less than a date
 		Given I configure the default "DocumentsPatientSearch" request
-		And I add a Patient Identifier parameter with default System and Value "patient2"
+		And I add a Patient Identifier parameter with default System and Value "<Patient>"
 		When I make the "DocumentsPatientSearch" request
 		Then the response status code should indicate success
 		Given I store the Patient
@@ -123,12 +131,13 @@ Feature: Documents
 		And the response should be a Bundle resource of type "searchset"
 		And The Bundle id should match the SSPTraceID
 		Examples:
-			| Days |
-			| 2    |
+			| Days | Patient   |
+			| 2    | patient2  |
+			| 2    | patient40 |
 
 	Scenario Outline: Search for Patient Documents created greater than a date
 		Given I configure the default "DocumentsPatientSearch" request
-		And I add a Patient Identifier parameter with default System and Value "patient2"
+		And I add a Patient Identifier parameter with default System and Value "<Patient>"
 		When I make the "DocumentsPatientSearch" request
 		Then the response status code should indicate success
 		Given I store the Patient
@@ -140,12 +149,13 @@ Feature: Documents
 		And the response should be a Bundle resource of type "searchset"
 		And The Bundle id should match the SSPTraceID
 		Examples:
-			| Days |
-			| 365  |
+			| Days | Patient   |
+			| 365  | patient2  |
+			| 365  | patient40 |
 
-	Scenario: Search for Documents with an invalid parameter
+	Scenario Outline: Scenario Outline name: Search for Documents with an invalid parameter
 		Given I configure the default "DocumentsPatientSearch" request
-		And I add a Patient Identifier parameter with default System and Value "patient2"
+		And I add a Patient Identifier parameter with default System and Value "<Patient>"
 		When I make the "DocumentsPatientSearch" request
 		Then the response status code should indicate success
 		Given I store the Patient
@@ -155,6 +165,10 @@ Feature: Documents
 		When I make the "DocumentsSearch" request
 		Then the response status code should be "422"
 		And the response should be a OperationOutcome resource with error code "INVALID_PARAMETER"
+		Examples:
+			| Patient   |
+			| patient2  |
+			| patient40 |
 
 	Scenario: Search for Documents on a Patient that doesnt exist
 		Given I configure the default "DocumentsSearch" request
@@ -183,9 +197,9 @@ Feature: Documents
 	#Retrieve  Documents Tests
 	##########################################
 
-	Scenario: Retrieve a Document for Patient2
+	Scenario Outline: Retrieve a Document for Patient2
 		Given I configure the default "DocumentsPatientSearch" request
-		And I add a Patient Identifier parameter with default System and Value "patient2"
+		And I add a Patient Identifier parameter with default System and Value "<Patient>"
 		When I make the "DocumentsPatientSearch" request
 		Then the response status code should indicate success
 		Given I store the Patient
@@ -201,6 +215,10 @@ Feature: Documents
 		And I save the binary document from the retrieve
 		And I Check the returned Binary Document is Valid
 		And I Check the returned Binary Document Do Not Include Not In Use Fields
+		Examples:
+			| Patient   |
+			| patient2  |
+			| patient40 |
 
 	##########################################
 	#Documents Search/Find Patients Tests
@@ -232,13 +250,14 @@ Feature: Documents
 		And the Patient Contact Telecom use should be valid
 		And the Patient Not In Use should be valid
 		Examples:
-			| Patient  |
-			| patient1 |
-			| patient2 |
-			| patient3 |
-			| patient4 |
-			| patient5 |
-			| patient6 |
+			| Patient   |
+			| patient1  |
+			| patient2  |
+			| patient3  |
+			| patient4  |
+			| patient5  |
+			| patient6  |
+			| patient40 |
 
 	Scenario Outline: Documents Patient Search with an invalid NHS number
 		Given I configure the default "DocumentsPatientSearch" request
@@ -389,10 +408,11 @@ Feature: Documents
 		And the response bundle should contain "1" entries
 		And the Patient Identifiers should be valid for Patient "<Patient>"
 		Examples:
-			| Patient  |
-			| patient1 |
-			| patient2 |
-			| patient3 |
+			| Patient   |
+			| patient1  |
+			| patient2  |
+			| patient3  |
+			| patient40 |
 
 	Scenario: Documents Patient search response does not return deceased patient
 		Given I configure the default "DocumentsPatientSearch" request

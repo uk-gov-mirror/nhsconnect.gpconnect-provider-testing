@@ -5,9 +5,9 @@ Feature: StructuredUncategorised
 	# Tests around Multiple Structured Areas in one Request are tested in the MultipleRequests Feature
 
 
-	Scenario: Verify Uncategorised structured record for a Patient with Uncategorised data not linked to any problems
+	Scenario Outline: Verify Uncategorised structured record for a Patient with Uncategorised data not linked to any problems
 		Given I configure the default "GpcGetStructuredRecord" request
-		And I add an NHS Number parameter for "patient3"
+		And I add an NHS Number parameter for "<Patient>"
 		And I add the uncategorised data parameter
 		When I make the "GpcGetStructuredRecord" request
 		Then the response status code should indicate success
@@ -16,7 +16,7 @@ Feature: StructuredUncategorised
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		And the Bundle should be valid for patient "patient3"
+		And the Bundle should be valid for patient "<Patient>"
 		And the Patient Id should be valid
 		And the Practitioner Id should be valid
 		And the Organization Id should be valid
@@ -28,12 +28,16 @@ Feature: StructuredUncategorised
 		And check the response does not contain an operation outcome
 		And I Check There is No Problems Secondary Problems List
 		And I Check No Problem Resources are Included
+		Examples:
+			| Patient   |
+			| patient3  |
+			| patient37 |
 
 	#PG 19-2-2020 - Added for 1.3.2 - To check that associated problems and the problems list are sent.
 
-	Scenario: Verify Uncategorised structured record for a Patient with Uncategorised data associated to Problems
+	Scenario Outline: Verify Uncategorised structured record for a Patient with Uncategorised data associated to Problems
 		Given I configure the default "GpcGetStructuredRecord" request
-		And I add an NHS Number parameter for "patient2"
+		And I add an NHS Number parameter for "<Patient>"
 		And I add the uncategorised data parameter
 		When I make the "GpcGetStructuredRecord" request
 		Then the response status code should indicate success
@@ -42,7 +46,7 @@ Feature: StructuredUncategorised
 		And the patient resource in the bundle should contain meta data profile and version id
 		And if the response bundle contains a practitioner resource it should contain meta data profile and version id
 		And if the response bundle contains an organization resource it should contain meta data profile and version id
-		And the Bundle should be valid for patient "patient2"
+		And the Bundle should be valid for patient "<Patient>"
 		And check that the bundle does not contain any duplicate resources
 		And the Patient Id should be valid
 		And the Practitioner Id should be valid
@@ -58,6 +62,10 @@ Feature: StructuredUncategorised
 		And I Check The Problems Resources are Valid
 		And I check The Problem Resources Do Not Include Not In Use Fields
 		And Check a Problem is linked to an "Observation" that is also included in the response with its list
+		Examples:
+			| Patient   |
+			| patient2  |
+			| patient37 |
 
 	Scenario: Retrieve uncategorised data structured record section for an invalid NHS number
 		Given I configure the default "GpcGetStructuredRecord" request
@@ -126,7 +134,6 @@ Feature: StructuredUncategorised
 		Then the response status code should indicate failure
 		And the response status code should be "422"
 		And the response should be a OperationOutcome resource with error code "INVALID_PARAMETER"
-
 		Examples:
 			| startDate                 | endDate                   | Parameter                | PartParameter                 |
 			| 2014                      | 2016-01-01                | includeUncategorisedData | uncategorisedDataSearchPeriod |
