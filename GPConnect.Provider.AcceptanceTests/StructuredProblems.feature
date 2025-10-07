@@ -270,11 +270,16 @@ Feature: StructuredProblems
 		Then the response status code should indicate failure
 		And the response should be a OperationOutcome resource
 
-	Scenario: Retrieve Problems structured record for a patient that has sensitive flag
+	Scenario Outline: Retrieve Problems structured record for a patient that has sensitive flag
 		Given I configure the default "GpcGetStructuredRecord" request
-		And I add an NHS Number parameter for "patient9"
+		And I add an NHS Number parameter for "<Patient>"
 		And I add the Problems parameter
 		When I make the "GpcGetStructuredRecord" request
 		Then the response status code should indicate failure
 		And the response status code should be "404"
 		And the response should be a OperationOutcome resource with error code "PATIENT_NOT_FOUND"
+		Examples:
+			| Patient   |
+			| patient9  |
+			| patient32 |
+
