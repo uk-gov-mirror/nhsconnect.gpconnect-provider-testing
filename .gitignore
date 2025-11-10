@@ -258,6 +258,6 @@ paket-files/
 /GPConnect.Provider.AcceptanceTests/*.feature.cs
 
 #ignore app.config file
-*.config
+#*.config
 
 /GPConnect.Provider.AcceptanceTests/App.config
